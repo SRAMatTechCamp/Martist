@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C6E9F5615F99A8600ED8996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F5515F99A8600ED8996 /* UIKit.framework */; };
+		4C6E9F5815F99A8600ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F5715F99A8600ED8996 /* Foundation.framework */; };
+		4C6E9F5A15F99A8600ED8996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F5915F99A8600ED8996 /* CoreGraphics.framework */; };
+		4C6E9F6015F99A8600ED8996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9F5E15F99A8600ED8996 /* InfoPlist.strings */; };
+		4C6E9F6215F99A8600ED8996 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9F6115F99A8600ED8996 /* main.m */; };
+		4C6E9F6615F99A8600ED8996 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9F6515F99A8600ED8996 /* AppDelegate.m */; };
+		4C6E9F6915F99A8600ED8996 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9F6715F99A8600ED8996 /* MainStoryboard.storyboard */; };
+		4C6E9F6C15F99A8600ED8996 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9F6B15F99A8600ED8996 /* ViewController.m */; };
+		4C6E9F7415F99A8600ED8996 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F7315F99A8600ED8996 /* SenTestingKit.framework */; };
+		4C6E9F7515F99A8600ED8996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F5515F99A8600ED8996 /* UIKit.framework */; };
+		4C6E9F7615F99A8600ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F5715F99A8600ED8996 /* Foundation.framework */; };
+		4C6E9F7E15F99A8600ED8996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9F7C15F99A8600ED8996 /* InfoPlist.strings */; };
+		4C6E9F8115F99A8600ED8996 /* DrawLineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9F8015F99A8600ED8996 /* DrawLineTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C6E9F7715F99A8600ED8996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C6E9F4815F99A8500ED8996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C6E9F5015F99A8600ED8996;
+			remoteInfo = DrawLine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C6E9F5115F99A8600ED8996 /* DrawLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6E9F5515F99A8600ED8996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C6E9F5715F99A8600ED8996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C6E9F5915F99A8600ED8996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C6E9F5D15F99A8600ED8996 /* DrawLine-Info.plist */ = {isa = PBXFileReference; path = "DrawLine-Info.plist"; sourceTree = "<group>"; };
+		4C6E9F5F15F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C6E9F6115F99A8600ED8996 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C6E9F6315F99A8600ED8996 /* DrawLine-Prefix.pch */ = {isa = PBXFileReference; path = "DrawLine-Prefix.pch"; sourceTree = "<group>"; };
+		4C6E9F6415F99A8600ED8996 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C6E9F6515F99A8600ED8996 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C6E9F6815F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4C6E9F6A15F99A8600ED8996 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		4C6E9F6B15F99A8600ED8996 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C6E9F7215F99A8600ED8996 /* DrawLineTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawLineTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C6E9F7315F99A8600ED8996 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		4C6E9F7B15F99A8600ED8996 /* DrawLineTests-Info.plist */ = {isa = PBXFileReference; path = "DrawLineTests-Info.plist"; sourceTree = "<group>"; };
+		4C6E9F7D15F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C6E9F7F15F99A8600ED8996 /* DrawLineTests.h */ = {isa = PBXFileReference; path = DrawLineTests.h; sourceTree = "<group>"; };
+		4C6E9F8015F99A8600ED8996 /* DrawLineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C6E9F4E15F99A8600ED8996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F5615F99A8600ED8996 /* UIKit.framework in Frameworks */,
+				4C6E9F5815F99A8600ED8996 /* Foundation.framework in Frameworks */,
+				4C6E9F5A15F99A8600ED8996 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C6E9F6E15F99A8600ED8996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F7415F99A8600ED8996 /* SenTestingKit.framework in Frameworks */,
+				4C6E9F7515F99A8600ED8996 /* UIKit.framework in Frameworks */,
+				4C6E9F7615F99A8600ED8996 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C6E9F4615F99A8500ED8996 = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F5B15F99A8600ED8996 /* DrawLine */,
+				4C6E9F7915F99A8600ED8996 /* DrawLineTests */,
+				4C6E9F5415F99A8600ED8996 /* Frameworks */,
+				4C6E9F5215F99A8600ED8996 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C6E9F5215F99A8600ED8996 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F5115F99A8600ED8996 /* DrawLine.app */,
+				4C6E9F7215F99A8600ED8996 /* DrawLineTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C6E9F5415F99A8600ED8996 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F5515F99A8600ED8996 /* UIKit.framework */,
+				4C6E9F5715F99A8600ED8996 /* Foundation.framework */,
+				4C6E9F5915F99A8600ED8996 /* CoreGraphics.framework */,
+				4C6E9F7315F99A8600ED8996 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C6E9F5B15F99A8600ED8996 /* DrawLine */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F6415F99A8600ED8996 /* AppDelegate.h */,
+				4C6E9F6515F99A8600ED8996 /* AppDelegate.m */,
+				4C6E9F6715F99A8600ED8996 /* MainStoryboard.storyboard */,
+				4C6E9F6A15F99A8600ED8996 /* ViewController.h */,
+				4C6E9F6B15F99A8600ED8996 /* ViewController.m */,
+				4C6E9F5C15F99A8600ED8996 /* Supporting Files */,
+			);
+			path = DrawLine;
+			sourceTree = "<group>";
+		};
+		4C6E9F5C15F99A8600ED8996 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F5D15F99A8600ED8996 /* DrawLine-Info.plist */,
+				4C6E9F5E15F99A8600ED8996 /* InfoPlist.strings */,
+				4C6E9F6115F99A8600ED8996 /* main.m */,
+				4C6E9F6315F99A8600ED8996 /* DrawLine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C6E9F7915F99A8600ED8996 /* DrawLineTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F7F15F99A8600ED8996 /* DrawLineTests.h */,
+				4C6E9F8015F99A8600ED8996 /* DrawLineTests.m */,
+				4C6E9F7A15F99A8600ED8996 /* Supporting Files */,
+			);
+			path = DrawLineTests;
+			sourceTree = "<group>";
+		};
+		4C6E9F7A15F99A8600ED8996 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E9F7B15F99A8600ED8996 /* DrawLineTests-Info.plist */,
+				4C6E9F7C15F99A8600ED8996 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C6E9F5015F99A8600ED8996 /* DrawLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C6E9F8415F99A8600ED8996 /* Build configuration list for PBXNativeTarget "DrawLine" */;
+			buildPhases = (
+				4C6E9F4D15F99A8600ED8996 /* Sources */,
+				4C6E9F4E15F99A8600ED8996 /* Frameworks */,
+				4C6E9F4F15F99A8600ED8996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrawLine;
+			productName = DrawLine;
+			productReference = 4C6E9F5115F99A8600ED8996 /* DrawLine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C6E9F7115F99A8600ED8996 /* DrawLineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C6E9F8715F99A8600ED8996 /* Build configuration list for PBXNativeTarget "DrawLineTests" */;
+			buildPhases = (
+				4C6E9F6D15F99A8600ED8996 /* Sources */,
+				4C6E9F6E15F99A8600ED8996 /* Frameworks */,
+				4C6E9F6F15F99A8600ED8996 /* Resources */,
+				4C6E9F7015F99A8600ED8996 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C6E9F7815F99A8600ED8996 /* PBXTargetDependency */,
+			);
+			name = DrawLineTests;
+			productName = DrawLineTests;
+			productReference = 4C6E9F7215F99A8600ED8996 /* DrawLineTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C6E9F4815F99A8500ED8996 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "神戸大学";
+			};
+			buildConfigurationList = 4C6E9F4B15F99A8500ED8996 /* Build configuration list for PBXProject "DrawLine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C6E9F4615F99A8500ED8996;
+			productRefGroup = 4C6E9F5215F99A8600ED8996 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C6E9F5015F99A8600ED8996 /* DrawLine */,
+				4C6E9F7115F99A8600ED8996 /* DrawLineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C6E9F4F15F99A8600ED8996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F6015F99A8600ED8996 /* InfoPlist.strings in Resources */,
+				4C6E9F6915F99A8600ED8996 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C6E9F6F15F99A8600ED8996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F7E15F99A8600ED8996 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C6E9F7015F99A8600ED8996 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C6E9F4D15F99A8600ED8996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F6215F99A8600ED8996 /* main.m in Sources */,
+				4C6E9F6615F99A8600ED8996 /* AppDelegate.m in Sources */,
+				4C6E9F6C15F99A8600ED8996 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C6E9F6D15F99A8600ED8996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C6E9F8115F99A8600ED8996 /* DrawLineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C6E9F7815F99A8600ED8996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C6E9F5015F99A8600ED8996 /* DrawLine */;
+			targetProxy = 4C6E9F7715F99A8600ED8996 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C6E9F5E15F99A8600ED8996 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C6E9F5F15F99A8600ED8996 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C6E9F6715F99A8600ED8996 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C6E9F6815F99A8600ED8996 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		4C6E9F7C15F99A8600ED8996 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C6E9F7D15F99A8600ED8996 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C6E9F8215F99A8600ED8996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C6E9F8315F99A8600ED8996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C6E9F8515F99A8600ED8996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawLine/DrawLine-Prefix.pch";
+				INFOPLIST_FILE = "DrawLine/DrawLine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C6E9F8615F99A8600ED8996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawLine/DrawLine-Prefix.pch";
+				INFOPLIST_FILE = "DrawLine/DrawLine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4C6E9F8815F99A8600ED8996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DrawLine.app/DrawLine";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawLine/DrawLine-Prefix.pch";
+				INFOPLIST_FILE = "DrawLineTests/DrawLineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4C6E9F8915F99A8600ED8996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DrawLine.app/DrawLine";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrawLine/DrawLine-Prefix.pch";
+				INFOPLIST_FILE = "DrawLineTests/DrawLineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C6E9F4B15F99A8500ED8996 /* Build configuration list for PBXProject "DrawLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C6E9F8215F99A8600ED8996 /* Debug */,
+				4C6E9F8315F99A8600ED8996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C6E9F8415F99A8600ED8996 /* Build configuration list for PBXNativeTarget "DrawLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C6E9F8515F99A8600ED8996 /* Debug */,
+				4C6E9F8615F99A8600ED8996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C6E9F8715F99A8600ED8996 /* Build configuration list for PBXNativeTarget "DrawLineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C6E9F8815F99A8600ED8996 /* Debug */,
+				4C6E9F8915F99A8600ED8996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C6E9F4815F99A8500ED8996 /* Project object */;
+}
