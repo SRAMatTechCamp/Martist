@@ -14,6 +14,7 @@
 		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
 		3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */; };
 		3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */; };
+		4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C305C7315FDE7C30079526F /* SQLiteDB.m */; };
 		4C61701815FD85DB00484C52 /* arrow 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBD15FD85DB00484C52 /* arrow 1.png */; };
 		4C61701915FD85DB00484C52 /* arrow 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBE15FD85DB00484C52 /* arrow 2.png */; };
 		4C61701A15FD85DB00484C52 /* arrow 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBF15FD85DB00484C52 /* arrow 3.png */; };
@@ -243,6 +244,8 @@
 		3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4C305C7215FDE7C30079526F /* SQLiteDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteDB.h; sourceTree = "<group>"; };
+		4C305C7315FDE7C30079526F /* SQLiteDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteDB.m; sourceTree = "<group>"; };
 		4C616FBD15FD85DB00484C52 /* arrow 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 1.png"; sourceTree = "<group>"; };
 		4C616FBE15FD85DB00484C52 /* arrow 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 2.png"; sourceTree = "<group>"; };
 		4C616FBF15FD85DB00484C52 /* arrow 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 3.png"; sourceTree = "<group>"; };
@@ -775,6 +778,8 @@
 			children = (
 				4CC7D63015FC656B002B89C7 /* DBCreate.h */,
 				4CC7D63115FC656B002B89C7 /* DBCreate.m */,
+				4C305C7215FDE7C30079526F /* SQLiteDB.h */,
+				4C305C7315FDE7C30079526F /* SQLiteDB.m */,
 				4C6E9E3E15F83AD200ED8996 /* AppDelegate.h */,
 				4C6E9E3F15F83AD200ED8996 /* AppDelegate.m */,
 				4C6E9E4115F83AD200ED8996 /* MainStoryboard.storyboard */,
@@ -1148,6 +1153,7 @@
 				4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */,
 				4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */,
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
+				4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1246,6 +1252,7 @@
 		4C6E9E5F15F83AD200ED8996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "com.apple.ubiquity.peer-uuid.CF072CE5-BA53-4D41-9661-10E9C6A53D41";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mapsdk_ios/Ymap\"",
@@ -1254,6 +1261,7 @@
 				GCC_PREFIX_HEADER = "Martist/Martist-Prefix.pch";
 				INFOPLIST_FILE = "Martist/Martist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -83,9 +83,6 @@ center.longitude = 139.7310058;
 
 - (void)viewDidUnload
 {
- //   [self setSaveBotton:nil];
-//  [self setSearchBotton:nil];
- //   [self setDrawBotton:nil];
     saveBotton = nil;
     searchBotton = nil;
     drawBotton = nil;
@@ -116,7 +113,7 @@ center.longitude = 139.7310058;
     
     NSLog(@"保存が完了しました2");
     
-    //image_af = [self.resizedImage:image];
+    image_af = [self resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
