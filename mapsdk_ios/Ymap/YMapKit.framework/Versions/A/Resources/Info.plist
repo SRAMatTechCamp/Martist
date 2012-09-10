@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleVersion</key>
+	<string>1.0.8</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleExecutable</key>
+	<string>YMapKit</string>
+	<key>CFBundleIdentifire</key>
+	<string>jp.co.yahoo</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+</dict>
+</plist>

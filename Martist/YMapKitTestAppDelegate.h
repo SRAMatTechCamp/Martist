@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YMapKit/YMapKit.h> //YMapKit.frameworkのヘッダーファイルをインポー
 
-@interface YMapKitTestAppDelegate : UIViewController{
+
+#define MIDTOWN_LAT 35.6657214
+#define MIDTOWN_LON 139.7310058
+
+//YMKMapViewDelegateを追加
+@interface YMapKitTestAppDelegate : UIViewController <YMKRouteOverlayDelegate, UIApplicationDelegate, YMKMapViewDelegate,YMKLabelTouchDelegate> {
+    UIWindow *window;
+    YMKMapView *map; //YMKMapViewインスタンス用ポインタ
+    
+    
+    YMKRouteOverlay *routerOverLay_before;
 }
-
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 @end
+
