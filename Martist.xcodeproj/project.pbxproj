@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */; };
+		3B9DA79015FDA801005E78ED /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B9DA77615FDA801005E78ED /* readme.txt */; };
+		3B9DA7A715FDA801005E78ED /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA78F15FDA801005E78ED /* YMapKit.framework */; };
+		3B9DA7AB15FDAA0D005E78ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AA15FDAA0D005E78ED /* QuartzCore.framework */; };
+		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
+		3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */; };
+		3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */; };
 		4C61701815FD85DB00484C52 /* arrow 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBD15FD85DB00484C52 /* arrow 1.png */; };
 		4C61701915FD85DB00484C52 /* arrow 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBE15FD85DB00484C52 /* arrow 2.png */; };
 		4C61701A15FD85DB00484C52 /* arrow 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C616FBF15FD85DB00484C52 /* arrow 3.png */; };
@@ -231,6 +237,12 @@
 /* Begin PBXFileReference section */
 		3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMapKitTestAppDelegate.h; sourceTree = "<group>"; };
 		3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMapKitTestAppDelegate.m; sourceTree = "<group>"; };
+		3B9DA77615FDA801005E78ED /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		3B9DA78F15FDA801005E78ED /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
+		3B9DA7AA15FDAA0D005E78ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C616FBD15FD85DB00484C52 /* arrow 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 1.png"; sourceTree = "<group>"; };
 		4C616FBE15FD85DB00484C52 /* arrow 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 2.png"; sourceTree = "<group>"; };
 		4C616FBF15FD85DB00484C52 /* arrow 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 3.png"; sourceTree = "<group>"; };
@@ -463,11 +475,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */,
+				3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */,
+				3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */,
+				3B9DA7AB15FDAA0D005E78ED /* QuartzCore.framework in Frameworks */,
 				4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */,
 				4C6E9E6D15F8691A00ED8996 /* MapKit.framework in Frameworks */,
 				4C6E9E3015F83AD200ED8996 /* UIKit.framework in Frameworks */,
 				4C6E9E3215F83AD200ED8996 /* Foundation.framework in Frameworks */,
 				4C6E9E3415F83AD200ED8996 /* CoreGraphics.framework in Frameworks */,
+				3B9DA7A715FDA801005E78ED /* YMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +501,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B9DA77515FDA801005E78ED /* mapsdk_ios */ = {
+			isa = PBXGroup;
+			children = (
+				3B9DA77615FDA801005E78ED /* readme.txt */,
+				3B9DA77715FDA801005E78ED /* Ymap */,
+			);
+			path = mapsdk_ios;
+			sourceTree = "<group>";
+		};
+		3B9DA77715FDA801005E78ED /* Ymap */ = {
+			isa = PBXGroup;
+			children = (
+				3B9DA77815FDA801005E78ED /* image */,
+				3B9DA78F15FDA801005E78ED /* YMapKit.framework */,
+			);
+			path = Ymap;
+			sourceTree = "<group>";
+		};
+		3B9DA77815FDA801005E78ED /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		4C417C6E15FDAF930017E128 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4C616FBC15FD85DB00484C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,7 +732,13 @@
 		4C6E9E2015F83AD200ED8996 = {
 			isa = PBXGroup;
 			children = (
+				3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */,
+				3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */,
+				3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */,
+				3B9DA7AA15FDAA0D005E78ED /* QuartzCore.framework */,
+				3B9DA77515FDA801005E78ED /* mapsdk_ios */,
 				4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */,
+				4C417C6E15FDAF930017E128 /* Resources */,
 				4C61707315FD85F400484C52 /* Images */,
 				4C616FBC15FD85DB00484C52 /* Images */,
 				4CC7D61E15FC64D6002B89C7 /* src */,
@@ -1044,6 +1099,7 @@
 				4C61712715FD85F400484C52 /* user.png in Resources */,
 				4C61712815FD85F400484C52 /* zoom minus.png in Resources */,
 				4C61712915FD85F400484C52 /* zoom plus.png in Resources */,
+				3B9DA79015FDA801005E78ED /* readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1190,6 +1246,10 @@
 		4C6E9E5F15F83AD200ED8996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mapsdk_ios/Ymap\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Martist/Martist-Prefix.pch";
 				INFOPLIST_FILE = "Martist/Martist-Info.plist";
@@ -1202,6 +1262,10 @@
 		4C6E9E6015F83AD200ED8996 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/mapsdk_ios/Ymap\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Martist/Martist-Prefix.pch";
 				INFOPLIST_FILE = "Martist/Martist-Info.plist";

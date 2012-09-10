@@ -9,8 +9,21 @@
 #import <UIKit/UIKit.h>
 //画面保存に必要なフレームワーク
 #import <QuartzCore/QuartzCore.h>
+#import <YMapKit/YMapKit.h> //YMapKit.frameworkのヘッダーファイルをインポート
 
-@interface YMapKitTestAppDelegate : UIViewController
+#define MIDTOWN_LAT 35.6657214
+#define MIDTOWN_LON 139.7310058
+
+//YMKMapViewDelegateを追加
+@interface YMapKitTestAppDelegate : UIViewController <YMKRouteOverlayDelegate, UIApplicationDelegate, YMKMapViewDelegate,YMKLabelTouchDelegate> {
+    UIWindow *window;
+    YMKMapView *map; //YMKMapViewインスタンス用ポインタ
+    
+    YMKRouteOverlay *routerOverLay_before;
+}
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;
+
 @end
+
