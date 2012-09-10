@@ -48,6 +48,7 @@
 // 保存するメソッド
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
+    UIImage* image_af;
     
     // UIView のサイズの画像コンテキストを開始します。
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -64,6 +65,8 @@
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
     
+    //image_af = [DrawOnMap resizedImage:image];
+    
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
     UIImageWriteToSavedPhotosAlbum(image, self, sel, NULL);
@@ -77,9 +80,25 @@
     // Alertを表示する
    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
     //[alert show];
-    // Alertを表示する
-   // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
-    //[alert show];
+}
+
+
+//画像をリサイズするメソッド
+- (UIImage*)resizedImage:(UIImage *)img 
+{
+    //CGFloat widthRatio  = size.width  / img.size.width;
+    //CGFloat heightRatio = size.height / img.size.height;
+    //CGFloat ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio;
+    CGSize resizedSize = CGSizeMake(320, 375);
+    
+    UIGraphicsBeginImageContext(resizedSize);
+    
+    [img drawInRect:CGRectMake(0, 0, resizedSize.width, resizedSize.height)];
+    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
 }
 
 //トリプルタップを検出し、画面を保存する
