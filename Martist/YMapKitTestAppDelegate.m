@@ -44,6 +44,26 @@
     // Release any retained subviews of the main view.
 }
 
+
+// 検索するメソッド
+
+-(IBAction)routeSearch:(id)sender {
+    NSLog(@"abc");
+    judgeStatement = 1;
+    NSLog(@"abde");
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    
+    for(UITouch *touch in touches){
+        CGPoint location = [touch locationInView:self.view];
+        NSLog(@"%f",location.x);
+    }
+    
+    
+}
+
 // 保存するメソッド
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
@@ -148,7 +168,7 @@
 - (void)viewDidLoad{
     
     //YMKMapViewのインスタンスを作成
-    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 320) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
+    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
     
     //地図のタイプを指定 標準の地図を指定
     map.mapType = YMKMapTypeStandard;

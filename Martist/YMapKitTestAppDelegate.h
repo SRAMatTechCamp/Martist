@@ -18,12 +18,16 @@
 @interface YMapKitTestAppDelegate : UIViewController <YMKRouteOverlayDelegate, UIApplicationDelegate, YMKMapViewDelegate,YMKLabelTouchDelegate> {
     UIWindow *window;
     YMKMapView *map; //YMKMapViewインスタンス用ポインタ
+    int judgeStatement;
     
     YMKRouteOverlay *routerOverLay_before;
 }
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;
+
+- (IBAction)routeSearch:(id)sender;
+
 
 @end
 
