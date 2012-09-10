@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMapKitTestAppDelegate : UIResponder{
+@interface YMapKitTestAppDelegate : UIViewController{
 }
 
 @end
