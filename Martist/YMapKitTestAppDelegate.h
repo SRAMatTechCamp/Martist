@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//画面保存に必要なフレームワーク
+#import <QuartzCore/QuartzCore.h>
 
-@interface YMapKitTestAppDelegate : UIViewController{
-}
-
+@interface YMapKitTestAppDelegate : UIViewController
+//保存するメソッド
+- (IBAction)saveToAlbum:(id)sender;
 @end

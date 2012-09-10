@@ -65,7 +65,7 @@
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
     
-    //image_af = [DrawOnMap resizedImage:image];
+    //image_af = [resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
@@ -100,6 +100,8 @@
     
     return resizedImage;
 }
+
+
 
 //トリプルタップを検出し、画面を保存する
 /*- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

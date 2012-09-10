@@ -11,4 +11,5 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface DrawOnMap : UIViewController
+-(UIImage*)resizedImage:(UIImage *)img ;
 @end
