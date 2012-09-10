@@ -10,4 +10,7 @@
 
 @implementation tapEvent
 
+/*-(IBAction)tapLabel{
+     tapLabel.text=@"タップされました";
+}*/
 @end

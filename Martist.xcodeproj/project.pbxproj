@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */; };
 		4C6E9E3015F83AD200ED8996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E2F15F83AD200ED8996 /* UIKit.framework */; };
 		4C6E9E3215F83AD200ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E3115F83AD200ED8996 /* Foundation.framework */; };
 		4C6E9E3415F83AD200ED8996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E3315F83AD200ED8996 /* CoreGraphics.framework */; };
@@ -20,6 +21,30 @@
 		4C6E9E5015F83AD200ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E3115F83AD200ED8996 /* Foundation.framework */; };
 		4C6E9E5815F83AD200ED8996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E5615F83AD200ED8996 /* InfoPlist.strings */; };
 		4C6E9E5B15F83AD200ED8996 /* MartistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9E5A15F83AD200ED8996 /* MartistTests.m */; };
+		4C6E9E6D15F8691A00ED8996 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E6C15F8691A00ED8996 /* MapKit.framework */; };
+		4C6E9E7D15F8864900ED8996 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E7C15F8864900ED8996 /* star.png */; };
+		4C6E9E7F15F8877E00ED8996 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E7E15F8877E00ED8996 /* camera.png */; };
+		4C6E9E8115F8879000ED8996 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E8015F8879000ED8996 /* book.png */; };
+		4C6E9E8315F887B600ED8996 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E8215F887B600ED8996 /* map.png */; };
+		4C6E9E8515F8882C00ED8996 /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E8415F8882C00ED8996 /* nav.png */; };
+		4C6E9E8715F8885500ED8996 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E8615F8885500ED8996 /* info.png */; };
+		4C6E9E8915F8889B00ED8996 /* cloud up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E8815F8889A00ED8996 /* cloud up.png */; };
+		4C6E9EED15F8BCF100ED8996 /* DrawOnTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */; };
+		4C6E9EF015F97CA800ED8996 /* Memorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EEF15F97CA800ED8996 /* Memorial.m */; };
+		4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF215F97F3400ED8996 /* Setting.m */; };
+		4C6E9EF615F97F7800ED8996 /* SNSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF515F97F7800ED8996 /* SNSConnection.m */; };
+		4C6E9EF915F97F9E00ED8996 /* DrawOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */; };
+		4C9E350015FCEFFF007B0FFA /* map Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E34FF15FCEFFF007B0FFA /* map Image.png */; };
+		4C9E350115FCFB97007B0FFA /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC7D63E15FCB1A5002B89C7 /* pencil.png */; };
+		4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */; };
+		4CC7D61D15FC5C55002B89C7 /* 風景１.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4CC7D61C15FC5C55002B89C7 /* 風景１.jpeg */; };
+		4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62015FC64D6002B89C7 /* FMDatabase.m */; };
+		4CC7D62B15FC64D6002B89C7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62215FC64D6002B89C7 /* FMDatabaseAdditions.m */; };
+		4CC7D62C15FC64D6002B89C7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62415FC64D6002B89C7 /* FMDatabasePool.m */; };
+		4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62615FC64D6002B89C7 /* FMDatabaseQueue.m */; };
+		4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62915FC64D6002B89C7 /* FMResultSet.m */; };
+		4CC7D63215FC656B002B89C7 /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
+		4CC7D63B15FC8B15002B89C7 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC7D63A15FC8B15002B89C7 /* pin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMapKitTestAppDelegate.h; sourceTree = "<group>"; };
+		3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMapKitTestAppDelegate.m; sourceTree = "<group>"; };
 		4C6E9E2B15F83AD200ED8996 /* Martist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Martist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E9E2F15F83AD200ED8996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C6E9E3115F83AD200ED8996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +79,41 @@
 		4C6E9E5715F83AD200ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C6E9E5915F83AD200ED8996 /* MartistTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MartistTests.h; sourceTree = "<group>"; };
 		4C6E9E5A15F83AD200ED8996 /* MartistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MartistTests.m; sourceTree = "<group>"; };
+		4C6E9E6C15F8691A00ED8996 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4C6E9E7C15F8864900ED8996 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/star.png"; sourceTree = "<group>"; };
+		4C6E9E7E15F8877E00ED8996 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/camera.png"; sourceTree = "<group>"; };
+		4C6E9E8015F8879000ED8996 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = book.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/book.png"; sourceTree = "<group>"; };
+		4C6E9E8215F887B600ED8996 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/map.png"; sourceTree = "<group>"; };
+		4C6E9E8415F8882C00ED8996 /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nav.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/nav.png"; sourceTree = "<group>"; };
+		4C6E9E8615F8885500ED8996 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = "../Martist 画像/free-vector-user-interface-icons/PNG/info.png"; sourceTree = "<group>"; };
+		4C6E9E8815F8889A00ED8996 /* cloud up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cloud up.png"; path = "../Martist 画像/free-vector-user-interface-icons/PNG/cloud up.png"; sourceTree = "<group>"; };
+		4C6E9EEB15F8BCF000ED8996 /* DrawOnTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawOnTap.h; sourceTree = "<group>"; };
+		4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawOnTap.m; sourceTree = "<group>"; };
+		4C6E9EEE15F97CA800ED8996 /* Memorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memorial.h; sourceTree = "<group>"; };
+		4C6E9EEF15F97CA800ED8996 /* Memorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memorial.m; sourceTree = "<group>"; };
+		4C6E9EF115F97F3400ED8996 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
+		4C6E9EF215F97F3400ED8996 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
+		4C6E9EF415F97F7700ED8996 /* SNSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSConnection.h; sourceTree = "<group>"; };
+		4C6E9EF515F97F7800ED8996 /* SNSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSConnection.m; sourceTree = "<group>"; };
+		4C6E9EF715F97F9D00ED8996 /* DrawOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawOnMap.h; sourceTree = "<group>"; };
+		4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawOnMap.m; sourceTree = "<group>"; };
+		4C9E34FF15FCEFFF007B0FFA /* map Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map Image.png"; sourceTree = "<group>"; };
+		4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4CC7D61C15FC5C55002B89C7 /* 風景１.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "風景１.jpeg"; path = "../Martist 画像/風景１.jpeg"; sourceTree = "<group>"; };
+		4CC7D61F15FC64D6002B89C7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4CC7D62015FC64D6002B89C7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4CC7D62115FC64D6002B89C7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4CC7D62215FC64D6002B89C7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4CC7D62315FC64D6002B89C7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4CC7D62415FC64D6002B89C7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4CC7D62515FC64D6002B89C7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4CC7D62615FC64D6002B89C7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4CC7D62815FC64D6002B89C7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4CC7D62915FC64D6002B89C7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4CC7D63015FC656B002B89C7 /* DBCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCreate.h; sourceTree = "<group>"; };
+		4CC7D63115FC656B002B89C7 /* DBCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCreate.m; sourceTree = "<group>"; };
+		4CC7D63A15FC8B15002B89C7 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		4CC7D63E15FCB1A5002B89C7 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */,
+				4C6E9E6D15F8691A00ED8996 /* MapKit.framework in Frameworks */,
 				4C6E9E3015F83AD200ED8996 /* UIKit.framework in Frameworks */,
 				4C6E9E3215F83AD200ED8996 /* Foundation.framework in Frameworks */,
 				4C6E9E3415F83AD200ED8996 /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +145,19 @@
 		4C6E9E2015F83AD200ED8996 = {
 			isa = PBXGroup;
 			children = (
+				4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */,
+				4C6E9E7C15F8864900ED8996 /* star.png */,
+				4C6E9E8415F8882C00ED8996 /* nav.png */,
+				4C9E34FF15FCEFFF007B0FFA /* map Image.png */,
+				4C6E9E8015F8879000ED8996 /* book.png */,
+				4CC7D63E15FCB1A5002B89C7 /* pencil.png */,
+				4C6E9E8215F887B600ED8996 /* map.png */,
+				4C6E9E8815F8889A00ED8996 /* cloud up.png */,
+				4CC7D61C15FC5C55002B89C7 /* 風景１.jpeg */,
+				4CC7D63A15FC8B15002B89C7 /* pin.png */,
+				4C6E9E8615F8885500ED8996 /* info.png */,
+				4C6E9E7E15F8877E00ED8996 /* camera.png */,
+				4CC7D61E15FC64D6002B89C7 /* src */,
 				4C6E9E3515F83AD200ED8996 /* Martist */,
 				4C6E9E5315F83AD200ED8996 /* MartistTests */,
 				4C6E9E2E15F83AD200ED8996 /* Frameworks */,
@@ -100,6 +177,7 @@
 		4C6E9E2E15F83AD200ED8996 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C6E9E6C15F8691A00ED8996 /* MapKit.framework */,
 				4C6E9E2F15F83AD200ED8996 /* UIKit.framework */,
 				4C6E9E3115F83AD200ED8996 /* Foundation.framework */,
 				4C6E9E3315F83AD200ED8996 /* CoreGraphics.framework */,
@@ -111,12 +189,26 @@
 		4C6E9E3515F83AD200ED8996 /* Martist */ = {
 			isa = PBXGroup;
 			children = (
+				4CC7D63015FC656B002B89C7 /* DBCreate.h */,
+				4CC7D63115FC656B002B89C7 /* DBCreate.m */,
 				4C6E9E3E15F83AD200ED8996 /* AppDelegate.h */,
 				4C6E9E3F15F83AD200ED8996 /* AppDelegate.m */,
 				4C6E9E4115F83AD200ED8996 /* MainStoryboard.storyboard */,
+				4C6E9EF715F97F9D00ED8996 /* DrawOnMap.h */,
+				4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */,
+				4C6E9EEB15F8BCF000ED8996 /* DrawOnTap.h */,
+				4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */,
+				4C6E9EF115F97F3400ED8996 /* Setting.h */,
+				4C6E9EF215F97F3400ED8996 /* Setting.m */,
+				4C6E9EEE15F97CA800ED8996 /* Memorial.h */,
+				4C6E9EEF15F97CA800ED8996 /* Memorial.m */,
+				4C6E9EF415F97F7700ED8996 /* SNSConnection.h */,
+				4C6E9EF515F97F7800ED8996 /* SNSConnection.m */,
 				4C6E9E4415F83AD200ED8996 /* ViewController.h */,
 				4C6E9E4515F83AD200ED8996 /* ViewController.m */,
 				4C6E9E3615F83AD200ED8996 /* Supporting Files */,
+				3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */,
+				3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */,
 			);
 			path = Martist;
 			sourceTree = "<group>";
@@ -149,6 +241,23 @@
 				4C6E9E5615F83AD200ED8996 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CC7D61E15FC64D6002B89C7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7D61F15FC64D6002B89C7 /* FMDatabase.h */,
+				4CC7D62015FC64D6002B89C7 /* FMDatabase.m */,
+				4CC7D62115FC64D6002B89C7 /* FMDatabaseAdditions.h */,
+				4CC7D62215FC64D6002B89C7 /* FMDatabaseAdditions.m */,
+				4CC7D62315FC64D6002B89C7 /* FMDatabasePool.h */,
+				4CC7D62415FC64D6002B89C7 /* FMDatabasePool.m */,
+				4CC7D62515FC64D6002B89C7 /* FMDatabaseQueue.h */,
+				4CC7D62615FC64D6002B89C7 /* FMDatabaseQueue.m */,
+				4CC7D62815FC64D6002B89C7 /* FMResultSet.h */,
+				4CC7D62915FC64D6002B89C7 /* FMResultSet.m */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +333,17 @@
 			files = (
 				4C6E9E3A15F83AD200ED8996 /* InfoPlist.strings in Resources */,
 				4C6E9E4315F83AD200ED8996 /* MainStoryboard.storyboard in Resources */,
+				4C6E9E7D15F8864900ED8996 /* star.png in Resources */,
+				4C6E9E7F15F8877E00ED8996 /* camera.png in Resources */,
+				4C6E9E8115F8879000ED8996 /* book.png in Resources */,
+				4C6E9E8315F887B600ED8996 /* map.png in Resources */,
+				4C6E9E8515F8882C00ED8996 /* nav.png in Resources */,
+				4C6E9E8715F8885500ED8996 /* info.png in Resources */,
+				4C6E9E8915F8889B00ED8996 /* cloud up.png in Resources */,
+				4CC7D61D15FC5C55002B89C7 /* 風景１.jpeg in Resources */,
+				4CC7D63B15FC8B15002B89C7 /* pin.png in Resources */,
+				4C9E350015FCEFFF007B0FFA /* map Image.png in Resources */,
+				4C9E350115FCFB97007B0FFA /* pencil.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +381,17 @@
 				4C6E9E3C15F83AD200ED8996 /* main.m in Sources */,
 				4C6E9E4015F83AD200ED8996 /* AppDelegate.m in Sources */,
 				4C6E9E4615F83AD200ED8996 /* ViewController.m in Sources */,
+				4C6E9EED15F8BCF100ED8996 /* DrawOnTap.m in Sources */,
+				4C6E9EF015F97CA800ED8996 /* Memorial.m in Sources */,
+				4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */,
+				4C6E9EF615F97F7800ED8996 /* SNSConnection.m in Sources */,
+				4C6E9EF915F97F9E00ED8996 /* DrawOnMap.m in Sources */,
+				4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */,
+				4CC7D62B15FC64D6002B89C7 /* FMDatabaseAdditions.m in Sources */,
+				4CC7D62C15FC64D6002B89C7 /* FMDatabasePool.m in Sources */,
+				4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */,
+				4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */,
+				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C6E9E5B15F83AD200ED8996 /* MartistTests.m in Sources */,
+				4CC7D63215FC656B002B89C7 /* DBCreate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +494,7 @@
 				GCC_PREFIX_HEADER = "Martist/Martist-Prefix.pch";
 				INFOPLIST_FILE = "Martist/Martist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,6 +506,7 @@
 				GCC_PREFIX_HEADER = "Martist/Martist-Prefix.pch";
 				INFOPLIST_FILE = "Martist/Martist-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -430,6 +564,7 @@
 				4C6E9E6015F83AD200ED8996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C6E9E6115F83AD200ED8996 /* Build configuration list for PBXNativeTarget "MartistTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +573,7 @@
 				4C6E9E6315F83AD200ED8996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

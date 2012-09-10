@@ -20,6 +20,8 @@
 		4C6E9FBA15F9BB8D00ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9F9B15F9BB8C00ED8996 /* Foundation.framework */; };
 		4C6E9FC215F9BB8D00ED8996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9FC015F9BB8D00ED8996 /* InfoPlist.strings */; };
 		4C6E9FC515F9BB8D00ED8996 /* ChangeViewByAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9FC415F9BB8D00ED8996 /* ChangeViewByAnimationTests.m */; };
+		4C6E9FD015F9D5D900ED8996 /* TestViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9FCF15F9D5D900ED8996 /* TestViewController1.m */; };
+		4C6E9FD315F9D62800ED8996 /* TestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9FD215F9D62800ED8996 /* TestViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +39,25 @@
 		4C6E9F9915F9BB8C00ED8996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C6E9F9B15F9BB8C00ED8996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C6E9F9D15F9BB8C00ED8996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4C6E9FA115F9BB8C00ED8996 /* ChangeViewByAnimation-Info.plist */ = {isa = PBXFileReference; path = "ChangeViewByAnimation-Info.plist"; sourceTree = "<group>"; };
+		4C6E9FA115F9BB8C00ED8996 /* ChangeViewByAnimation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChangeViewByAnimation-Info.plist"; sourceTree = "<group>"; };
 		4C6E9FA315F9BB8C00ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C6E9FA515F9BB8C00ED8996 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C6E9FA715F9BB8C00ED8996 /* ChangeViewByAnimation-Prefix.pch */ = {isa = PBXFileReference; path = "ChangeViewByAnimation-Prefix.pch"; sourceTree = "<group>"; };
-		4C6E9FA815F9BB8C00ED8996 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C6E9FA715F9BB8C00ED8996 /* ChangeViewByAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangeViewByAnimation-Prefix.pch"; sourceTree = "<group>"; };
+		4C6E9FA815F9BB8C00ED8996 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C6E9FA915F9BB8D00ED8996 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C6E9FAC15F9BB8D00ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4C6E9FAE15F9BB8D00ED8996 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		4C6E9FAE15F9BB8D00ED8996 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C6E9FAF15F9BB8D00ED8996 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4C6E9FB615F9BB8D00ED8996 /* ChangeViewByAnimationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChangeViewByAnimationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E9FB715F9BB8D00ED8996 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4C6E9FBF15F9BB8D00ED8996 /* ChangeViewByAnimationTests-Info.plist */ = {isa = PBXFileReference; path = "ChangeViewByAnimationTests-Info.plist"; sourceTree = "<group>"; };
+		4C6E9FBF15F9BB8D00ED8996 /* ChangeViewByAnimationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChangeViewByAnimationTests-Info.plist"; sourceTree = "<group>"; };
 		4C6E9FC115F9BB8D00ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4C6E9FC315F9BB8D00ED8996 /* ChangeViewByAnimationTests.h */ = {isa = PBXFileReference; path = ChangeViewByAnimationTests.h; sourceTree = "<group>"; };
+		4C6E9FC315F9BB8D00ED8996 /* ChangeViewByAnimationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeViewByAnimationTests.h; sourceTree = "<group>"; };
 		4C6E9FC415F9BB8D00ED8996 /* ChangeViewByAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeViewByAnimationTests.m; sourceTree = "<group>"; };
+		4C6E9FCE15F9D5D900ED8996 /* TestViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController1.h; sourceTree = "<group>"; };
+		4C6E9FCF15F9D5D900ED8996 /* TestViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController1.m; sourceTree = "<group>"; };
+		4C6E9FD115F9D62800ED8996 /* TestViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController2.h; sourceTree = "<group>"; };
+		4C6E9FD215F9D62800ED8996 /* TestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,10 @@
 				4C6E9FAB15F9BB8D00ED8996 /* MainStoryboard.storyboard */,
 				4C6E9FAE15F9BB8D00ED8996 /* ViewController.h */,
 				4C6E9FAF15F9BB8D00ED8996 /* ViewController.m */,
+				4C6E9FCE15F9D5D900ED8996 /* TestViewController1.h */,
+				4C6E9FCF15F9D5D900ED8996 /* TestViewController1.m */,
+				4C6E9FD115F9D62800ED8996 /* TestViewController2.h */,
+				4C6E9FD215F9D62800ED8996 /* TestViewController2.m */,
 				4C6E9FA015F9BB8C00ED8996 /* Supporting Files */,
 			);
 			path = ChangeViewByAnimation;
@@ -261,6 +271,8 @@
 				4C6E9FA615F9BB8C00ED8996 /* main.m in Sources */,
 				4C6E9FAA15F9BB8D00ED8996 /* AppDelegate.m in Sources */,
 				4C6E9FB015F9BB8D00ED8996 /* ViewController.m in Sources */,
+				4C6E9FD015F9D5D900ED8996 /* TestViewController1.m in Sources */,
+				4C6E9FD315F9D62800ED8996 /* TestViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

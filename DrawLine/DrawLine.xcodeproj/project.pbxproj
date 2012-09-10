@@ -37,20 +37,20 @@
 		4C6E9F5515F99A8600ED8996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C6E9F5715F99A8600ED8996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C6E9F5915F99A8600ED8996 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4C6E9F5D15F99A8600ED8996 /* DrawLine-Info.plist */ = {isa = PBXFileReference; path = "DrawLine-Info.plist"; sourceTree = "<group>"; };
+		4C6E9F5D15F99A8600ED8996 /* DrawLine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawLine-Info.plist"; sourceTree = "<group>"; };
 		4C6E9F5F15F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C6E9F6115F99A8600ED8996 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C6E9F6315F99A8600ED8996 /* DrawLine-Prefix.pch */ = {isa = PBXFileReference; path = "DrawLine-Prefix.pch"; sourceTree = "<group>"; };
-		4C6E9F6415F99A8600ED8996 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C6E9F6315F99A8600ED8996 /* DrawLine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawLine-Prefix.pch"; sourceTree = "<group>"; };
+		4C6E9F6415F99A8600ED8996 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C6E9F6515F99A8600ED8996 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4C6E9F6815F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4C6E9F6A15F99A8600ED8996 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		4C6E9F6A15F99A8600ED8996 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4C6E9F6B15F99A8600ED8996 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4C6E9F7215F99A8600ED8996 /* DrawLineTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawLineTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E9F7315F99A8600ED8996 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4C6E9F7B15F99A8600ED8996 /* DrawLineTests-Info.plist */ = {isa = PBXFileReference; path = "DrawLineTests-Info.plist"; sourceTree = "<group>"; };
+		4C6E9F7B15F99A8600ED8996 /* DrawLineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawLineTests-Info.plist"; sourceTree = "<group>"; };
 		4C6E9F7D15F99A8600ED8996 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4C6E9F7F15F99A8600ED8996 /* DrawLineTests.h */ = {isa = PBXFileReference; path = DrawLineTests.h; sourceTree = "<group>"; };
+		4C6E9F7F15F99A8600ED8996 /* DrawLineTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineTests.h; sourceTree = "<group>"; };
 		4C6E9F8015F99A8600ED8996 /* DrawLineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

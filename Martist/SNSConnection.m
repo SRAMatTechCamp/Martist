@@ -13,6 +13,8 @@
 @end
 
 @implementation SNSConnection
+@synthesize toTwitter;
+@synthesize toFacebook;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +33,8 @@
 
 - (void)viewDidUnload
 {
+    [self setToTwitter:nil];
+    [self setToFacebook:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
