@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SNSConnection : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *toTwitter;
+@property (weak, nonatomic) IBOutlet UIButton *toFacebook;
+
 
 @end

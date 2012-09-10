@@ -6,22 +6,22 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Top-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopScrean" title="Top" id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LYf-5b-p81">
-                                <rect key="frame" x="110" y="143" width="100" height="37"/>
+                                <rect key="frame" x="110" y="188" width="100" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="お絵描き">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="始める">
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.28472798049999998" green="0.70571701330000003" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,30 +29,6 @@
                                 <connections>
                                     <segue destination="w0v-DA-vot" kind="modal" id="78O-Xl-cll"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QoP-eO-wGr">
-                                <rect key="frame" x="110" y="238" width="100" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="メモリアル">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0JU-ZD-etk">
-                                <rect key="frame" x="110" y="337" width="100" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="設定">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=" Martist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="tvd-vq-pIF">
                                 <rect key="frame" x="124" y="60" width="72" height="29"/>
@@ -62,18 +38,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.97239422249999996" blue="0.98461670400000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-448" y="-373"/>
+            <point key="canvasLocation" x="-432" y="-39"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sWR-UQ-7dU">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgT-J7-eKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="w0v-DA-vot" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="T7B-dA-kaA"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="R9W-uh-VCe">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -82,88 +59,272 @@
                     <connections>
                         <segue destination="drb-3D-HbL" kind="relationship" relationship="viewControllers" id="lFQ-Rg-Rcp"/>
                         <segue destination="WCS-s2-6kJ" kind="relationship" relationship="viewControllers" id="YhG-st-A2H"/>
+                        <segue destination="7Jj-jg-CwS" kind="relationship" relationship="viewControllers" id="0R6-8c-F5T"/>
+                        <segue destination="7jq-wl-pjv" kind="relationship" relationship="viewControllers" id="LkP-di-xS2"/>
                         <segue destination="gSv-AT-s9a" kind="relationship" relationship="viewControllers" id="Qm0-PU-nGq"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="33" y="-373"/>
+            <point key="canvasLocation" x="37" y="-39"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--Draw On Tap - お絵描きサンプル-->
+        <scene sceneID="d2M-8q-Xcd">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUt-RB-Fio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="" id="7Jj-jg-CwS" customClass="DrawOnTap" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jnU-Yu-yEh">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Do Tap!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AyO-F9-c2X" userLabel="tapLabel">
+                                <rect key="frame" x="128" y="218" width="65" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Do Two Tap!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rZD-w1-hde" userLabel="tap2Label">
+                                <rect key="frame" x="111" y="261" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BUP-Wf-Aui">
+                                <rect key="frame" x="118" y="124" width="85" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="保存する">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="7Jj-jg-CwS" eventType="touchUpInside" id="3fP-bA-Q9f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="お絵描きサンプル" image="nav.png" id="r7K-I9-uVs"/>
+                    <connections>
+                        <outlet property="saveBotton" destination="BUP-Wf-Aui" id="zOG-Rh-owb"/>
+                        <outlet property="tap2Label" destination="rZD-w1-hde" id="kmN-vs-fXv"/>
+                        <outlet property="tapLabel" destination="AyO-F9-c2X" id="eAI-O5-ygx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1012" y="-963"/>
+        </scene>
+        <!--Draw On Map - お絵描き-->
         <scene sceneID="oJV-ga-6K5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0I-2n-1RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="drb-3D-HbL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" title="お絵描き" id="drb-3D-HbL" customClass="DrawOnMap" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSG-cX-Hfz">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rLd-53-e0G">
-                                <rect key="frame" x="133" y="225" width="42" height="21"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="45s-BX-eoz">
+                                <rect key="frame" x="-1" y="0.0" width="320" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dkZ-CJ-4HV" userLabel="saveBotton">
+                                <rect key="frame" x="-2" y="374" width="321" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="カメラに保存">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveToAlbum:" destination="drb-3D-HbL" eventType="touchUpInside" id="vgp-Se-C0D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="kIp-xm-mhg"/>
+                    <tabBarItem key="tabBarItem" title="お絵描き" image="map.png" id="kIp-xm-mhg" userLabel="Tab Bar Item - お絵描き"/>
+                    <connections>
+                        <outlet property="saveBotton" destination="dkZ-CJ-4HV" id="8be-jn-X8M"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="599" y="-962"/>
+            <point key="canvasLocation" x="607" y="-963"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--Memorial - メモリアル-->
         <scene sceneID="962-y0-eCm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhG-vo-Gg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="WCS-s2-6kJ" sceneMemberID="viewController">
+                <viewController title="メモリアル" id="WCS-s2-6kJ" customClass="Memorial" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WVV-xV-XHh">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="写真" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="G8X-oa-R5b">
-                                <rect key="frame" x="121" y="176" width="42" height="21"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="map Image.png" id="zZV-lo-MsE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="メモリアル" image="book.png" id="OwT-gF-hs0"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="607" y="-373"/>
+        </scene>
+        <!--Connection - SNS連動-->
+        <scene sceneID="3sl-ZH-QbC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avJ-1G-SZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="7jq-wl-pjv" customClass="SNSConnection" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uS1-Wo-8xs">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="s2J-0G-0eO">
+                                <rect key="frame" x="139" y="79" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SBF-fp-hgF">
+                                <rect key="frame" x="90" y="92" width="140" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Twitterへ送る">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4fF-SL-Tqt">
+                                <rect key="frame" x="90" y="173" width="140" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Facebookへ送る">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="OwT-gF-hs0"/>
+                    <tabBarItem key="tabBarItem" title="SNS連動" image="cloud up.png" id="vnP-b9-Rfl"/>
+                    <connections>
+                        <outlet property="toFacebook" destination="4fF-SL-Tqt" id="fwH-ZA-nJ8"/>
+                        <outlet property="toTwitter" destination="SBF-fp-hgF" id="ZcW-yL-tfy"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="599" y="-365"/>
+            <point key="canvasLocation" x="607" y="817"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--Setting - 設定-->
         <scene sceneID="ylQ-3w-JPp">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW1-HD-vqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gSv-AT-s9a" sceneMemberID="viewController">
+                <viewController id="gSv-AT-s9a" customClass="Setting" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ch-Iz-f5U">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="設定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="K5W-cT-AuG">
-                                <rect key="frame" x="118" y="106" width="42" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jDK-Wr-bEu">
+                                <rect key="frame" x="73" y="89" width="175" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="初期フォント設定">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dy8-OA-WnY">
+                                <rect key="frame" x="73" y="251" width="175" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="お気に入りフォント２">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2xj-up-TXk">
+                                <rect key="frame" x="73" y="168" width="175" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="お気に入りフォント１">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="awR-d7-9qP"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="info.png" id="awR-d7-9qP"/>
+                    <navigationItem key="navigationItem" id="UzD-8W-W9P"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="607" y="238"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book.png" width="26" height="30"/>
+        <image name="cloud up.png" width="42" height="28"/>
+        <image name="info.png" width="16" height="36"/>
+        <image name="map Image.png" width="321" height="480"/>
+        <image name="map.png" width="30" height="30"/>
+        <image name="nav.png" width="21" height="31"/>
+    </resources>
     <classes>
+        <class className="DrawOnMap" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawOnMap.h"/>
+            <relationships>
+                <relationship kind="outlet" name="saveBotton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DrawOnTap" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawOnTap.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tap2Label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tapLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="Memorial" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Memorial.h"/>
+        </class>
+        <class className="SNSConnection" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SNSConnection.h"/>
+            <relationships>
+                <relationship kind="outlet" name="toFacebook" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="toTwitter" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="Setting" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Setting.h"/>
+        </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

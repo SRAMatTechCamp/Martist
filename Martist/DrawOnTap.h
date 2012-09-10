@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface DrawOnTap : UIViewController
+@interface DrawOnTap :UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *tapLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tap2Label;
+
 
 @end
