@@ -30,7 +30,6 @@
 	// Do any additional setup after loading the view.
     
     //画面の大きさを調べた
-    
     CGRect r = [[UIScreen mainScreen] bounds];
     CGFloat w = r.size.width;
     CGFloat h = r.size.height;

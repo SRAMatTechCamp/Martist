@@ -15,7 +15,7 @@
 @interface DrawOnTap(){
     CGPoint beginPoint;
     CGPoint endPoint;
-   __weak IBOutlet UIButton *saveBotton;
+  // __weak IBOutlet UIButton *saveBotton;
 };
 
 @end
@@ -43,7 +43,7 @@
 {
     [self setTapLabel:nil];
     [self setTap2Label:nil];
-    saveBotton = nil;
+    //saveBotton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

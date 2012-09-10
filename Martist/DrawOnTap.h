@@ -12,6 +12,5 @@
 @interface DrawOnTap :UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *tapLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tap2Label;
-
-
+- (IBAction)save:(id)sender;
 @end
