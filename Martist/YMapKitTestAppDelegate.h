@@ -28,23 +28,20 @@
     __weak IBOutlet UIButton *drawBotton;
 }
 
-@property (nonatomic, readwrite) CLLocationCoordinate2D pin_point;
+@property (nonatomic, readwrite) CLLocationCoordinate2D st_point;
+@property (nonatomic, readwrite) CLLocationCoordinate2D gl_point;
 @property (nonatomic, readwrite) NSString *annotationTitle;
 @property (nonatomic, readwrite) NSString *annotationSubtitle;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;
--(void)savingImageIsFinished:(UIImage*)image
+- (void)savingImageIsFinished:(UIImage*)image
     didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo;
 - (UIImage*)resizedImage:(UIImage *)img ;
 
-- (IBAction)routeSearch:(id)sender;
+- (IBAction)tappin:(id)sender;
 
-- (id)initWithLocationCoordinate:(CLLocationCoordinate2D) coord
-                           title:(NSString *)annTitle subtitle:(NSString *)annSubtitle;
-- (NSString *)title;
-- (NSString *)subtitle;
-
+- (IBAction)routing:(id)sender;
 
 @end
 

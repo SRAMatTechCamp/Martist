@@ -8,7 +8,8 @@
 
 @implementation YMapKitTestAppDelegate
 @synthesize window;
-@synthesize pin_point;
+@synthesize st_point;
+@synthesize gl_point;
 @synthesize annotationTitle;
 @synthesize annotationSubtitle;
 
@@ -22,27 +23,6 @@
     return self;
 }
 
-- (id)initWithLocationCoordinate:(CLLocationCoordinate2D) pin title:(NSString *)annTitle subtitle:(NSString *)annSubtitle {
-    if (self=[super init]) {
-        pin_point.latitude = pin.latitude;
-        pin_point.longitude = pin.longitude;
-        annotationTitle = annTitle;
-        annotationSubtitle = annSubtitle;
-    }
-    return self;
-}
-
-//タイトル
-- (NSString *)title
-{
-    return annotationTitle;
-}
-
-//サブタイトル
-- (NSString *)subtitle
-{
-    return annotationSubtitle;
-}
 
 
 - (void)viewDidLoad{
@@ -73,48 +53,11 @@ center.longitude = 139.7310058;
 map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
     
 
-/*    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
- 
- CLLocationCoordinate2D sp;
- sp.longitude = 139.7310058;
- sp.latitude = 35.6657214;
- CLLocationCoordinate2D gp;
- gp.longitude = 139.7454106;
- gp.latitude = 35.6586308;
- CLLocationCoordinate2D fp;
- fp.longitude = 139.7660840;
- fp.latitude = 35.6813822;
- 
- 
- //YMKRouteOverlayを作成
- YMKRouteOverlay* routeOrverlay = [[[YMKRouteOverlay alloc] initWithAppid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-"] init];
- //YMKRouteOverlayDelegateを設定
- routeOrverlay.delegate = self;
- 
- 
- //出発地ピンの吹き出し設定
- [routeOrverlay setStartTitle:@"東京ミッドタウン"];
- 
- [routeOrverlay setGoalTitle:@"大阪駅"];
- //出発地、目的地、移動手段を設定
- [routeOrverlay setRouteStartPos:sp withGoalPos:gp withTraffic:TRAFFIC_WALK];
- [routeOrverlay search];
- 
- 
- CGPoint point = CGPointMake(200, 300);
- CGPoint point2;
- CLLocationCoordinate2D xp;
- xp = [map convertPoint:point toCoordinateFromView:nil];
- point2 = [map convertCoordinate:sp toPointToView:nil];
- NSLog(@"%f", xp.latitude);
- NSLog(@"%f", point2.x);*/
+
 }
 
 - (void)viewDidUnload
 {
- //   [self setSaveBotton:nil];
-//  [self setSearchBotton:nil];
- //   [self setDrawBotton:nil];
     saveBotton = nil;
     searchBotton = nil;
     drawBotton = nil;
@@ -125,12 +68,24 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
 
 // 検索するメソッド
 
--(IBAction)routeSearch:(id)sender {
+-(IBAction)tappin:(id)sender {
     if(map.userInteractionEnabled){
         map.userInteractionEnabled = NO;
     }else{
         map.userInteractionEnabled = YES;
     }
+}
+
+- (IBAction)routing:(id)sender{
+    //YMKRouteOverlayを作成
+    YMKRouteOverlay* routeOrverlay = [[[YMKRouteOverlay alloc] initWithAppid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-"] init];
+    //YMKRouteOverlayDelegateを設定
+    routeOrverlay.delegate = self;
+    
+    //出発地、目的地、移動手段を設定
+    [routeOrverlay setRouteStartPos:st_point withGoalPos:gl_point withTraffic:TRAFFIC_WALK];
+    [routeOrverlay search];
+    
 }
 
 
@@ -141,50 +96,12 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
     
     NSLog(@"x=%f",pickPos.x);
     NSLog(@"y=%f",pickPos.y);
-    pin_point = [map convertPoint:pickPos toCoordinateFromView:nil];
-    NSLog(@"%f",pin_point.latitude);
-    NSLog(@"%f",pin_point.longitude);
+    gl_point = st_point;
+    st_point = [map convertPoint:pickPos toCoordinateFromView:nil];
+    NSLog(@"%f",st_point.latitude);
+    NSLog(@"%f",st_point.longitude);
 /*    YMapKitTestAppDelegate *myannotation = [[YMapKitTestAppDelegate alloc]initWithLocationCoordinate:pin_point title:[[NSString alloc] initWithString:@"ミッドタウン"] subtitle:[[NSString alloc] initWithString:@"ミッドタウンです。"]];
     [map addAnnotation:myannotation];*/
-    
-    
-
-     
-     CLLocationCoordinate2D sp;
-     sp.longitude = 139.7310058;
-     sp.latitude = 35.6657214;
-     CLLocationCoordinate2D gp;
-     gp.longitude = 139.7454106;
-     gp.latitude = 35.6586308;
-     CLLocationCoordinate2D fp;
-     fp.longitude = 139.7660840;
-     fp.latitude = 35.6813822;
-     
-     
-     //YMKRouteOverlayを作成
-     YMKRouteOverlay* routeOrverlay = [[[YMKRouteOverlay alloc] initWithAppid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-"] init];
-     //YMKRouteOverlayDelegateを設定
-     routeOrverlay.delegate = self;
-     
-     
-     //出発地ピンの吹き出し設定
-     [routeOrverlay setStartTitle:@"東京ミッドタウン"];
-     
-     [routeOrverlay setGoalTitle:@"大阪駅"];
-     //出発地、目的地、移動手段を設定
-     [routeOrverlay setRouteStartPos:sp withGoalPos:gp withTraffic:TRAFFIC_WALK];
-     [routeOrverlay search];
-     
-     
-     CGPoint point = CGPointMake(200, 300);
-     CGPoint point2;
-     CLLocationCoordinate2D xp;
-     xp = [map convertPoint:point toCoordinateFromView:nil];
-     point2 = [map convertCoordinate:sp toPointToView:nil];
-     NSLog(@"%f", xp.latitude);
-     NSLog(@"%f", point2.x);
-    
-    
 
 }
 
@@ -233,9 +150,6 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
 //画像をリサイズするメソッド
 - (UIImage*)resizedImage:(UIImage *)img 
 {
-    //CGFloat widthRatio  = size.width  / img.size.width;
-    //CGFloat heightRatio = size.height / img.size.height;
-    //CGFloat ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio;
     CGSize resizedSize = CGSizeMake(320, 375);
     
     UIGraphicsBeginImageContext(resizedSize);
@@ -269,7 +183,8 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
     //[map addOverlay:routeOverlay];
     if( routerOverLay_before ) {
         NSLog(@"yes");
-        [map insertOverlay:routeOverlay aboveOverlay:routerOverLay_before];
+        //[map insertOverlay:routeOverlay aboveOverlay:routerOverLay_before];
+        [map addOverlay:routeOverlay];
     }
     else {
         NSLog(@"no");
