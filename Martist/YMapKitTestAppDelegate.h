@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//画面保存に必要なフレームワーク
-#import <QuartzCore/QuartzCore.h>
+#import <QuartzCore/QuartzCore.h>//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク
 #import <YMapKit/YMapKit.h> //YMapKit.frameworkのヘッダーファイルをインポート
 
 #define MIDTOWN_LAT 35.6657214
@@ -20,7 +19,12 @@
     YMKMapView *map; //YMKMapViewインスタンス用ポインタ
     
     YMKRouteOverlay *routerOverLay_before;
+    
+    __weak IBOutlet UIButton *saveBotton;
+    __weak IBOutlet UIButton *searchBotton;
+    __weak IBOutlet UIButton *drawBotton;
 }
+
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;

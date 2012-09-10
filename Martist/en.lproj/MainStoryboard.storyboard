@@ -138,7 +138,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveBotton:" destination="drb-3D-HbL" eventType="touchUpInside" id="v20-P8-srb"/>
+                                    <action selector="saveToAlbum:" destination="drb-3D-HbL" eventType="touchUpInside" id="Rml-vq-RVn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TnD-E5-06y">
@@ -167,18 +167,15 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="drawLine:" destination="drb-3D-HbL" eventType="touchUpInside" id="CRR-jH-lRb"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="お絵描き" image="map.png" id="kIp-xm-mhg" userLabel="Tab Bar Item - お絵描き"/>
                     <connections>
-                        <outlet property="drawBotton" destination="QVb-gM-gaZ" id="OEr-Q5-PIf"/>
-                        <outlet property="saveBotton" destination="RgM-7B-xNm" id="Wkp-bk-vJW"/>
-                        <outlet property="searchBotton" destination="TnD-E5-06y" id="LPw-w8-M03"/>
+                        <outlet property="drawBotton" destination="QVb-gM-gaZ" id="lWi-fi-NnN"/>
+                        <outlet property="saveBotton" destination="RgM-7B-xNm" id="V6z-SB-WpW"/>
+                        <outlet property="searchBotton" destination="TnD-E5-06y" id="B0b-lb-6dF"/>
                     </connections>
                 </viewController>
             </objects>
@@ -348,6 +345,7 @@
                 <relationship kind="outlet" name="drawBotton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="saveBotton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchBotton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="window" candidateClass="UIWindow"/>
             </relationships>
         </class>
     </classes>

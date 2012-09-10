@@ -9,11 +9,11 @@
 #import "DrawOnMap.h"
 
 @interface DrawOnMap ()
-@property (weak, nonatomic) IBOutlet UIButton *saveBotton;
+//@property (weak, nonatomic) IBOutlet UIButton *saveBotton;
 @end
 
 @implementation DrawOnMap
-@synthesize saveBotton;
+//@synthesize saveBotton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,13 +40,13 @@
 
 - (void)viewDidUnload
 {
-    [self setSaveBotton:nil];
+   // [self setSaveBotton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
 // 保存するメソッド
-- (IBAction)saveToAlbum:(id)sender {
+/*- (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
     UIImage* image_af;
     
@@ -80,7 +80,7 @@
     // Alertを表示する
    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
     //[alert show];
-}
+}*/
 
 
 //画像をリサイズするメソッド
