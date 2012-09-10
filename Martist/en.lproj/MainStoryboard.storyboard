@@ -101,7 +101,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="save:" destination="7Jj-jg-CwS" eventType="touchUpInside" id="3fP-bA-Q9f"/>
+                                    <action selector="save:" destination="7Jj-jg-CwS" eventType="touchUpInside" id="X0p-CL-Tc4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,7 +109,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="お絵描きサンプル" image="nav.png" id="r7K-I9-uVs"/>
                     <connections>
-                        <outlet property="saveBotton" destination="BUP-Wf-Aui" id="zOG-Rh-owb"/>
                         <outlet property="tap2Label" destination="rZD-w1-hde" id="kmN-vs-fXv"/>
                         <outlet property="tapLabel" destination="AyO-F9-c2X" id="eAI-O5-ygx"/>
                     </connections>
@@ -127,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RgM-7B-xNm">
-                                <rect key="frame" x="0.0" y="374" width="107" height="37"/>
+                                <rect key="frame" x="0.0" y="374" width="80" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="保存">
@@ -141,8 +140,8 @@
                                     <action selector="saveToAlbum:" destination="drb-3D-HbL" eventType="touchUpInside" id="Rml-vq-RVn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TnD-E5-06y">
-                                <rect key="frame" x="107" y="374" width="107" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="TnD-E5-06y">
+                                <rect key="frame" x="81" y="374" width="80" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="検索">
@@ -156,11 +155,23 @@
                                     <action selector="searchBotton:" destination="drb-3D-HbL" eventType="touchUpInside" id="OGH-yG-51P"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QVb-gM-gaZ">
-                                <rect key="frame" x="214" y="374" width="106" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="QVb-gM-gaZ">
+                                <rect key="frame" x="240" y="374" width="80" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="描画">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qGA-63-YNF">
+                                <rect key="frame" x="161" y="374" width="80" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="描画">
+                                <state key="normal" title="ピン">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -314,7 +325,7 @@
         <class className="DrawOnTap" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawOnTap.h"/>
             <relationships>
-                <relationship kind="outlet" name="saveBotton" candidateClass="UIButton"/>
+                <relationship kind="action" name="save:"/>
                 <relationship kind="outlet" name="tap2Label" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tapLabel" candidateClass="UILabel"/>
             </relationships>

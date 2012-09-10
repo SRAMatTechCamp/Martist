@@ -96,7 +96,7 @@ center.longitude = 139.7310058;
 // 保存するメソッド
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
-   // UIImage* image_af;
+    UIImage* image_af;
     
     NSLog(@"保存が完了しました1");
     // UIView のサイズの画像コンテキストを開始します。
@@ -116,11 +116,11 @@ center.longitude = 139.7310058;
     
     NSLog(@"保存が完了しました2");
     
-    //image_af = [resizedImage:image];
+    //image_af = [self.resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
-    UIImageWriteToSavedPhotosAlbum(image, self, sel, NULL);
+    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);
     NSLog(@"保存が完了しました3");
 }
 
@@ -194,4 +194,37 @@ center.longitude = 139.7310058;
                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
+
+
+
+
+
+// 例えば、カメラやアルバムから選んでもらった画像を扱います
+/*- (void) imagePickerController:(UIImagePickerController *)picker 
+ didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    // ユーザーの選んだ（または撮影した）画像を取得します
+    UIImage *aImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // JPEGのデータとしてNSDataを作成します
+    // ここのUIImageJPEGRepresentationがミソです
+    NSData *data = UIImageJPEGRepresentation(aImage, 0.8f);
+    
+    // 保存するディレクトリを指定します
+    // ここではデータを保存する為に一般的に使われるDocumentsディレクトリ
+    NSString *path = [NSStringstringWithFormat:@"%@/sample.jpg",
+                      [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    
+    
+    // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
+    // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います
+    if ([data writeToFile:path atomically:YES]) {
+        NSLog(@"save OK");
+    } else {
+        NSLog(@"save NG");
+    }
+}*/
+
+
+
 @end

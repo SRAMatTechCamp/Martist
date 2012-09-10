@@ -28,6 +28,9 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;
+-(void)savingImageIsFinished:(UIImage*)image
+    didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo;
+- (UIImage*)resizedImage:(UIImage *)img ;
 
 @end
 
