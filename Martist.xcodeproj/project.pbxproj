@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */; };
 		4C6E9E3015F83AD200ED8996 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E2F15F83AD200ED8996 /* UIKit.framework */; };
 		4C6E9E3215F83AD200ED8996 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E3115F83AD200ED8996 /* Foundation.framework */; };
 		4C6E9E3415F83AD200ED8996 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E3315F83AD200ED8996 /* CoreGraphics.framework */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMapKitTestAppDelegate.h; sourceTree = "<group>"; };
+		3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMapKitTestAppDelegate.m; sourceTree = "<group>"; };
 		4C6E9E2B15F83AD200ED8996 /* Martist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Martist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6E9E2F15F83AD200ED8996 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C6E9E3115F83AD200ED8996 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,8 @@
 				4C6E9E4415F83AD200ED8996 /* ViewController.h */,
 				4C6E9E4515F83AD200ED8996 /* ViewController.m */,
 				4C6E9E3615F83AD200ED8996 /* Supporting Files */,
+				3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */,
+				3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */,
 			);
 			path = Martist;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				4CC7D62C15FC64D6002B89C7 /* FMDatabasePool.m in Sources */,
 				4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */,
 				4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */,
+				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

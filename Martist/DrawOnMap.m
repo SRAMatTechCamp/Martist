@@ -72,13 +72,14 @@
 // 保存が完了したら呼ばれるメソッド
 -(void)savingImageIsFinished:(UIImage*)image
     didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo{
-    
     NSLog(@"保存が完了しました");
     
     // Alertを表示する
    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
     //[alert show];
-    
+    // Alertを表示する
+   // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
+    //[alert show];
 }
 
 //トリプルタップを検出し、画面を保存する
