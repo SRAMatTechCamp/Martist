@@ -1,17 +1,14 @@
 #import "YMapKitTestAppDelegate.h"
 //画面を保存するのに必要
-//#import <QuartzCore/QuartzCore.h>
+#import <QuartzCore/QuartzCore.h>
+#import "MyAnnotation.h"
 
-@interface YMapKitTestAppDelegate (){
-}
-@end
+
 
 @implementation YMapKitTestAppDelegate
 @synthesize window;
 @synthesize st_point;
 @synthesize gl_point;
-@synthesize annotationTitle;
-@synthesize annotationSubtitle;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -27,34 +24,32 @@
 
 - (void)viewDidLoad{
     
-[super viewDidLoad];
+    [super viewDidLoad];
 
-//YMKMapViewのインスタンスを作成
-map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
+    //YMKMapViewのインスタンスを作成
+    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
 
-//地図のタイプを指定 標準の地図を指定
-map.mapType = YMKMapTypeStandard;
+    //地図のタイプを指定 標準の地図を指定
+    map.mapType = YMKMapTypeStandard;
 
-//YMKMapViewを追加
-//[self.window addSubview:map];
-
-
-//YMKMapViewDelegateを登録
-map.delegate = self;
+    //YMKMapViewを追加
+    //[self.window addSubview:map];
 
 
-//地図の位置と縮尺を設定
-CLLocationCoordinate2D center;
-center.latitude = 35.6657214;
-center.longitude = 139.7310058;
+    //YMKMapViewDelegateを登録
+    map.delegate = self;
 
-map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+
+    //地図の位置と縮尺を設定
+    CLLocationCoordinate2D center;
+    center.latitude = 35.6657214;
+    center.longitude = 139.7310058;
+
+    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
     
-[self.view addSubview:map];
+    [self.view addSubview:map];
     
-
-
-}
+    }
 
 - (void)viewDidUnload
 {
@@ -65,6 +60,12 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
     // Release any retained subviews of the main view.
 }
 
+//　１個前のルート削除メソッド
+- (IBAction)removeroute:(id)sender{
+    
+    [map removeOverlay:routerOverLay_before];
+    
+}
 
 // 検索するメソッド
 
@@ -100,8 +101,15 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
     st_point = [map convertPoint:pickPos toCoordinateFromView:nil];
     NSLog(@"%f",st_point.latitude);
     NSLog(@"%f",st_point.longitude);
-/*    YMapKitTestAppDelegate *myannotation = [[YMapKitTestAppDelegate alloc]initWithLocationCoordinate:pin_point title:[[NSString alloc] initWithString:@"ミッドタウン"] subtitle:[[NSString alloc] initWithString:@"ミッドタウンです。"]];
-    [map addAnnotation:myannotation];*/
+    //MyAnnotationの初期化
+    MyAnnotation* myAnnotation = [[MyAnnotation alloc] initWithLocationCoordinate:st_point title:[[NSString alloc] initWithString:@"節点"] subtitle:[[NSString alloc] initWithString:@"節点"]];
+    //AnnotationをYMKMapViewに追加
+    removeAnnotation = before2Annotation;
+    before2Annotation = beforeAnnotation;
+    beforeAnnotation = myAnnotation;
+    [map removeAnnotation:removeAnnotation];
+    [map addAnnotation:myAnnotation];
+    
 
 }
 
@@ -201,6 +209,25 @@ map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002)
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"エラー" message:@"ルート検索エラー"
                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
+}
+
+//overlay追加イベント
+- (YMKOverlayView*)mapView:(YMKMapView *)mapView viewForOverlay:(id <YMKOverlay>)overlay
+{
+    //追加されたoverlayがYMKRouteOverlayか確認
+    if([overlay isKindOfClass:[YMKRouteOverlay class]] ){
+        
+        //YMKRouteOverlayViewを作成
+        YMKRouteOverlayView* wkYMKOverlayView = (YMKRouteOverlayView*)[[YMKRouteOverlayView alloc] initWithRouteOverlay:overlay];
+        //出発地ピンを非表示
+        wkYMKOverlayView.startPinVisible = NO;
+        //目的地ピンを非表示
+        wkYMKOverlayView.goalPinVisible = NO;
+        //経由点ピンを非表示
+        wkYMKOverlayView.routePinVisible = NO;
+        return wkYMKOverlayView;
+    }
+    return nil;
 }
 
 

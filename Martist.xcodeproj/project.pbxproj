@@ -31,6 +31,7 @@
 		3B99D49315FE06470057BF71 /* via@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D47B15FE06470057BF71 /* via@2x.png */; };
 		3B99D49415FE06470057BF71 /* yback.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D47C15FE06470057BF71 /* yback.png */; };
 		3B99D49515FE06470057BF71 /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99D47D15FE06470057BF71 /* YMapKit.framework */; };
+		3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B99D49815FE43000057BF71 /* MyAnnotation.m */; };
 		3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */; };
 		3B9DA7AB15FDAA0D005E78ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AA15FDAA0D005E78ED /* QuartzCore.framework */; };
 		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
@@ -190,6 +191,8 @@
 		3B99D47B15FE06470057BF71 /* via@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "via@2x.png"; path = "../mapsdk_ios /Ymap/image/via@2x.png"; sourceTree = "<group>"; };
 		3B99D47C15FE06470057BF71 /* yback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yback.png; path = "../mapsdk_ios /Ymap/image/yback.png"; sourceTree = "<group>"; };
 		3B99D47D15FE06470057BF71 /* YMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YMapKit.framework; sourceTree = "<group>"; };
+		3B99D49715FE43000057BF71 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		3B99D49815FE43000057BF71 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMapKitTestAppDelegate.h; sourceTree = "<group>"; };
 		3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMapKitTestAppDelegate.m; sourceTree = "<group>"; };
 		3B9DA7AA15FDAA0D005E78ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -578,6 +581,8 @@
 				3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */,
 				3B9DA76615FD7F68005E78ED /* YMapKitTestAppDelegate.m */,
 				4C6E9E3615F83AD200ED8996 /* Supporting Files */,
+				3B99D49715FE43000057BF71 /* MyAnnotation.h */,
+				3B99D49815FE43000057BF71 /* MyAnnotation.m */,
 			);
 			path = Martist;
 			sourceTree = "<group>";
@@ -864,6 +869,7 @@
 				4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */,
 				4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */,
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
+				3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
