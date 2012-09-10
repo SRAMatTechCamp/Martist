@@ -26,6 +26,8 @@
 
 
 - (void)viewDidLoad{
+    
+[super viewDidLoad];
 
 //YMKMapViewのインスタンスを作成
 map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
@@ -34,12 +36,8 @@ map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGf
 map.mapType = YMKMapTypeStandard;
 
 //YMKMapViewを追加
-//[window addSubview:map];
-[self.view addSubview:map];
+//[self.window addSubview:map];
 
-UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(180, 400, 20, 20)];
-[label setText:@"あいうえお"];
-[window addSubview:label];
 
 //YMKMapViewDelegateを登録
 map.delegate = self;
@@ -51,6 +49,8 @@ center.latitude = 35.6657214;
 center.longitude = 139.7310058;
 
 map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+    
+[self.view addSubview:map];
     
 
 
