@@ -118,7 +118,6 @@
     UIImage* image;
     UIImage* image_af;
     
-    NSLog(@"保存が完了しました1");
     // UIView のサイズの画像コンテキストを開始します。
     UIGraphicsBeginImageContext(self.view.frame.size);
     
@@ -134,14 +133,11 @@
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
     
-    NSLog(@"保存が完了しました2");
-    
-    //image_af = [self.resizedImage:image];
+    image_af = [self resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
     UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);
-    NSLog(@"保存が完了しました3");
 }
 
 // 保存が完了したら呼ばれるメソッド
