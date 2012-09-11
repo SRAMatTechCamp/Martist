@@ -117,7 +117,7 @@
     
     NSLog(@"保存が完了しました2");
     
-    //image_af = [self.resizedImage:image];
+    image_af = [self resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);

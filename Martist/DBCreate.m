@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 Doshisha.univ. All rights reserved.
 //
 
-/*#import "DBCreate.h"
+#import "DBCreate.h"
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 
@@ -93,4 +93,4 @@
     }
 }
 
-@end*/
+@end

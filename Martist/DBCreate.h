@@ -8,10 +8,9 @@
 
 //#import <Foundation/Foundation.h>
 //#import "AppDelegate.h"
-/*#import "FMDatabase.h"
+#import "FMDatabase.h"
 
 @interface DBCreate : NSObject
-
 
 -(id)dbdelete;
 -(void)createDB;
@@ -30,4 +29,4 @@
 -(void)printEnemyData;
 
 
-@end*/
+@end
