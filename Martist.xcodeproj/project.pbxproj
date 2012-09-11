@@ -160,6 +160,8 @@
 		4CC7D62D15FC64D6002B89C7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62615FC64D6002B89C7 /* FMDatabaseQueue.m */; };
 		4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62915FC64D6002B89C7 /* FMResultSet.m */; };
 		4CC7D63215FC656B002B89C7 /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
+		4CE9B42F15FF13F600A33AAC /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
+		4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,6 +347,7 @@
 		4CC7D62915FC64D6002B89C7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		4CC7D63015FC656B002B89C7 /* DBCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCreate.h; sourceTree = "<group>"; };
 		4CC7D63115FC656B002B89C7 /* DBCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCreate.m; sourceTree = "<group>"; };
+		4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明　ボタン.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,6 +441,7 @@
 		4C61707315FD85F400484C52 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */,
 				4C61707415FD85F400484C52 /* arrow 1.png */,
 				4C61707515FD85F400484C52 /* arrow 2.png */,
 				4C61707615FD85F400484C52 /* arrow 3.png */,
@@ -846,6 +850,7 @@
 				3B99D49415FE06470057BF71 /* yback.png in Resources */,
 				3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
+				4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE9B42F15FF13F600A33AAC /* DBCreate.m in Sources */,
 				4C6E9E3C15F83AD200ED8996 /* main.m in Sources */,
 				4C6E9E4015F83AD200ED8996 /* AppDelegate.m in Sources */,
 				4C6E9E4615F83AD200ED8996 /* ViewController.m in Sources */,

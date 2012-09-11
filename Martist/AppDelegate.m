@@ -7,14 +7,36 @@
 //
 
 #import "AppDelegate.h"
+#import "DBCreate.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
+
+//アプリの初回起動時にのみ呼ばれるところ
+//まずデータベースをここで作ってしまう
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSLog(@"a");
+    NSLog(@"アプリが起動しました");
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
+    NSString* dir = [paths objectAtIndex:0];
+    [dir stringByAppendingPathComponent:@"album.db"]; //  /album.dbへパスを作成
+    NSLog(@"path:%@", [dir stringByAppendingPathComponent:@"album.db"]);
+    
+    //１回目の処理をNSUserDefualtを使用して書く。
+    //定型文　覚えるぐらいの勢いで!!
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *save = [defaults objectForKey:@"save_data"];
+    
+    if(save == nil){
+        NSLog(@"DB作成します。");
+        DBCreate *create = [[DBCreate alloc] init];
+        [create createDB];
+        
+        [defaults setObject:@"2" forKey:@"save_data"];
+    }
     // Override point for customization after application launch.
     return YES;
 }

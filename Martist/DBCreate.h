@@ -12,21 +12,19 @@
 
 @interface DBCreate : NSObject
 
--(id)dbdelete;
++(id)dbConnect;
 -(void)createDB;
 -(void)deleteDB;
-+(id)dbConnect;
+-(id)dbdelete;
 //+(id)getMax;
--(NSDictionary *)getMax:(NSDictionary *)tempDic;
+//-(NSDictionary *)getMax:(NSDictionary *)tempDic;
 
 //+(id)getMaxConnect;
--(NSDictionary *)getMaxConnect:(NSString *)fb_id:(NSString *)friendstring;
--(void)defaultCard;
-+(id)dbcheck;
+//-(NSDictionary *)getMaxConnect:(NSString *)fb_id:(NSString *)friendstring;
+//-(void)defaultCard;
+//+(id)dbcheck;
 
 
--(void)addEnemyData;
--(void)printEnemyData;
-
-
+-(void)addAlbumData:(UIImage *)img;
+//-(void)printEnemyData;
 @end

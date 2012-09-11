@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBCreate.h"
 
-@interface Memorial : UIViewController
+
+//デリゲート用の記述
+@interface Memorial : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
 
 @end

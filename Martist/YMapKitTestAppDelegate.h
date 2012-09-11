@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク
+#import <QuartzCore/QuartzCore.h>//画面保存に必要なフレームワーク
 #import <YMapKit/YMapKit.h> //YMapKit.frameworkのヘッダーファイルをインポート
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>

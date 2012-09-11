@@ -13,40 +13,46 @@
 @implementation DBCreate
 
 
+ //フォトアルバムのデータベース
 +(id)dbConnect{
-    //敵キャラステータスのデータベース
+    NSLog(@"dbConnect");
     NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     NSString* dir = [paths objectAtIndex:0];
-    FMDatabase* db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"enemy.db"]];
+    FMDatabase* db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"album.db"]];
     
+    NSLog(@"oepning");
     [db open];
-    
+    NSLog(@"opened");
     return db;
 }
 
 //アプリの初回起動時にDBの作成
 -(void)createDB{
-    NSLog(@"createDB");
+    NSLog(@"DB作成開始");
     //以下はSQLiteの仕組みについて
     FMDatabase* db = [DBCreate dbConnect];
     //敵情報データベース
-    //id, life, attack, defense, imagePath
+    //キーはnumとTime(番号と保存日時、写真の形式String型)
     if([db open]) {
         [db setShouldCacheStatements:YES];
-        NSString* sql = @"CREATE TABLE enemy (id INTEGER PRIMARY KEY, life INTEGER, attack INTEGER, defense INTEGER, imagePath TEXT);";
-        [db executeUpdate:sql];
-        [db executeUpdate:@"vacuum"];//DBの整理整頓？
+        NSString* sql = @"CREATE TABLE album (num INTEGER PRIMARY KEY,image BLOB,time TEXT);";
+        if([db executeUpdate:sql]){
+            NSLog(@"DB作成完了");
+            [db executeUpdate:@"vacuum"];//DBの整理整頓？
+        }else{
+            NSLog(@"execute失敗");
+        }
         [db close];
-        NSLog(@"DB作成完了");
     }
 }
 
 //DBの削除
 -(void)deleteDB{
+    NSLog(@"deleteDB");
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
         [db setShouldCacheStatements:YES];
-        NSString* sql = @"DELETE FROM enemy";
+        NSString* sql = @"DELETE FROM album";
         [db executeUpdate:sql];
         [db executeUpdate:@"vacuum"];
         [db close];
@@ -54,29 +60,45 @@
     }
 }
 
-//敵データを追加する
--(void)addEnemyData{
+//フォトアルバムへのデータの追加
+-(void)addAlbumData:(UIImage *)image{
+    NSLog(@"addAlubumData");
     FMDatabase* db = [DBCreate dbConnect];
-    
     if([db open]) {
-        NSLog(@"open???");
+        NSLog(@"open albumDB");
         [db setShouldCacheStatements:YES];
         
+        
+        
+        // なんとなくタイムスタンプを保存
+        NSDate* currentDate = [NSDate date];
+        [db executeUpdate:@"INSERT INTO album (time) values (?)",currentDate];
+        [db commit];
+        // select
+        FMResultSet *rs = [db executeQuery:@"SELECT * FROM album"];
+        while([rs next]){
+            // タイムスタンプを取得し、確認
+            NSDate* rsDate = [rs dateForColumn:@"time"];
+            NSLog(@"%@",rsDate);
+        }
+        
         //TODO 引数は文字列にキャストしてから突っ込む。
-        [db executeUpdate:@"INSERT INTO enemy (life,attack,defense,imagePath) VALUES (?,?,?,?)",@"50",@"10",@"10",@"shoboon.png"];
-        [db executeUpdate:@"INSERT INTO enemy (life,attack,defense,imagePath) VALUES (?,?,?,?)",@"100",@"20",@"20",@"shoboon2.png"];
-        NSLog(@"敵データ登録完了");
+         currentDate = [NSDate date];
+        [db executeUpdate:@"INSERT INTO  Album(num,name,time) VALUES (?,?,?)",@"1",@"shoboon.png",@"currentDate "];//日時を追加する
+        //[db executeUpdate:@"INSERT INTO enemy (life,attack,defense,imagePath) VALUES (?,?,?,?)",@"100",@"20",@"20",@"shoboon2.png"];
+        NSLog(@"サンプルフォトデータ登録完了");
     }
     [db executeUpdate:@"vacuum"];
     [db close];
 }
 
--(void)printEnemyData{
+
+/*-(void)printAlbumData{
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
         NSLog(@"open");
         [db setShouldCacheStatements:YES];
-        FMResultSet *rs = [db executeQuery:@"SELECT * FROM enemy"];
+        FMResultSet *rs = [db executeQuery:@"SELECT * FROM Album"];
 //            NSLog(@"life = %d, attack = %d",[rs intForColumn:@"life"], [rs intForColumn:@"attack"]);
         while ([rs next]) {
             NSLog(@"----------------------------");
@@ -91,6 +113,6 @@
     }else{
         NSLog(@"cannnot open");
     }
-}
+}*/
 
 @end
