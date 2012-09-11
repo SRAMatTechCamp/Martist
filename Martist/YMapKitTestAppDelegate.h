@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク//画面保存に必要なフレームワーク
 #import <YMapKit/YMapKit.h> //YMapKit.frameworkのヘッダーファイルをインポート
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "MyAnnotation.h"
 
 #define MIDTOWN_LAT 35.6657214
@@ -29,6 +30,9 @@
     CLLocationCoordinate2D gl_point;
     NSString *annotationTitle;
     NSString *annotationSubtitle;
+    CLLocationManager *locationManager; // 現在地情報取得
+    double latitude, longitude; // 取得した緯度経度
+
     
     __weak IBOutlet UIButton *saveBotton;
     __weak IBOutlet UIButton *searchBotton;

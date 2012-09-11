@@ -25,29 +25,12 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-
-    //YMKMapViewのインスタンスを作成
-    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
-
-    //地図のタイプを指定 標準の地図を指定
-    map.mapType = YMKMapTypeStandard;
-
-    //YMKMapViewを追加
-    //[self.window addSubview:map];
-
-
-    //YMKMapViewDelegateを登録
-    map.delegate = self;
-
-
-    //地図の位置と縮尺を設定
-    CLLocationCoordinate2D center;
-    center.latitude = 35.6657214;
-    center.longitude = 139.7310058;
-
-    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
     
-    [self.view addSubview:map];
+    locationManager = [[CLLocationManager alloc]init];
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    
+
     
     }
 
@@ -109,8 +92,6 @@
     beforeAnnotation = myAnnotation;
     [map removeAnnotation:removeAnnotation];
     [map addAnnotation:myAnnotation];
-    
-
 }
 
 // 保存するメソッド
@@ -140,7 +121,7 @@
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
-    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);
+    UIImageWriteToSavedPhotosAlbum(image, self, sel, NULL);
     NSLog(@"保存が完了しました3");
 }
 
@@ -225,9 +206,70 @@
         wkYMKOverlayView.goalPinVisible = NO;
         //経由点ピンを非表示
         wkYMKOverlayView.routePinVisible = NO;
+        
+        
         return wkYMKOverlayView;
     }
+    
+    //追加されたoverlayがYMKPolylineか確認
+    YMKPolyline* line = (YMKPolyline*)overlay;
+    if([line isKindOfClass:[YMKPolyline class]] ){
+        //YMKPolylineViewを作成
+        YMKPolylineView*  wkYMKPolylineView = [[YMKPolylineView alloc] initWithOverlay:overlay];
+        //ラインの色を青に設定
+        wkYMKPolylineView.strokeColor =  [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.1];
+        wkYMKPolylineView.fillColor =  [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.3];
+        //ラインの太さ
+        wkYMKPolylineView.lineWidth = 20;
+        return wkYMKPolylineView;
+    }
+    
+    
     return nil;
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    
+    [locationManager stopUpdatingLocation];
+
+    //YMKMapViewのインスタンスを作成
+    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
+    
+    //地図のタイプを指定 標準の地図を指定
+    map.mapType = YMKMapTypeStandard;
+    
+    
+    //YMKMapViewDelegateを登録
+    map.delegate = self;
+    
+    
+    //地図の位置と縮尺を設定
+    CLLocationCoordinate2D center;
+    center.latitude = newLocation.coordinate.latitude;
+    center.longitude = newLocation.coordinate.longitude;
+    
+    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+    
+    [self.view addSubview:map];
+    
+    //YMKPolylineを作成
+    CLLocationCoordinate2D coors[6];
+    coors[0].latitude = center.latitude + 0.0053236;
+    coors[0].longitude = center.longitude + 0.0068044;
+    coors[1].latitude = center.latitude - 0.0065854;
+    coors[1].longitude = center.longitude - 0.0006276;
+    coors[2].latitude = center.latitude + 0.0045286;
+    coors[2].longitude = center.longitude - 0.0062666;
+    coors[3].latitude = center.latitude - 0.0027264;
+    coors[3].longitude =  center.longitude + 0.0060964;
+    coors[4].latitude = center.latitude - 0.0035404;
+    coors[4].longitude = center.longitude - 0.0060066;
+    coors[5].latitude = center.latitude + 0.0053236;
+    coors[5].longitude =  center.longitude + 0.0068044;
+    YMKPolyline *line = [YMKPolyline polylineWithCoordinates:coors count:6];
+    //YMKPolylineをYMKMapViewに追加
+    [map addOverlay:line];
+    
 }
 
 
