@@ -13,6 +13,7 @@
 
 @property (nonatomic, assign) BOOL CarFlag;
 @property (nonatomic, assign) BOOL LocationFlag;
+@property (nonatomic, assign) BOOL getStar;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

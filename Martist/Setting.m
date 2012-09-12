@@ -15,6 +15,7 @@
 
 @implementation Setting
 @synthesize getLocation;
+@synthesize writeStar;
 @synthesize HowToGo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,6 +37,7 @@
 {
     [self setHowToGo:nil];
     [self setGetLocation:nil];
+    [self setWriteStar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -63,6 +65,11 @@
         [app setLocationFlag:FALSE];
     }
     
+}
+
+- (IBAction)setStar:(id)sender{
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    app.getStar = TRUE;
 }
 
 

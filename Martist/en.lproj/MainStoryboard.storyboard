@@ -378,6 +378,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setStar:" destination="gSv-AT-s9a" eventType="touchUpInside" id="NEa-NV-tRz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -387,6 +390,7 @@
                     <connections>
                         <outlet property="HowToGo" destination="jDK-Wr-bEu" id="ql4-jz-dHV"/>
                         <outlet property="getLocation" destination="dy8-OA-WnY" id="JTG-EK-IfI"/>
+                        <outlet property="writeStar" destination="2xj-up-TXk" id="5JC-K4-LaZ"/>
                     </connections>
                 </viewController>
             </objects>

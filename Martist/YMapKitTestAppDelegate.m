@@ -33,6 +33,7 @@
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     app.CarFlag = false;
     app.LocationFlag = false;
+    app.getStar = false;
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
     }
 
@@ -198,11 +199,37 @@
         locationManager.delegate = self;
         [locationManager startUpdatingLocation];
     }
+    
+    if(app.getStar == TRUE){
+        [NSThread detachNewThreadSelector:@selector(putStarThread) toTarget:self withObject:nil];
+        app.getStar = FALSE;
+    }
  
 }
 
+- (void) putStarThread{
+    CLLocationCoordinate2D center = [map centerCoordinate];
+    NSLog(@"%f",center.latitude);
+    CLLocationCoordinate2D coors[6];
+    coors[0].latitude = center.latitude + 0.0053236;
+    coors[0].longitude = center.longitude + 0.0068044;
+    coors[1].latitude = center.latitude - 0.0065854;
+    coors[1].longitude = center.longitude - 0.0006276;
+    coors[2].latitude = center.latitude + 0.0045286;
+    coors[2].longitude = center.longitude - 0.0062666;
+    coors[3].latitude = center.latitude - 0.0027264;
+    coors[3].longitude =  center.longitude + 0.0060964;
+    coors[4].latitude = center.latitude - 0.0035404;
+    coors[4].longitude = center.longitude - 0.0060066;
+    coors[5].latitude = center.latitude + 0.0053236;
+    coors[5].longitude =  center.longitude + 0.0068044;
+    YMKPolyline *line = [YMKPolyline polylineWithCoordinates:coors count:6];
+    //YMKPolylineをYMKMapViewに追加
+    [map addOverlay:line];
+}
+
 //画像をリサイズするメソッド
-- (UIImage*)resizedImage:(UIImage *)img 
+- (UIImage*)resizedImage:(UIImage *)img
 {
     CGSize resizedSize = CGSizeMake(320, 375);
     
@@ -351,23 +378,6 @@
         
         [self.view addSubview:map];
         
-        //YMKPolylineを作成
-        CLLocationCoordinate2D coors[6];
-        coors[0].latitude = center.latitude + 0.0053236;
-        coors[0].longitude = center.longitude + 0.0068044;
-        coors[1].latitude = center.latitude - 0.0065854;
-        coors[1].longitude = center.longitude - 0.0006276;
-        coors[2].latitude = center.latitude + 0.0045286;
-        coors[2].longitude = center.longitude - 0.0062666;
-        coors[3].latitude = center.latitude - 0.0027264;
-        coors[3].longitude =  center.longitude + 0.0060964;
-        coors[4].latitude = center.latitude - 0.0035404;
-        coors[4].longitude = center.longitude - 0.0060066;
-        coors[5].latitude = center.latitude + 0.0053236;
-        coors[5].longitude =  center.longitude + 0.0068044;
-        YMKPolyline *line = [YMKPolyline polylineWithCoordinates:coors count:6];
-        //YMKPolylineをYMKMapViewに追加
-        [map addOverlay:line];
     }else if(mapShowed == TRUE){
                    NSLog(@"nok");  
         CLLocationCoordinate2D center;
