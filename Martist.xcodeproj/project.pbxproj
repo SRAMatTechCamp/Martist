@@ -162,6 +162,9 @@
 		4CC7D63215FC656B002B89C7 /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
 		4CE9B42F15FF13F600A33AAC /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
 		4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */; };
+		4CF2E87616004DC100764E7B /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87416004DC100764E7B /* 右端.png */; };
+		4CF2E87716004DC100764E7B /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87516004DC100764E7B /* 真ん中.png */; };
+		4CF2E87916004E2A00764E7B /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87816004E2A00764E7B /* 左端.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +351,9 @@
 		4CC7D63015FC656B002B89C7 /* DBCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCreate.h; sourceTree = "<group>"; };
 		4CC7D63115FC656B002B89C7 /* DBCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCreate.m; sourceTree = "<group>"; };
 		4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明　ボタン.png"; sourceTree = "<group>"; };
+		4CF2E87416004DC100764E7B /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
+		4CF2E87516004DC100764E7B /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
+		4CF2E87816004E2A00764E7B /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +547,9 @@
 			isa = PBXGroup;
 			children = (
 				3B99DC9915FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */,
+				4CF2E87416004DC100764E7B /* 右端.png */,
+				4CF2E87816004E2A00764E7B /* 左端.png */,
+				4CF2E87516004DC100764E7B /* 真ん中.png */,
 				3B99DC9015FEF34D0057BF71 /* Accounts.framework */,
 				3B99D4A215FEC17C0057BF71 /* Twitter.framework */,
 				3B99D49615FE06A40057BF71 /* Resources */,
@@ -849,6 +858,9 @@
 				3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */,
+				4CF2E87616004DC100764E7B /* 右端.png in Resources */,
+				4CF2E87716004DC100764E7B /* 真ん中.png in Resources */,
+				4CF2E87916004E2A00764E7B /* 左端.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

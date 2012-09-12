@@ -15,6 +15,8 @@
 
 @implementation Memorial
 @synthesize photo;
+//これを冒頭で宣言する(上に持っていく)
+int denum = 0;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,14 +42,23 @@
         rs = [db executeQuery:@"SELECT * FROM album"];
         
         //[rs next]により要素がある次々ループが回る
-        while ([rs next]) {
+        /*while ([rs next]) {
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
             
             //UIImageView(photo)のメソッドを用いて
             //画像(showedImage)を表示する
             [photo setImage:showedImage];
-        }
+        }*/
+        
+        //[rs next]により要素がある次々ループが回る
+        [rs next];
+            NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+            showedImage = [UIImage imageWithData:pickedImage];
+            
+            //UIImageView(photo)のメソッドを用いて
+            //画像(showedImage)を表示する
+            [photo setImage:showedImage];
     }
      [rs close];
      [db close];
@@ -64,6 +75,7 @@
 }
 
 // カメラやアルバムから選んでもらった画像をアプリ(db)にもってくる
+//現在は機能として取込んでいない
 -(IBAction)pickfromphoto:(id)sender imagePickerController:(UIImagePickerController *)picker 
  didFinishPickingMediaWithInfo:(NSDictionary *)info {;
     
@@ -92,17 +104,9 @@
         
         // なんとなくタイムスタンプを保存
         NSDate* currentDate = [[NSDate alloc]init];
-        //変換用のformatter 
-        
-        // NSDate型を「yyyy/MM/dd HH:mm:ss」形式の文字列として取得する
-        //今の時刻を表示させる
-        /*NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        df.dateFormat  = @"yyyy/MM/dd HH:mm:ss";
-        NSString *str = [df stringFromDate:[NSDate date]];
-        NSLog(@"変換後の時間:%@",str);
-        NSLog(@"変換前の時間%@",currentDate);*/
         
         [db executeUpdate:@"INSERT INTO album (time) values (?)",currentDate];
+        NSLog(@"サンプルフォトデータ登録完了");
         [db commit];
         // select
         
@@ -114,9 +118,8 @@
         }
         
         //引数は文字列にキャストしてから突っ込む。
-        currentDate = [NSDate date];
-        [db executeUpdate:@"INSERT INTO  Album(num,name,time) VALUES (?,?,?)",@"1",@"selectedImade",currentDate];//日時を追加する
-        NSLog(@"サンプルフォトデータ登録完了");
+        /*currentDate = [NSDate date];
+        [db executeUpdate:@"INSERT INTO  Album(num,name,time) VALUES (?,?,?)",@"1",@"selectedImade",currentDate];//日時を追加する*/
     }
     [db executeUpdate:@"vacuum"];
     [db close];
@@ -144,10 +147,6 @@
         NSLog(@"変換後の時間:%@",str);
         NSLog(@"変換前の時間%@",currentDate);
         
-        /*文字から数に変換する方法
-        [str intValue];
-         NSLog(@"変換後の時間(数値表現):%@",str);*/
-        
         //挿入するsql numは勝手に数字が順に保存される
         //imageDataは画像、currentDateは保存した日時
         if([db executeUpdate:@"INSERT INTO  album(image,time) VALUES (?,?)",imagedata,currentDate]) 
@@ -160,6 +159,65 @@
     //モーダルビュー(選択画面)を閉じる
     [self dismissModalViewControllerAnimated:YES];
 }
+
+
+//指定したデータをDBから削除する
+-(IBAction)deletePhotoData:(id)sender{
+    
+    //ボタンが読み込まれるたびに値が加算されていく
+    denum +=1;
+    
+    //データベースを開く
+    FMDatabase* db = [DBCreate dbConnect];
+    if([db open]){
+        //データを削除する
+        if(denum <=  5){
+        //[db executeUpdate:@"DELETE FROM  album WHERE num = ? ",denum]; 
+        //[db executeUpdate:@"DELETE FROM  album WHERE num = 1 "]; 
+          //  [db executeUpdate:@"DELETE FROM  album WHERE num = 2 "]; 
+            NSLog(@"%d番目のデータの削除が完了",denum); 
+        }
+    }else {
+        NSLog(@"データベースが開けなかったので");
+        NSLog(@"データベースに登録できませんでした");
+    };
+}
+
+
+//次の写真を表示される
+-(IBAction)moveAfterPhoto:(id)sender{
+    UIImage *showedImage;
+    FMResultSet *rs;
+    
+    //過程のイメージ
+    //データベースコネクト
+    //現在の写真のnumを表示する
+    //num+1の写真が存在するか確かめる
+    //ある→その写真の表示
+    //ない→ないことを通知する
+    
+    //データベースを開く
+    FMDatabase* db = [DBCreate dbConnect];
+    
+    if([db open]){
+        rs = [db executeQuery:@"SELECT * FROM album"];
+        //次の写真に移る
+        [rs next];
+        NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+        showedImage = [UIImage imageWithData:pickedImage];
+        
+        [rs next];
+        pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+        showedImage = [UIImage imageWithData:pickedImage];
+        
+        [photo setImage:showedImage];
+         NSLog(@"次の画面が表示されました");
+    }else {
+        NSLog(@"データベースが開けなかったので");
+        NSLog(@"データベースに登録できませんでした");
+    };
+}
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
