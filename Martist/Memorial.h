@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Twitter/Twitter.h>
 #import "DBCreate.h"
 #import <Twitter/Twitter.h>
+
 
 
 //デリゲート用の記述

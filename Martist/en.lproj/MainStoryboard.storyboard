@@ -234,6 +234,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="moveBeforePhoto:" destination="WCS-s2-6kJ" eventType="touchUpInside" id="gZW-RX-qbK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kf0-Ge-GuP">
                                 <rect key="frame" x="240" y="0.0" width="80" height="40"/>
