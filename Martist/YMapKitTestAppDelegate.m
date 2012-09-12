@@ -2,6 +2,7 @@
 //画面を保存するのに必要
 #import <QuartzCore/QuartzCore.h>
 #import "MyAnnotation.h"
+#import "AppDelegate.h"
 
 
 
@@ -9,6 +10,7 @@
 @synthesize window;
 @synthesize st_point;
 @synthesize gl_point;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,6 +31,8 @@
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    app.CarFlag = false;
     
 
     
@@ -66,8 +70,16 @@
     //YMKRouteOverlayDelegateを設定
     routeOrverlay.delegate = self;
     
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
     //出発地、目的地、移動手段を設定
-    [routeOrverlay setRouteStartPos:st_point withGoalPos:gl_point withTraffic:TRAFFIC_WALK];
+    if(app.CarFlag){
+        [routeOrverlay setRouteStartPos:st_point withGoalPos:gl_point withTraffic:TRAFFIC_CAR];
+    }else{
+        [routeOrverlay setRouteStartPos:st_point withGoalPos:gl_point withTraffic:TRAFFIC_WALK];
+    }
+    
+
     [routeOrverlay search];
     
 }
@@ -77,6 +89,7 @@
 {
     UITouch *touch = [touches anyObject];
     pickPos = [touch locationInView:self.view];
+    NSLog(@"OK");
     
     NSLog(@"x=%f",pickPos.x);
     NSLog(@"y=%f",pickPos.y);

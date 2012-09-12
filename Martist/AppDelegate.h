@@ -10,6 +10,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+
+@property (nonatomic, assign) BOOL CarFlag;
 @property (strong, nonatomic) UIWindow *window;
 
 @end

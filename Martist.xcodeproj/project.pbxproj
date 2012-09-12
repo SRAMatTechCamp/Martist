@@ -42,7 +42,7 @@
 		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
 		3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */; };
 		3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */; };
-                4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C305C7315FDE7C30079526F /* SQLiteDB.m */; };
+		4C305C7415FDE7C30079526F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4C6170CF15FD85F400484C52 /* arrow 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707415FD85F400484C52 /* arrow 1.png */; };
 		4C6170D015FD85F400484C52 /* arrow 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707515FD85F400484C52 /* arrow 2.png */; };
 		4C6170D115FD85F400484C52 /* arrow 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707615FD85F400484C52 /* arrow 3.png */; };
@@ -585,8 +585,6 @@
 			children = (
 				4CC7D63015FC656B002B89C7 /* DBCreate.h */,
 				4CC7D63115FC656B002B89C7 /* DBCreate.m */,
-				4C305C7215FDE7C30079526F /* SQLiteDB.h */,
-				4C305C7315FDE7C30079526F /* SQLiteDB.m */,
 				4C6E9E3E15F83AD200ED8996 /* AppDelegate.h */,
 				4C6E9E3F15F83AD200ED8996 /* AppDelegate.m */,
 				4C6E9E4115F83AD200ED8996 /* MainStoryboard.storyboard */,
@@ -902,7 +900,7 @@
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 				3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */,
 				3B99D4AB15FEC8C70057BF71 /* Twitter.m in Sources */,
-				4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */,
+				4C305C7415FDE7C30079526F /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +972,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -993,6 +992,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1001,7 +1001,7 @@
 		4C6E9E5F15F83AD200ED8996 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "com.apple.ubiquity.peer-uuid.CF072CE5-BA53-4D41-9661-10E9C6A53D41";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mapsdk_ios/Ymap\"",

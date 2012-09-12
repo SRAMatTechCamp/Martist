@@ -13,6 +13,8 @@
 
 @synthesize window = _window;
 
+@synthesize CarFlag;
+
 
 //アプリの初回起動時にのみ呼ばれるところ
 //まずデータベースをここで作ってしまう
@@ -66,6 +68,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)setCarFlag:(BOOL)Carflag{
+    CarFlag = Carflag;
+}
+
+-(BOOL)getCarFlag{
+    return CarFlag;
 }
 
 @end
