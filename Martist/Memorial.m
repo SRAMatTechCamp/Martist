@@ -14,6 +14,7 @@
 @end
 
 @implementation Memorial
+@synthesize Twitter;
 @synthesize photo;
 //これを冒頭で宣言する(上に持っていく)
 int denum = 0;
@@ -55,6 +56,7 @@ int denum = 0;
         [rs next];
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
+            uploadImage = showedImage;
             
             //UIImageView(photo)のメソッドを用いて
             //画像(showedImage)を表示する
@@ -70,6 +72,7 @@ int denum = 0;
 - (void)viewDidUnload
 {
     [self setPhoto:nil];
+    [self setTwitter:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -127,6 +130,16 @@ int denum = 0;
     NSLog(@"データベースへの登録設定一覧完了");
 }
 
+- (IBAction)Send:(id)sender{
+    TWTweetComposeViewController *tweet = [[TWTweetComposeViewController alloc]init];
+    
+    [tweet setInitialText:@"ここにメッセージを入力してください"];
+    
+    [tweet addImage:uploadImage];
+    
+    [self presentViewController:tweet animated:YES completion:nil];
+    
+}
 
 //取ってきた画像を画面に表示する
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{

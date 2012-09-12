@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DBCreate.h"
+#import <Twitter/Twitter.h>
 
 
 //デリゲート用の記述
-@interface Memorial : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@interface Memorial : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>{
+    UIImage *uploadImage;
+}
+@property (weak, nonatomic) IBOutlet
 
+
+UIImageView *photo;
+@property (nonatomic, strong) IBOutlet UITextView *inputtext;
+
+- (IBAction)Send:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *Twitter;
 @end

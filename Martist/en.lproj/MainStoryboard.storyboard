@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--View Controller - Top-->
@@ -58,7 +58,6 @@
                     <connections>
                         <segue destination="drb-3D-HbL" kind="relationship" relationship="viewControllers" id="lFQ-Rg-Rcp"/>
                         <segue destination="WCS-s2-6kJ" kind="relationship" relationship="viewControllers" id="YhG-st-A2H"/>
-                        <segue destination="7jq-wl-pjv" kind="relationship" relationship="viewControllers" id="LkP-di-xS2"/>
                         <segue destination="gSv-AT-s9a" kind="relationship" relationship="viewControllers" id="Qm0-PU-nGq"/>
                     </connections>
                 </tabBarController>
@@ -206,7 +205,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ClD-HD-Erp">
-                                <rect key="frame" x="0.0" y="38" width="320" height="375"/>
+                                <rect key="frame" x="0.0" y="36" width="320" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OtY-9j-sb7">
@@ -262,13 +261,16 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Send:" destination="WCS-s2-6kJ" eventType="touchUpInside" id="SlF-4h-Uul"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="メモリアル" image="book.png" id="OwT-gF-hs0"/>
                     <connections>
-                        <outlet property="photo" destination="ClD-HD-Erp" id="kqm-oP-1nk"/>
+                        <outlet property="photo" destination="ClD-HD-Erp" id="6Mm-Fi-QEi"/>
                     </connections>
                 </viewController>
             </objects>
@@ -280,7 +282,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avJ-1G-SZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7jq-wl-pjv" customClass="SNSConnection" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uS1-Wo-8xs">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="s2J-0G-0eO">
@@ -336,22 +338,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jDK-Wr-bEu">
-                                <rect key="frame" x="73" y="89" width="175" height="37"/>
+                                <rect key="frame" x="73" y="73" width="175" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="初期フォント設定">
+                                <state key="normal" title="ルート：徒歩">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeHowToGo:" destination="gSv-AT-s9a" eventType="touchUpInside" id="fxe-Lk-vqZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dy8-OA-WnY">
                                 <rect key="frame" x="73" y="251" width="175" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="お気に入りフォント２">
+                                <state key="normal" title="なぞりがき＾３＾">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -360,10 +365,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2xj-up-TXk">
-                                <rect key="frame" x="73" y="168" width="175" height="37"/>
+                                <rect key="frame" x="73" y="164" width="175" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="お気に入りフォント１">
+                                <state key="normal" title="なぞりがき☆">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -376,6 +381,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="設定" image="list 1.png" id="awR-d7-9qP"/>
                     <navigationItem key="navigationItem" id="UzD-8W-W9P"/>
+                    <connections>
+                        <outlet property="HowToGo" destination="jDK-Wr-bEu" id="ql4-jz-dHV"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="607" y="238"/>
@@ -390,51 +398,6 @@
         <image name="nav.png" width="21" height="31"/>
         <image name="真ん中.png" width="100" height="41"/>
     </resources>
-    <classes>
-        <class className="DrawOnTap" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawOnTap.h"/>
-            <relationships>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="tap2Label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tapLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="Memorial" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Memorial.h"/>
-            <relationships>
-                <relationship kind="outlet" name="photo" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SNSConnection" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SNSConnection.h"/>
-            <relationships>
-                <relationship kind="outlet" name="toFacebook" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="toTwitter" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="Setting" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Setting.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="YMapKitTestAppDelegate" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YMapKitTestAppDelegate.h"/>
-            <relationships>
-                <relationship kind="action" name="removeroute:"/>
-                <relationship kind="action" name="routing:"/>
-                <relationship kind="action" name="saveToAlbum:"/>
-                <relationship kind="action" name="tappin:"/>
-                <relationship kind="outlet" name="drawBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="window" candidateClass="UIWindow"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

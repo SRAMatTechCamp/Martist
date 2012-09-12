@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface Setting : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *HowToGo;
+
+- (IBAction)changeHowToGo:(id)sender;
+
 
 @end

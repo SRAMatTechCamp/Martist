@@ -7,12 +7,14 @@
 //
 
 #import "Setting.h"
+#import "AppDelegate.h"
 
 @interface Setting ()
 
 @end
 
 @implementation Setting
+@synthesize HowToGo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +33,23 @@
 
 - (void)viewDidUnload
 {
+    [self setHowToGo:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
+- (IBAction)changeHowToGo:(id)sender{
+    if([[HowToGo currentTitle] isEqualToString:@"ルート：徒歩"]){
+        [HowToGo setTitle:@"ルート：車" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setCarFlag:TRUE];
+    }else{
+        [HowToGo setTitle:@"ルート：徒歩" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setCarFlag:FALSE];
+    }
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
