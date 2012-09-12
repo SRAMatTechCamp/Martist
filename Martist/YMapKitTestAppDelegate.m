@@ -107,21 +107,21 @@
 //現在はDBに保存しているが、設定でカメラへ保存も選択できるようにする予定
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
+    UIImage* image1;
+    UIImage* image2;
     UIImage* reImage;
     
-    //ボタンをのぞいてぴったりの画像で保存
+    //ボタンをのぞいてぴったりの画像で保存する
    // UIView *justView;
     self.view.frame = CGRectMake(0, 40, 320, 373);
     
     // リサイズ例文（サイズを指定する方法）
-    UIImage *img_mae = [UIImage imageNamed:@"hoge.png"];  // リサイズ前UIImage
-    UIImage *img_ato;  // リサイズ後UIImage
-    //CGFloat width = 100;  // リサイズ後幅のサイズ
-    //CGFloat height = 200;  // リサイズ後高さのサイズ
+    //UIImage *img_mae = [UIImage imageNamed:@"hoge.png"];  // リサイズ前UIImage
+    //UIImage *img_ato;  // リサイズ後UIImage
     
     UIGraphicsBeginImageContext(CGSizeMake(320, 373));
-    [img_mae drawInRect:CGRectMake(0, 0, 320, 373)];
-    img_ato = UIGraphicsGetImageFromCurrentImageContext();
+    [image1 drawInRect:CGRectMake(0, 0, 320, 373)];
+    image2 = UIGraphicsGetImageFromCurrentImageContext();
     //UIGraphicsEndImageContext(); 
     
    // self.view.frame.size = CGSizeMake(320, 373);
@@ -140,12 +140,8 @@
     
     reImage = [self resizedImage:image];
     
-    
-    
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
-    
-    
     
     //データベースへのデータの保存
     FMDatabase* db = [DBCreate dbConnect];
@@ -173,6 +169,7 @@
 
     UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);*/
 
+    self.view.frame = CGRectMake(0, 0, 320, 480);
 }
 
 // 保存が完了したら呼ばれるメソッド

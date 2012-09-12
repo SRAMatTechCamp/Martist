@@ -58,7 +58,6 @@
                     <connections>
                         <segue destination="drb-3D-HbL" kind="relationship" relationship="viewControllers" id="lFQ-Rg-Rcp"/>
                         <segue destination="WCS-s2-6kJ" kind="relationship" relationship="viewControllers" id="YhG-st-A2H"/>
-                        <segue destination="7jq-wl-pjv" kind="relationship" relationship="viewControllers" id="LkP-di-xS2"/>
                         <segue destination="gSv-AT-s9a" kind="relationship" relationship="viewControllers" id="Qm0-PU-nGq"/>
                     </connections>
                 </tabBarController>
@@ -235,6 +234,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="moveBeforePhoto:" destination="WCS-s2-6kJ" eventType="touchUpInside" id="gZW-RX-qbK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kf0-Ge-GuP">
                                 <rect key="frame" x="240" y="0.0" width="80" height="40"/>
@@ -280,7 +282,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avJ-1G-SZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7jq-wl-pjv" customClass="SNSConnection" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uS1-Wo-8xs">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="s2J-0G-0eO">

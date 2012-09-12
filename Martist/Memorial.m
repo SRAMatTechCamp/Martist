@@ -7,7 +7,6 @@
 //
 
 #import "Memorial.h"
-//#import "DBCreate.h"
 
 @interface Memorial ()
 
@@ -15,8 +14,17 @@
 
 @implementation Memorial
 @synthesize photo;
-//これを冒頭で宣言する(上に持っていく)
-int denum = 0;
+//これを冒頭で宣言する(上に持っていく
+int now_num = 1;
+UIImage *showedImage;
+
+//主キー(num)を識別するための数字
+int key;
+int key_max=100;//写真の最大枚数を保存
+NSData *image_key;
+UIImage *showedImage_key;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +37,12 @@ int denum = 0;
 
 - (void)viewDidLoad
 {
+    //はじめに画面が呼ばれたときに初期化
+    key = 1;
+    NSLog(@"初期のkey:%d",key);
+    
     //ここに画像を呼び出して、表示させる処理を書いた。
     //宣言はif文のなかではなく上で宣言しておく(中だと動かないときがある)
-    UIImage *showedImage;
     FMResultSet *rs;
     
     FMDatabase* db = [DBCreate dbConnect];
@@ -41,17 +52,7 @@ int denum = 0;
         //検索した結果を返す(現在はすべて返している)
         rs = [db executeQuery:@"SELECT * FROM album"];
         
-        //[rs next]により要素がある次々ループが回る
-        /*while ([rs next]) {
-            NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-            showedImage = [UIImage imageWithData:pickedImage];
-            
-            //UIImageView(photo)のメソッドを用いて
-            //画像(showedImage)を表示する
-            [photo setImage:showedImage];
-        }*/
-        
-        //[rs next]により要素がある次々ループが回る
+        //一番はじめにある画像が選択されている
         [rs next];
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
@@ -59,6 +60,24 @@ int denum = 0;
             //UIImageView(photo)のメソッドを用いて
             //画像(showedImage)を表示する
             [photo setImage:showedImage];
+    
+            /*//画像を読み込む
+             showedImage = [UIImage imageNamed:@"error 1.png"];
+          
+            //UIImageView(photo)のメソッドを用いて
+            //画像(showedImage)を表示する
+            [photo setImage:showedImage];*/
+        
+        //[rs next]により要素がある次々ループが回る
+        /*while ([rs next]) {
+         NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+         showedImage = [UIImage imageWithData:pickedImage];
+         
+         //UIImageView(photo)のメソッドを用いて
+         //画像(showedImage)を表示する
+         [photo setImage:showedImage];
+         }*/
+        
     }
      [rs close];
      [db close];
@@ -165,17 +184,17 @@ int denum = 0;
 -(IBAction)deletePhotoData:(id)sender{
     
     //ボタンが読み込まれるたびに値が加算されていく
-    denum +=1;
+    //now_num +=1;
     
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
         //データを削除する
-        if(denum <=  5){
+        if(now_num <=  5){
         //[db executeUpdate:@"DELETE FROM  album WHERE num = ? ",denum]; 
         //[db executeUpdate:@"DELETE FROM  album WHERE num = 1 "]; 
           //  [db executeUpdate:@"DELETE FROM  album WHERE num = 2 "]; 
-            NSLog(@"%d番目のデータの削除が完了",denum); 
+            //NSLog(@"%d番目のデータの削除が完了",now_num); 
         }
     }else {
         NSLog(@"データベースが開けなかったので");
@@ -186,31 +205,46 @@ int denum = 0;
 
 //次の写真を表示される
 -(IBAction)moveAfterPhoto:(id)sender{
-    UIImage *showedImage;
-    FMResultSet *rs;
-    
-    //過程のイメージ
-    //データベースコネクト
-    //現在の写真のnumを表示する
-    //num+1の写真が存在するか確かめる
-    //ある→その写真の表示
-    //ない→ないことを通知する
+    //ボタンが押されたらkeyを増加させる
+    key++;
     
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
-    
     if([db open]){
-        rs = [db executeQuery:@"SELECT * FROM album"];
-        //次の写真に移る
-        [rs next];
-        NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-        showedImage = [UIImage imageWithData:pickedImage];
+        //写真遷移過程のイメージ
+        //@データベースコネクト
+        //現在の写真をimageで取得する
+        //@その写真のnumをselect文により求める
+        //num+1の写真が存在するか確かめる
+        //ある→その写真の表示
+        //ない→ないことを通知する(あとで実装)
+        //rsには現在の写真のタプルが入っている
         
-        [rs next];
-        pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-        showedImage = [UIImage imageWithData:pickedImage];
+        NSLog(@"現在のkey:%d",key);
+        //keyによるDB制御
+        FMResultSet *rs_key;;
+        rs_key = [db executeQuery:@"SELECT * FROM album"];
+        [rs_key next];
         
-        [photo setImage:showedImage];
+        
+        //データベースの最大値を超える場合の処理を付け加える
+        
+        //keyの回数分だけループを回す
+        for (int i=0; i<key; i++) {
+        if( [rs_key next] ){
+            image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
+            showedImage_key = [UIImage imageWithData:image_key];
+        }else {
+            NSLog(@"次の画像がありません");
+            key_max =key;
+        }
+        }
+        
+         [photo setImage:showedImage_key];
+        
+        NSLog(@"表示された画像の番号:%d",key+1);
+        
+        //ここを画面に表示させる
          NSLog(@"次の画面が表示されました");
     }else {
         NSLog(@"データベースが開けなかったので");
@@ -219,6 +253,47 @@ int denum = 0;
 }
 
 
+//前の写真を表示される
+-(IBAction)moveBeforePhoto:(id)sender{
+    
+    //画像が表示されたらkeyを減少させる
+    key--;
+    
+    //データベースを開く
+    FMDatabase* db = [DBCreate dbConnect];
+    if([db open]){
+        NSLog(@"現在のkey:%d",key);
+        //keyによるDB制御
+        FMResultSet *rs_key;;
+        rs_key = [db executeQuery:@"SELECT * FROM album"];
+        [rs_key next];
+        
+        //前のkeyの画像が存在するとき
+        if(key >=0){
+        //keyの回数分だけループを回す
+        for (int i=0; i<=key; i++) {
+            if( [rs_key next] ){
+                image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
+                showedImage_key = [UIImage imageWithData:image_key];
+            }else {
+                NSLog(@"表示できる画像がありません");
+            }
+        }}
+        else {
+            //画面に表示するように変更する
+            NSLog(@"前の画像が存在しません");
+            //keyの値を0に戻す
+            key = 0;
+        }
+        
+        [photo setImage:showedImage_key];
+        
+        NSLog(@"前の画面が表示されました");
+    }else {
+        NSLog(@"データベースが開けなかったので");
+        NSLog(@"データベースに登録できませんでした");
+    };
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
