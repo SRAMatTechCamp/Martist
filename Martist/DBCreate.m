@@ -35,7 +35,7 @@
     //キーはnumとTime(番号と保存日時、写真の形式String型)
     if([db open]) {
         [db setShouldCacheStatements:YES];
-        NSString* sql = @"CREATE TABLE album (num INTEGER PRIMARY KEY,image BLOB,time TEXT);";
+        NSString* sql = @"CREATE TABLE album (num INTEGER PRIMARY KEY AUTOINCREMENT,image BLOB,time TEXT);";
         if([db executeUpdate:sql]){
             NSLog(@"DB作成完了");
             [db executeUpdate:@"vacuum"];//DBの整理整頓？

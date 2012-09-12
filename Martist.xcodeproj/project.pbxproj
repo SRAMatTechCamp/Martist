@@ -42,7 +42,7 @@
 		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
 		3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */; };
 		3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */; };
-                4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C305C7315FDE7C30079526F /* SQLiteDB.m */; };
+		4C305C7415FDE7C30079526F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4C6170CF15FD85F400484C52 /* arrow 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707415FD85F400484C52 /* arrow 1.png */; };
 		4C6170D015FD85F400484C52 /* arrow 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707515FD85F400484C52 /* arrow 2.png */; };
 		4C6170D115FD85F400484C52 /* arrow 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707615FD85F400484C52 /* arrow 3.png */; };
@@ -162,6 +162,9 @@
 		4CC7D63215FC656B002B89C7 /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
 		4CE9B42F15FF13F600A33AAC /* DBCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D63115FC656B002B89C7 /* DBCreate.m */; };
 		4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */; };
+		4CF2E87616004DC100764E7B /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87416004DC100764E7B /* 右端.png */; };
+		4CF2E87716004DC100764E7B /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87516004DC100764E7B /* 真ん中.png */; };
+		4CF2E87916004E2A00764E7B /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF2E87816004E2A00764E7B /* 左端.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +351,9 @@
 		4CC7D63015FC656B002B89C7 /* DBCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCreate.h; sourceTree = "<group>"; };
 		4CC7D63115FC656B002B89C7 /* DBCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCreate.m; sourceTree = "<group>"; };
 		4CE9B43015FF39F400A33AAC /* 透明　ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明　ボタン.png"; sourceTree = "<group>"; };
+		4CF2E87416004DC100764E7B /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
+		4CF2E87516004DC100764E7B /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
+		4CF2E87816004E2A00764E7B /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +547,9 @@
 			isa = PBXGroup;
 			children = (
 				3B99DC9915FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */,
+				4CF2E87416004DC100764E7B /* 右端.png */,
+				4CF2E87816004E2A00764E7B /* 左端.png */,
+				4CF2E87516004DC100764E7B /* 真ん中.png */,
 				3B99DC9015FEF34D0057BF71 /* Accounts.framework */,
 				3B99D4A215FEC17C0057BF71 /* Twitter.framework */,
 				3B99D49615FE06A40057BF71 /* Resources */,
@@ -585,8 +594,6 @@
 			children = (
 				4CC7D63015FC656B002B89C7 /* DBCreate.h */,
 				4CC7D63115FC656B002B89C7 /* DBCreate.m */,
-				4C305C7215FDE7C30079526F /* SQLiteDB.h */,
-				4C305C7315FDE7C30079526F /* SQLiteDB.m */,
 				4C6E9E3E15F83AD200ED8996 /* AppDelegate.h */,
 				4C6E9E3F15F83AD200ED8996 /* AppDelegate.m */,
 				4C6E9E4115F83AD200ED8996 /* MainStoryboard.storyboard */,
@@ -851,6 +858,9 @@
 				3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */,
+				4CF2E87616004DC100764E7B /* 右端.png in Resources */,
+				4CF2E87716004DC100764E7B /* 真ん中.png in Resources */,
+				4CF2E87916004E2A00764E7B /* 左端.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +912,7 @@
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 				3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */,
 				3B99D4AB15FEC8C70057BF71 /* Twitter.m in Sources */,
-				4C305C7415FDE7C30079526F /* SQLiteDB.m in Sources */,
+				4C305C7415FDE7C30079526F /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

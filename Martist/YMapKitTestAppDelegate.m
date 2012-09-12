@@ -10,7 +10,6 @@
 @synthesize st_point;
 @synthesize gl_point;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -20,8 +19,6 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad{
     
     [super viewDidLoad];
@@ -29,9 +26,7 @@
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
-    
 
-    
     }
 
 - (void)viewDidUnload
@@ -94,10 +89,28 @@
     [map addAnnotation:myAnnotation];
 }
 
-// 保存するメソッド
+// データベースに保存するメソッド
+//現在はDBに保存しているが、設定でカメラへ保存も選択できるようにする予定
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
-    UIImage* image_af;
+    UIImage* reImage;
+    
+    //ボタンをのぞいてぴったりの画像で保存
+   // UIView *justView;
+    self.view.frame = CGRectMake(0, 40, 320, 373);
+    
+    // リサイズ例文（サイズを指定する方法）
+    UIImage *img_mae = [UIImage imageNamed:@"hoge.png"];  // リサイズ前UIImage
+    UIImage *img_ato;  // リサイズ後UIImage
+    //CGFloat width = 100;  // リサイズ後幅のサイズ
+    //CGFloat height = 200;  // リサイズ後高さのサイズ
+    
+    UIGraphicsBeginImageContext(CGSizeMake(320, 373));
+    [img_mae drawInRect:CGRectMake(0, 0, 320, 373)];
+    img_ato = UIGraphicsGetImageFromCurrentImageContext();
+    //UIGraphicsEndImageContext(); 
+    
+   // self.view.frame.size = CGSizeMake(320, 373);
     
     // UIView のサイズの画像コンテキストを開始します。
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -111,15 +124,40 @@
     // 画像コンテキストから画像を生成します。
     image = UIGraphicsGetImageFromCurrentImageContext();
     
+    reImage = [self resizedImage:image];
+    
+    
+    
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
     
-    image_af = [self resizedImage:image];
+    
+    
+    //データベースへのデータの保存
+    FMDatabase* db = [DBCreate dbConnect];
+    if([db open]){
+        
+        NSData *imagedata = [[NSData alloc] initWithData:UIImagePNGRepresentation((image))];
+        
+        // なんとなくタイムスタンプを保存
+        NSDate* currentDate = [[NSDate alloc]init];
+        
+        //挿入するsql numは勝手に数字が順に保存される
+        //imageDataは画像、currentDateは保存した日時
+        if([db executeUpdate:@"INSERT INTO  album(image,time) VALUES (?,?)",imagedata,currentDate]) 
+        NSLog(@"マップからDBへの挿入が完了しました");
+    }else {
+        NSLog(@"データベースが開けなかったので");
+        NSLog(@"データベースに登録できませんでした");
+    };
+
+    //カメラへ保存する部分
+    /*image_af = [self resizedImage:image];
     
     //UIImage *image = [[self.view] UIImage];
     SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
 
-    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);
+    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);*/
 
 }
 
@@ -149,11 +187,27 @@
     return resizedImage;
 }
 
+- (UIImage*)resizedImageNew:(UIImage *)img size:(CGSize)size
+{
+    CGFloat widthRatio  = size.width  / img.size.width;
+    CGFloat heightRatio = size.height / img.size.height;
+    CGFloat ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio;
+    CGSize resizedSize = CGSizeMake(img.size.width*ratio, img.size.height*ratio);
+    
+    UIGraphicsBeginImageContext(resizedSize);
+    
+    [img drawInRect:CGRectMake(0, 0, resizedSize.width, resizedSize.height)];
+    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -231,7 +285,7 @@
     [locationManager stopUpdatingLocation];
 
     //YMKMapViewのインスタンスを作成
-    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
+    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 39, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
     
     //地図のタイプを指定 標準の地図を指定
     map.mapType = YMKMapTypeStandard;

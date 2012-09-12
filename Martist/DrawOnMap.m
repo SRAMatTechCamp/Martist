@@ -100,37 +100,6 @@
     return resizedImage;
 }
 
-
-
-//トリプルタップを検出し、画面を保存する
-/*- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    if([[touches anyObject] tapCount] == 3){
-    UIImage* image;
-    
-    // UIView のサイズの画像コンテキストを開始します。
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    
-    // 開始した画像コンテキストを取得します。
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // UIView の内容を、開始した画像コンテキストへ書き出させます。
-    [self.view.layer renderInContext:context];
-    
-    // 画像コンテキストから画像を生成します。
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // 画像コンテキストを終了します。
-    UIGraphicsEndImageContext();
-    
-    //UIImage *image = [[self.view] UIImage];
-    SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
-    UIImageWriteToSavedPhotosAlbum(image, self, sel, NULL);
-}
-}*/
-
-
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
