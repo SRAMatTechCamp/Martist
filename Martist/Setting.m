@@ -14,6 +14,7 @@
 @end
 
 @implementation Setting
+@synthesize getLocation;
 @synthesize HowToGo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,6 +35,7 @@
 - (void)viewDidUnload
 {
     [self setHowToGo:nil];
+    [self setGetLocation:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -48,6 +50,19 @@
         AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
         [app setCarFlag:FALSE];
     }
+}
+
+- (IBAction)changeGetLocation:(id)sender{
+    if([[getLocation currentTitle] isEqualToString:@"現在地取得：なし"]){
+        [getLocation setTitle:@"現在地取得：あり" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setLocationFlag:TRUE];
+    }else{
+        [getLocation setTitle:@"現在地取得：なし" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setLocationFlag:FALSE];
+    }
+    
 }
 
 

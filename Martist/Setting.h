@@ -10,8 +10,10 @@
 
 @interface Setting : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *HowToGo;
+@property (weak, nonatomic) IBOutlet UIButton *getLocation;
 
 - (IBAction)changeHowToGo:(id)sender;
 
+- (IBAction)changeGetLocation:(id)sender;
 
 @end

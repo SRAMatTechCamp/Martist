@@ -10,6 +10,7 @@
 @synthesize window;
 @synthesize st_point;
 @synthesize gl_point;
+@synthesize mapShowed;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -25,13 +26,14 @@
     
     [super viewDidLoad];
     
+    mapShowed = NO;
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     app.CarFlag = false;
-
-
+    app.LocationFlag = false;
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
     }
 
 - (void)viewDidUnload
@@ -185,6 +187,19 @@
     //[alert show];
 }
 
+//現在地取得
+- (void) getLocationThread {
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    if(mapShowed == TRUE && app.LocationFlag == TRUE){
+        NSLog(@"OK");
+        locationManager = [[CLLocationManager alloc]init];
+        locationManager.delegate = self;
+        [locationManager startUpdatingLocation];
+    }
+ 
+}
 
 //画像をリサイズするメソッド
 - (UIImage*)resizedImage:(UIImage *)img 
@@ -294,47 +309,78 @@
     return nil;
 }
 
-- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    
-    [locationManager stopUpdatingLocation];
 
-    //YMKMapViewのインスタンスを作成
-    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 39, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
-    
-    //地図のタイプを指定 標準の地図を指定
-    map.mapType = YMKMapTypeStandard;
-    
-    
-    //YMKMapViewDelegateを登録
-    map.delegate = self;
-    
-    
-    //地図の位置と縮尺を設定
-    CLLocationCoordinate2D center;
-    center.latitude = newLocation.coordinate.latitude;
-    center.longitude = newLocation.coordinate.longitude;
-    
-    map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
-    
-    [self.view addSubview:map];
-    
-    //YMKPolylineを作成
-    CLLocationCoordinate2D coors[6];
-    coors[0].latitude = center.latitude + 0.0053236;
-    coors[0].longitude = center.longitude + 0.0068044;
-    coors[1].latitude = center.latitude - 0.0065854;
-    coors[1].longitude = center.longitude - 0.0006276;
-    coors[2].latitude = center.latitude + 0.0045286;
-    coors[2].longitude = center.longitude - 0.0062666;
-    coors[3].latitude = center.latitude - 0.0027264;
-    coors[3].longitude =  center.longitude + 0.0060964;
-    coors[4].latitude = center.latitude - 0.0035404;
-    coors[4].longitude = center.longitude - 0.0060066;
-    coors[5].latitude = center.latitude + 0.0053236;
-    coors[5].longitude =  center.longitude + 0.0068044;
-    YMKPolyline *line = [YMKPolyline polylineWithCoordinates:coors count:6];
-    //YMKPolylineをYMKMapViewに追加
-    [map addOverlay:line];
+//Annotation追加イベント
+- (YMKAnnotationView*)mapView:(YMKMapView *)mapView viewForAnnotation:(MyAnnotation*)annotation{
+    //追加されたAnnotationがMyAnnotationか確認
+    if( [annotation isKindOfClass:[MyAnnotation class]] && annotation.coordinate.latitude == beforeMyPoint.coordinate.latitude && annotation.coordinate.longitude && beforeMyPoint.coordinate.longitude){
+        //YMKPinAnnotationViewを作成
+        YMKPinAnnotationView *pin = [[YMKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"Pin"];
+        //アイコンイメージの変更
+        pin.image=[UIImage imageNamed:@"compass48@2x.png"];
+        //アイコンのイメージのどこを基準点にするか設定
+        CGPoint centerOffset;
+        centerOffset.x=15;
+        centerOffset.y=15;
+        [pin setCenterOffset:centerOffset];
+        return pin;
+    }
+    return nil;
+}
+- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
+    [locationManager stopUpdatingLocation];    
+    if(mapShowed == FALSE){
+        mapShowed = TRUE;
+        //YMKMapViewのインスタンスを作成
+        map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 39, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
+        
+        //地図のタイプを指定 標準の地図を指定
+        map.mapType = YMKMapTypeStandard;
+        
+        
+        //YMKMapViewDelegateを登録
+        map.delegate = self;
+        
+        
+        //地図の位置と縮尺を設定
+        CLLocationCoordinate2D center;
+        center.latitude = newLocation.coordinate.latitude;
+        center.longitude = newLocation.coordinate.longitude;
+        
+        map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+        
+        [self.view addSubview:map];
+        
+        //YMKPolylineを作成
+        CLLocationCoordinate2D coors[6];
+        coors[0].latitude = center.latitude + 0.0053236;
+        coors[0].longitude = center.longitude + 0.0068044;
+        coors[1].latitude = center.latitude - 0.0065854;
+        coors[1].longitude = center.longitude - 0.0006276;
+        coors[2].latitude = center.latitude + 0.0045286;
+        coors[2].longitude = center.longitude - 0.0062666;
+        coors[3].latitude = center.latitude - 0.0027264;
+        coors[3].longitude =  center.longitude + 0.0060964;
+        coors[4].latitude = center.latitude - 0.0035404;
+        coors[4].longitude = center.longitude - 0.0060066;
+        coors[5].latitude = center.latitude + 0.0053236;
+        coors[5].longitude =  center.longitude + 0.0068044;
+        YMKPolyline *line = [YMKPolyline polylineWithCoordinates:coors count:6];
+        //YMKPolylineをYMKMapViewに追加
+        [map addOverlay:line];
+    }else if(mapShowed == TRUE){
+                   NSLog(@"nok");  
+        CLLocationCoordinate2D center;
+        center.latitude = newLocation.coordinate.latitude;
+        center.longitude = newLocation.coordinate.longitude;
+        MyAnnotation* myPoint = [[MyAnnotation alloc] initWithLocationCoordinate:center title:[[NSString alloc] initWithString:@"節点"] subtitle:[[NSString alloc] initWithString:@"節点"]];
+        [map removeAnnotation:beforeMyPoint];
+        beforeMyPoint = myPoint;
+        [map addAnnotation:myPoint];
+    }
+
+
+
     
 }
 
