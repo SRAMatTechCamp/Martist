@@ -14,6 +14,7 @@
 @synthesize window = _window;
 
 @synthesize CarFlag;
+@synthesize LocationFlag;
 
 
 //アプリの初回起動時にのみ呼ばれるところ
@@ -74,8 +75,16 @@
     CarFlag = Carflag;
 }
 
+- (void)setLocationFlag:(BOOL)Locationflag{
+    LocationFlag = Locationflag;
+}
+
 -(BOOL)getCarFlag{
     return CarFlag;
+}
+
+-(BOOL)getLocationFlag{
+    return LocationFlag;
 }
 
 @end

@@ -13,8 +13,10 @@
 @end
 
 @implementation Memorial
+@synthesize Twitter;
 @synthesize photo;
-//これを冒頭で宣言する(上に持っていく
+
+
 int now_num = 1;
 UIImage *showedImage;
 
@@ -63,10 +65,17 @@ UIImage *showedImage_key;
     
             /*//画像を読み込む
              showedImage = [UIImage imageNamed:@"error 1.png"];
-          
+        }*/
+        
+        //[rs next]により要素がある次々ループが回る
+        [rs next];
+            pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+            showedImage = [UIImage imageWithData:pickedImage];
+            uploadImage = showedImage;
+        
             //UIImageView(photo)のメソッドを用いて
             //画像(showedImage)を表示する
-            [photo setImage:showedImage];*/
+            [photo setImage:showedImage];
         
         //[rs next]により要素がある次々ループが回る
         /*while ([rs next]) {
@@ -89,6 +98,7 @@ UIImage *showedImage_key;
 - (void)viewDidUnload
 {
     [self setPhoto:nil];
+    [self setTwitter:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -146,6 +156,16 @@ UIImage *showedImage_key;
     NSLog(@"データベースへの登録設定一覧完了");
 }
 
+- (IBAction)Send:(id)sender{
+    TWTweetComposeViewController *tweet = [[TWTweetComposeViewController alloc]init];
+    
+    [tweet setInitialText:@"ここにメッセージを入力してください"];
+    
+    [tweet addImage:uploadImage];
+    
+    [self presentViewController:tweet animated:YES completion:nil];
+    
+}
 
 //取ってきた画像を画面に表示する
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{

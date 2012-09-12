@@ -33,7 +33,6 @@
 		3B99D49515FE06470057BF71 /* YMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99D47D15FE06470057BF71 /* YMapKit.framework */; };
 		3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B99D49815FE43000057BF71 /* MyAnnotation.m */; };
 		3B99D4A315FEC17C0057BF71 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99D4A215FEC17C0057BF71 /* Twitter.framework */; };
-		3B99D4AB15FEC8C70057BF71 /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B99D4AA15FEC8C70057BF71 /* Twitter.m */; };
 		3B99DC9115FEF34D0057BF71 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99DC9015FEF34D0057BF71 /* Accounts.framework */; };
 		3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99DC9715FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */; };
 		3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99DC9915FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */; };
@@ -205,8 +204,6 @@
 		3B99D49715FE43000057BF71 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		3B99D49815FE43000057BF71 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		3B99D4A215FEC17C0057BF71 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		3B99D4A915FEC8C70057BF71 /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
-		3B99D4AA15FEC8C70057BF71 /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
 		3B99DC9015FEF34D0057BF71 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3B99DC9715FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2012-09-11 15.23.03.png"; sourceTree = "<group>"; };
 		3B99DC9915FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2012-09-11 15.23.03.png"; sourceTree = "<group>"; };
@@ -614,8 +611,6 @@
 				4C6E9E3615F83AD200ED8996 /* Supporting Files */,
 				3B99D49715FE43000057BF71 /* MyAnnotation.h */,
 				3B99D49815FE43000057BF71 /* MyAnnotation.m */,
-				3B99D4A915FEC8C70057BF71 /* Twitter.h */,
-				3B99D4AA15FEC8C70057BF71 /* Twitter.m */,
 			);
 			path = Martist;
 			sourceTree = "<group>";
@@ -911,7 +906,6 @@
 				4CC7D62F15FC64D6002B89C7 /* FMResultSet.m in Sources */,
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 				3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */,
-				3B99D4AB15FEC8C70057BF71 /* Twitter.m in Sources */,
 				4C305C7415FDE7C30079526F /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

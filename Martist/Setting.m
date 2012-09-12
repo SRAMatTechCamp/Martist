@@ -7,12 +7,15 @@
 //
 
 #import "Setting.h"
+#import "AppDelegate.h"
 
 @interface Setting ()
 
 @end
 
 @implementation Setting
+@synthesize getLocation;
+@synthesize HowToGo;
 
 
 
@@ -33,9 +36,37 @@
 
 - (void)viewDidUnload
 {
+    [self setHowToGo:nil];
+    [self setGetLocation:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
+- (IBAction)changeHowToGo:(id)sender{
+    if([[HowToGo currentTitle] isEqualToString:@"ルート：徒歩"]){
+        [HowToGo setTitle:@"ルート：車" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setCarFlag:TRUE];
+    }else{
+        [HowToGo setTitle:@"ルート：徒歩" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setCarFlag:FALSE];
+    }
+}
+
+- (IBAction)changeGetLocation:(id)sender{
+    if([[getLocation currentTitle] isEqualToString:@"現在地取得：なし"]){
+        [getLocation setTitle:@"現在地取得：あり" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setLocationFlag:TRUE];
+    }else{
+        [getLocation setTitle:@"現在地取得：なし" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [app setLocationFlag:FALSE];
+    }
+    
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

@@ -27,6 +27,7 @@
     MyAnnotation *removeAnnotation;
     MyAnnotation *beforeAnnotation;
     MyAnnotation *before2Annotation;
+    MyAnnotation *beforeMyPoint;
     CLLocationCoordinate2D st_point;
     CLLocationCoordinate2D gl_point;
     NSString *annotationTitle;
@@ -44,6 +45,7 @@
 @property (nonatomic, readwrite) CLLocationCoordinate2D gl_point;
 @property (nonatomic, readwrite) NSString *annotationTitle;
 @property (nonatomic, readwrite) NSString *annotationSubtitle;
+@property (nonatomic,assign)BOOL mapShowed;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 //保存するメソッド
 - (IBAction)saveToAlbum:(id)sender;
