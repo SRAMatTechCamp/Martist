@@ -20,8 +20,6 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad{
     
     [super viewDidLoad];
@@ -35,10 +33,8 @@
     //YMKMapViewを追加
     //[self.window addSubview:map];
 
-
     //YMKMapViewDelegateを登録
     map.delegate = self;
-
 
     //地図の位置と縮尺を設定
     CLLocationCoordinate2D center;
@@ -109,8 +105,6 @@
     beforeAnnotation = myAnnotation;
     [map removeAnnotation:removeAnnotation];
     [map addAnnotation:myAnnotation];
-    
-
 }
 
 // 保存するメソッド
@@ -245,7 +239,6 @@
     // ここではデータを保存する為に一般的に使われるDocumentsディレクトリ
     NSString *path = [NSStringstringWithFormat:@"%@/sample.jpg",
                       [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
-    
     
     // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
     // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います
