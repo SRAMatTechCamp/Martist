@@ -17,6 +17,8 @@
 @synthesize getLocation;
 @synthesize writeStar;
 @synthesize saveToCamera;
+@synthesize getImageAddress;
+@synthesize putImage;
 @synthesize HowToGo;
 
 
@@ -42,6 +44,8 @@
     [self setGetLocation:nil];
     [self setWriteStar:nil];
     [self setSaveToCamera:nil];
+    [self setGetImageAddress:nil];
+    [self setPutImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -88,6 +92,48 @@
     }
     
 }
+
+- (IBAction)getImgAdress:(id)sender{
+    if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] ){
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [ipc setDelegate:self];
+        [ipc setAllowsEditing:YES];
+        [self presentModalViewController:ipc animated:YES];
+    }
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+    [picker dismissModalViewControllerAnimated:YES];
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    app.image = image;
+    
+    NSURL *url = [editingInfo objectForKey:UIImagePickerControllerReferenceURL];
+    
+    [getImageAddress setTitle:url.query forState:UIControlStateNormal];
+    
+	NSLog(@"query : %@", [url query]);
+    
+}
+
+- (IBAction)putImg:(id)sender{
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    if(putImage.on == TRUE){
+        NSLog(@"aaaaa");
+        app.setImage = TRUE;
+        app.imageSet = FALSE;
+    }else{
+        app.setImage = FALSE;
+    }
+    
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

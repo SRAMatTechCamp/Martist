@@ -35,7 +35,9 @@
     app.LocationFlag = false;
     app.getStar = false;
     app.CameraFlag = false;
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
+    app.imageSet = false;
+    app.setImage = false;
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
     }
 
 - (void)viewDidUnload
@@ -208,6 +210,16 @@
     if(app.getStar == TRUE){
         [NSThread detachNewThreadSelector:@selector(putStarThread) toTarget:self withObject:nil];
         app.getStar = FALSE;
+    }
+    if(app.setImage == TRUE && app.imageSet == FALSE){
+        UIImage *img = app.image;
+        imgview = [[UIImageView alloc] initWithImage:img];
+        imgview.alpha = 0.3;
+        [self.view addSubview:imgview];
+        app.imageSet = TRUE;
+    }else if(app.setImage == FALSE){
+        NSLog(@"aaaaaaa");
+        [imgview removeFromSuperview];
     }
  
 }
@@ -382,6 +394,7 @@
         map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
         
         [self.view addSubview:map];
+        
         
     }else if(mapShowed == TRUE){
                    NSLog(@"nok");  
