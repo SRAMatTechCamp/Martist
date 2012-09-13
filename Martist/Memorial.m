@@ -18,13 +18,14 @@
 @synthesize Twitter;
 @synthesize photo;
 
+
 int now_num = 1;
 UIImage *showedImage;
 
 //主キー(num)を識別するための数字
 int key;
 int key_base=1;
-int key_max=1;//現在の写真の枚数を保存
+int key_max;//現在の写真の枚数を保存
 NSData *image_key;
 UIImage *showedImage_key;
 
@@ -45,9 +46,10 @@ UIImage *showedImage_key;
     key = 1;
     NSLog(@"初期のkey:%d",key);
     
-    //ここに画像を呼び出して、表示させる処理を書いた。
+ /*   //ここに画像を呼び出して、表示させる処理を書いた。
     //宣言はif文のなかではなく上で宣言しておく(中だと動かないときがある)
     FMResultSet *rs;
+    FMResultSet *count;
     
     FMDatabase* db = [DBCreate dbConnect];
     
@@ -57,7 +59,11 @@ UIImage *showedImage_key;
         
         //検索した結果を返す(現在はすべて返している)
         rs = [db executeQuery:@"SELECT * FROM album"];
+          
+        key_max = [self countAll];
+        NSLog(@"現在の写真の数:%d",key_max);
         
+        if(key ==1){
         //一番はじめにある画像が選択されている
             if([rs next]){
         NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
@@ -68,14 +74,14 @@ UIImage *showedImage_key;
         //画像が表示されるときにはwarningLabelを隠す
         [warningLabel setHidden:YES];
                 
-            }else {
+            }
+        }else {
                 //画像が表示されないときにはwarningLabelを表示する
                 [warningLabel setHidden:NO];
                 
-                /*UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"保存された写真はありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
-                [alert show];*/
+                
             }
-    }
+    }*
     
     //画像がないとき
     //[warningLabel setHidden:YES];
@@ -83,7 +89,7 @@ UIImage *showedImage_key;
     //[warningLabel setHidden:NO];
      
     [rs close];
-     [db close];
+     [db close];*/
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -100,6 +106,7 @@ UIImage *showedImage_key;
 
 
 //タブ:Memorialが選択されるたびに呼ばれる
+//写真があれば、現在は毎回１枚目がされるようになっている
 - (void)viewWillAppear:(BOOL)animated{
     //ここに画像を呼び出して、表示させる処理を書いた。
     //宣言はif文のなかではなく上で宣言しておく(中だと動かないときがある)
@@ -113,35 +120,71 @@ UIImage *showedImage_key;
         //検索した結果を返す(現在はすべて返している)
         rs = [db executeQuery:@"SELECT * FROM album"];
         
+        key_max = [self countAll];
+        NSLog(@"現在の写真の数:%d",key_max);
+        
+        if(key >=1){
         //一番はじめにある画像が選択されている
+        for (int i=0; i < key; i++) {
         if([rs next]){
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
             
             [photo setImage:showedImage];
             
+            NSLog(@"写真の番号:%d",key);
+            
             //画像が表示されるときにはwarningLabelを隠す
             [warningLabel setHidden:YES];
-            
         }else {
+            
+          //  NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+          //  showedImage = [UIImage imageWithData:pickedImage];
+            
+            [photo setImage:showedImage];
+            NSLog(@"写真の番号1:%d",key);
             //画像が表示されないときにはwarningLabelを表示する
-            [warningLabel setHidden:NO];
+            //[warningLabel setHidden:NO];
             
             /*UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"保存された写真はありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
              [alert show];*/
+        }
+        }
         }
     }
     [rs close];
     [db close];
     
     NSLog(@"タブ:メモリアルが選択されました１");
+    NSLog(@"表示された画像の番号:%d",key);
 }
 
 
 
-
-
-
+//現在のデータベースの行数を返す
+-(int) countAll {
+    NSString* sql1 = [NSString stringWithFormat:@"select count(*) as count from album"];
+    FMDatabase* db = [DBCreate dbConnect];
+    
+    if(![db open]) {
+        return 0;
+    }
+    [db setShouldCacheStatements:YES];
+    
+    FMResultSet* rs = nil;
+    rs = [db executeQuery:sql1];
+    
+    int count = 0;
+    if ([rs next]) {
+        // just print out what we've got in a number of formats.
+        count = [rs intForColumn:@"count"];
+    }
+    
+    [rs close];
+    [db close];
+    
+    return count;
+}
 
 //Twitterへ投稿できる
 - (IBAction)Send:(id)sender{
@@ -179,8 +222,20 @@ UIImage *showedImage_key;
 
 //次の写真を表示する
 -(IBAction)moveAfterPhoto:(id)sender{
+   
+    NSLog(@"画像遷移前のkey:%d",key);
+    NSLog(@"画像遷移前のkey_max:%d",key_max);
+    
+    key_max = [self countAll];
+    NSLog(@"現在の写真の数:%d",key_max);
+    
+    //遷移の分岐イメージ
+     //次の画像がある → 表示する
+     //次の画像がない → alert(警告)を出す。次の画像は表示しない。
+    
     //画像が表示されるときにはwarningLabelを隠す
     [warningLabel setHidden:YES];
+    
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
@@ -188,47 +243,57 @@ UIImage *showedImage_key;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
         
+        //現在表示している写真が最後の写真でないとき
+        if(key_max >= key){
         //keyの回数分だけループを回す
-        for (int i=0; i < key; i++) {
+        for (int i = 0; i < key; i++) {
             //次があれば表示される
         if( [rs_key next] ){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             [photo setImage:showedImage_key];
-            NSLog(@"111");
-        }else if(key_max == 1){//次の画像がないかつ写真が1枚のみ
-            key_max =key;
-            UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
-            [alert show];
+        }
+        }
+     NSLog(@"次の画像があるので遷移します");
+    }
             
-            //画像が表示されるときにはwarningLabelを隠す
+        if(key_max == 0){
+            //写真が保存されていないときにはwarningLabelを表示する
             [warningLabel setHidden:NO];
-            
-            NSLog(@"222");
-        }else{
-            key_max =key;
+        }else if(key_max == 1){//次の画像がないかつ写真が1枚のみ
             UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
             [alert show];
             
             //画像が表示されるときにはwarningLabelを隠す
             [warningLabel setHidden:YES];
-        }
-    
-            NSLog(@"次の画像の表示が完了しました");
+            
+            NSLog(@"222");
+        }else if(key_max == key){
+            UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+            [alert show];
+            NSLog(@"最後の画像です");
+            
+            [warningLabel setHidden:YES];
+            
         }
         
-        //最後の画像のときにはkeyを増加させない
-        if(key != key_max){
+        [warningLabel setHidden:YES];
+        
+        if(key_max == 0){
+            UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+            [alert show];
+            [warningLabel setHidden:NO];
+            
+        }else if(key != key_max){//最後の画像のときにはkeyを増加させない
         key++;
-        key_max =key;
         NSLog(@"現在のkey:%d",key);
         //ここを画面に表示させる
         NSLog(@"次の画面が表示されました");
-        }else if(key ==1){
-            key++;
         }
         
+        
         NSLog(@"表示された画像の番号:%d",key);
+        
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
@@ -236,7 +301,10 @@ UIImage *showedImage_key;
 }
 
 //前の写真を表示される
+//一番前の画像が表示されないので直す
 -(IBAction)moveBeforePhoto:(id)sender{
+    
+    key--;
     
     [warningLabel setHidden:YES];
     //データベースを開く
@@ -247,43 +315,41 @@ UIImage *showedImage_key;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
         
-        //前のkeyの画像が存在するとき
+        key_max = [self countAll];
+        NSLog(@"現在の写真の数:%d",key_max);
+        
+        //2枚目以降にいるとき
         if(key > 1){
             //keyの回数分だけループを回す
-            key--;
             for (int i=0; i<key-1; i++) {
-               if(key_base == 1) {
-                    NSLog(@"前の画像がありません");
-                   UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"前の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
-                   [alert show];
-               }else if( [rs_key next] ){
+                  if( [rs_key next] ){
                     image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                     showedImage_key = [UIImage imageWithData:image_key];
                    [photo setImage:showedImage_key];
-
-                    NSLog(@"現在のkey:%d",key);
-                    NSLog(@"表示された画像の番号:%d",key);
-                    NSLog(@"前の画面が表示されました");
                 }
                 }
-        }
-        
-        if(key < 1){
+            NSLog(@"現在のkey:%d",key);
+            NSLog(@"表示された画像の番号:%d",key);
+            NSLog(@"前の画面が表示されました");
+        }else if(key ==1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             [photo setImage:showedImage_key];
-
-            key = 1;
-            NSLog(@"現在のkey:%d",key);
-        }else if(key == 1) {
-            NSLog(@"現在のkey:%d",key);
-            NSLog(@"前の画像がありません");
+        }else if(key < 1){
+            image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
+            showedImage_key = [UIImage imageWithData:image_key];
+            [photo setImage:showedImage_key];
             UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"前の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
-            [alert show];
-            
-            //画像が表示されるときにはwarningLabelを表示する
+                [alert show];
+            key=1;
+        }
+        
+        if(key_max == 0){
+            /*UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+            [alert show];*/
             [warningLabel setHidden:NO];
         }
+            
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");

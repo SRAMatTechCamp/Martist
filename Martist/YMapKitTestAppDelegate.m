@@ -144,9 +144,6 @@
     //データベースへのデータの保存
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
-        
-        
-        
         //mapの範囲を作成しきりとったものを代入
         CGRect map_rect = CGRectMake(0, 0, 320, 373);
         mapImage = [self makeUIImageFromUIView:map withRect:map_rect];
