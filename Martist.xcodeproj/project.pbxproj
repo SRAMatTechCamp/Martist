@@ -154,6 +154,7 @@
 		4C6E9EF015F97CA800ED8996 /* Memorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EEF15F97CA800ED8996 /* Memorial.m */; };
 		4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF215F97F3400ED8996 /* Setting.m */; };
 		4C94785116018EC000999901 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C94785016018EC000999901 /* pencil.png */; };
+		4C9478581601C34200999901 /* 鉛筆.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9478571601C34200999901 /* 鉛筆.png */; };
 		4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */; };
 		4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62015FC64D6002B89C7 /* FMDatabase.m */; };
 		4CC7D62B15FC64D6002B89C7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62215FC64D6002B89C7 /* FMDatabaseAdditions.m */; };
@@ -332,6 +333,7 @@
 		4C6E9EF115F97F3400ED8996 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		4C6E9EF215F97F3400ED8996 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
 		4C94785016018EC000999901 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		4C9478571601C34200999901 /* 鉛筆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鉛筆.png"; sourceTree = "<group>"; };
 		4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4CC7D61F15FC64D6002B89C7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		4CC7D62015FC64D6002B89C7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				3B3DA04A1601741900812B84 /* スクリーンショット 2012-09-13 10.52.03.png */,
+				4C9478571601C34200999901 /* 鉛筆.png */,
 				4C94785016018EC000999901 /* pencil.png */,
 				3B3DA04416016C5D00812B84 /* 右端.png */,
 				3B99DC9715FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */,
@@ -849,6 +852,7 @@
 				3B3DA04916016D6400812B84 /* 真ん中.png in Resources */,
 				3B3DA04B1601741900812B84 /* スクリーンショット 2012-09-13 10.52.03.png in Resources */,
 				4C94785116018EC000999901 /* pencil.png in Resources */,
+				4C9478581601C34200999901 /* 鉛筆.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -116,24 +116,9 @@
 //現在はDBに保存しているが、設定でカメラへ保存も選択できるようにする予定
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
-    UIImage* image1;
-    UIImage* image2;
-    UIImage* reImage;
-    
-    //ボタンをのぞいてぴったりの画像で保存する
-   // UIView *justView;
-    self.view.frame = CGRectMake(0, 40, 320, 373);
-    
-    // リサイズ例文（サイズを指定する方法）
-    //UIImage *img_mae = [UIImage imageNamed:@"hoge.png"];  // リサイズ前UIImage
-    //UIImage *img_ato;  // リサイズ後UIImage
-    
-    UIGraphicsBeginImageContext(CGSizeMake(320, 373));
-    [image1 drawInRect:CGRectMake(0, 0, 320, 373)];
-    image2 = UIGraphicsGetImageFromCurrentImageContext();
-    //UIGraphicsEndImageContext(); 
-    
-   // self.view.frame.size = CGSizeMake(320, 373);
+  
+    //地図部分だけの画像
+    UIImage* mapImage; 
     
     // UIView のサイズの画像コンテキストを開始します。
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -147,16 +132,25 @@
     // 画像コンテキストから画像を生成します。
     image = UIGraphicsGetImageFromCurrentImageContext();
     
-    reImage = [self resizedImage:image];
+    //reImage = [self resizedImage:image];
     
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
+    
+    
+    
     
     //データベースへのデータの保存
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
         
-        NSData *imagedata = [[NSData alloc] initWithData:UIImagePNGRepresentation((image))];
+        
+        
+        //mapの範囲を作成しきりとったものを代入
+        CGRect map_rect = CGRectMake(0, 0, 320, 373);
+        mapImage = [self makeUIImageFromUIView:map withRect:map_rect];
+        
+        NSData *imagedata = [[NSData alloc] initWithData:UIImagePNGRepresentation((mapImage))];
         
         // なんとなくタイムスタンプを保存
         NSDate* currentDate = [[NSDate alloc]init];
@@ -165,6 +159,11 @@
         //imageDataは画像、currentDateは保存した日時
         if([db executeUpdate:@"INSERT INTO  album(image,time) VALUES (?,?)",imagedata,currentDate]) 
         NSLog(@"マップからDBへの挿入が完了しました");
+        
+        // Alertを表示する
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存されました" message:@"設定でカメラにも保存できます" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+        
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
@@ -180,7 +179,17 @@
         
         self.view.frame = CGRectMake(0, 0, 320, 480);
     }
+    
+    //カメラへ保存する部分
+    /*image_af = [self resizedImage:image];
+    
+    //UIImage *image = [[self.view] UIImage];
+    SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
 
+    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);*/
+
+    //self.view.frame = CGRectMake(0, 0, 320, 480);
+    
 }
 
 // 保存が完了したら呼ばれるメソッド
@@ -189,8 +198,51 @@
     NSLog(@"保存が完了しました");
     
     // Alertを表示する
-    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
-    //[alert show];
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存されました" message:@"設定でカメラにも保存できます" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+}
+
+/** UIViewの一部をUIImageとして取得
+ * @param view 対象のUIImage
+ * @param rect 切り出したい位置とサイズ
+ *
+ * @return 対象のUIImage
+ */
+-(UIImage *)makeUIImageFromUIView:(UIView *)view
+                         withRect:(CGRect)rect
+{
+    
+    // オフスクリーン（見えない描画領域）を作成
+    CGSize size = CGSizeMake( rect.size.width , rect.size.height );
+    UIGraphicsBeginImageContextWithOptions(size,NO,0.0); 
+    // (補足：サイズ , NO:透過有 , 0.0:自動スケール　です）
+    // オフスクリーン（見えない領域）描画よりグラフィックスコンテキスト取得
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // 切り取り開始位置に合わせ
+    // 左にpoint.x、上にpoint.y移動させるAffine変換を作成します。
+    CGPoint point = rect.origin;
+    CGAffineTransform affineMoveLeftTop
+    = CGAffineTransformMakeTranslation(
+                                       -(int)point.x ,
+                                       -(int)point.y );
+    // Affine変換を使用する為、コンテキストに設定
+    CGContextConcatCTM( context , affineMoveLeftTop );
+    
+    // Viewの移動返還後のイメージをオフスクリーンに貼付けます。
+    // （※　オフスクリーンからはみ出た領域は削除されるようです。 ）
+    [(CALayer*)view.layer renderInContext:context];
+    
+    
+    // オフスクリーンの内容をUIImageとして取り出します。
+    // (autoreleaseと思います)
+    UIImage *cnvImg = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // オフスクリーンを破棄します。
+    UIGraphicsEndImageContext();
+    
+    return cnvImg;
+    
 }
 
 //現在地取得
@@ -312,7 +364,7 @@
 //ルート検索が正常に終了しなかった場合
 -(void)errorRouteSearch:(YMKRouteOverlay*)routeOverlay withError:(int)error
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"エラー" message:@"ルート検索エラー"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"線が書けません" message:@"ピンを二つおいてください"
                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
@@ -348,7 +400,6 @@
         wkYMKPolylineView.lineWidth = 20;
         return wkYMKPolylineView;
     }
-    
     
     return nil;
 }
@@ -404,15 +455,8 @@
         MyAnnotation* myPoint = [[MyAnnotation alloc] initWithLocationCoordinate:center title:[[NSString alloc] initWithString:@"節点"] subtitle:[[NSString alloc] initWithString:@"節点"]];
         beforeMyPoint = myPoint;
         [map addAnnotation:myPoint];
-    }
-
-
-
-    
+    }    
 }
-
-
-
 
 
 // 例えば、カメラやアルバムから選んでもらった画像を扱います
@@ -430,7 +474,6 @@
     // ここではデータを保存する為に一般的に使われるDocumentsディレクトリ
     NSString *path = [NSStringstringWithFormat:@"%@/sample.jpg",
                       [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
-    
     
     // NSDataのwriteToFileメソッドを使ってファイルに書き込みます
     // atomically=YESの場合、同名のファイルがあったら、まずは別名で作成して、その後、ファイルの上書きを行います

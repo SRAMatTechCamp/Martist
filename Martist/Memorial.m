@@ -9,10 +9,12 @@
 #import "Memorial.h"
 
 @interface Memorial ()
+//@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 
 @end
 
 @implementation Memorial
+@synthesize warningLabel;
 @synthesize Twitter;
 @synthesize photo;
 
@@ -48,21 +50,32 @@ UIImage *showedImage_key;
     
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
+        
+        [warningLabel setHidden:YES];
         [db setShouldCacheStatements:YES];
         
         //検索した結果を返す(現在はすべて返している)
         rs = [db executeQuery:@"SELECT * FROM album"];
         
         //一番はじめにある画像が選択されている
-        [rs next];
+            if([rs next]){
         NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
         showedImage = [UIImage imageWithData:pickedImage];
             
         //UIImageView(photo)のメソッドを用いて
         //画像(showedImage)を表示する
         [photo setImage:showedImage];
+            }else {
+                
+                [warningLabel setHidden:NO];
+                /*UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"保存された写真はありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+                [alert show];*/
+                
+                
+            }
         
-    
+        
+    }
             /*//画像を読み込む
              showedImage = [UIImage imageNamed:@"error 1.png"];
         }*/
@@ -75,8 +88,7 @@ UIImage *showedImage_key;
         
         //UIImageView(photo)のメソッドを用いて
         //画像(showedImage)を表示する
-        [photo setImage:showedImage];
-        NSLog(@"初期の画像の番号:%d",key);
+        //[photo setImage:showedImage];
 
         
         //[rs next]により要素がある次々ループが回る
@@ -89,7 +101,6 @@ UIImage *showedImage_key;
          [photo setImage:showedImage];
          }*/
         
-    }
      [rs close];
      [db close];
     
@@ -101,6 +112,7 @@ UIImage *showedImage_key;
 {
     [self setPhoto:nil];
     [self setTwitter:nil];
+    [self setWarningLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -229,30 +241,30 @@ UIImage *showedImage_key;
 //次の写真を表示する
 -(IBAction)moveAfterPhoto:(id)sender{
     
+    [warningLabel setHidden:YES];
+
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
-        //写真遷移過程のイメージ
-        //@データベースコネクト
-        //現在の写真をimageで取得する
-        //ある→その写真の表示
-        //ない→ないことを通知する(あとで実装)
-        //keyによるDB制御
         FMResultSet *rs_key;;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
         
-        //データベースの最大値を超える場合の処理を付け加える
-        
         //keyの回数分だけループを回す
-        for (int i=0; i<key; i++) {
+        for (int i=0; i < key; i++) {
         if( [rs_key next] ){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
+            NSLog(@"あああ");
         }else {
-            NSLog(@"次の画像がありません");
             key_max =key;
+            
+            UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+            [alert show];
+            
+            NSLog(@"いいい");
         }
+            NSLog(@"保存が完了しました");
         }
         
          [photo setImage:showedImage_key];
@@ -269,13 +281,13 @@ UIImage *showedImage_key;
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
-    };
+    }
 }
-
 
 //前の写真を表示される
 -(IBAction)moveBeforePhoto:(id)sender{
     
+    [warningLabel setHidden:YES];
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
@@ -290,8 +302,10 @@ UIImage *showedImage_key;
             key--;
             for (int i=0; i<key-1; i++) {
                if(key == 1) {
-                    NSLog(@"前の画像がありません");}
-                else if( [rs_key next] ){
+                    NSLog(@"前の画像がありません");
+                   UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"前の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+                   [alert show];
+               }else if( [rs_key next] ){
                     image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                     showedImage_key = [UIImage imageWithData:image_key];
                     NSLog(@"現在のkey:%d",key);
@@ -301,14 +315,17 @@ UIImage *showedImage_key;
                 }
         }
         
-        if(key<=1){
+        if(key < 1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             key = 1;
             NSLog(@"現在のkey:%d",key);
+        }else if(key == 1) {
+            NSLog(@"現在のkey:%d",key);
+            NSLog(@"前の画像がありません");
+            UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"前の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+            [alert show];
         }
-        
-        
         
         [photo setImage:showedImage_key];
         
