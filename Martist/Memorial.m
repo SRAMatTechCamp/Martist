@@ -16,13 +16,12 @@
 @synthesize Twitter;
 @synthesize photo;
 
-
 int now_num = 1;
 UIImage *showedImage;
 
 //主キー(num)を識別するための数字
 int key;
-int key_max=100;//写真の最大枚数を保存
+int key_max=1;//現在の写真の枚数を保存
 NSData *image_key;
 UIImage *showedImage_key;
 
@@ -56,12 +55,13 @@ UIImage *showedImage_key;
         
         //一番はじめにある画像が選択されている
         [rs next];
-            NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-            showedImage = [UIImage imageWithData:pickedImage];
+        NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+        showedImage = [UIImage imageWithData:pickedImage];
             
-            //UIImageView(photo)のメソッドを用いて
-            //画像(showedImage)を表示する
-            [photo setImage:showedImage];
+        //UIImageView(photo)のメソッドを用いて
+        //画像(showedImage)を表示する
+        [photo setImage:showedImage];
+        
     
             /*//画像を読み込む
              showedImage = [UIImage imageNamed:@"error 1.png"];
@@ -69,13 +69,15 @@ UIImage *showedImage_key;
         
         //[rs next]により要素がある次々ループが回る
         [rs next];
-            pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-            showedImage = [UIImage imageWithData:pickedImage];
-            uploadImage = showedImage;
+        pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
+        showedImage = [UIImage imageWithData:pickedImage];
+        uploadImage = showedImage;
         
-            //UIImageView(photo)のメソッドを用いて
-            //画像(showedImage)を表示する
-            [photo setImage:showedImage];
+        //UIImageView(photo)のメソッドを用いて
+        //画像(showedImage)を表示する
+        [photo setImage:showedImage];
+        NSLog(@"初期の画像の番号:%d",key);
+
         
         //[rs next]により要素がある次々ループが回る
         /*while ([rs next]) {
@@ -156,6 +158,7 @@ UIImage *showedImage_key;
     NSLog(@"データベースへの登録設定一覧完了");
 }
 
+//Twitterへ投稿できる
 - (IBAction)Send:(id)sender{
     TWTweetComposeViewController *tweet = [[TWTweetComposeViewController alloc]init];
     
@@ -223,10 +226,8 @@ UIImage *showedImage_key;
 }
 
 
-//次の写真を表示される
+//次の写真を表示する
 -(IBAction)moveAfterPhoto:(id)sender{
-    //ボタンが押されたらkeyを増加させる
-    key++;
     
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
@@ -262,7 +263,12 @@ UIImage *showedImage_key;
         
          [photo setImage:showedImage_key];
         
-        NSLog(@"表示された画像の番号:%d",key+1);
+        //ボタンが押されたらkeyを増加させる
+        key++;
+        NSLog(@"増加直後のkey:%d",key);
+        
+        
+        NSLog(@"表示された画像の番号:%d",key);
         
         //ここを画面に表示させる
          NSLog(@"次の画面が表示されました");
@@ -276,9 +282,6 @@ UIImage *showedImage_key;
 //前の写真を表示される
 -(IBAction)moveBeforePhoto:(id)sender{
     
-    //画像が表示されたらkeyを減少させる
-    key--;
-    
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
@@ -288,27 +291,30 @@ UIImage *showedImage_key;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
         
+        //画像が表示されたらkeyを減少させる
+        if(key <= 1){
+            //画面に表示するように変更する
+            NSLog(@"前の画像が存在しません");
+            key = 1;
+        }else {
         //前のkeyの画像が存在するとき
-        if(key >=0){
+        key--;
+        
         //keyの回数分だけループを回す
-        for (int i=0; i<=key; i++) {
+        for (int i=0; i<key; i++) {
             if( [rs_key next] ){
                 image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                 showedImage_key = [UIImage imageWithData:image_key];
+                NSLog(@"表示された画像の番号:%d",key);
+                NSLog(@"前の画面が表示されました");
             }else {
                 NSLog(@"表示できる画像がありません");
             }
-        }}
-        else {
-            //画面に表示するように変更する
-            NSLog(@"前の画像が存在しません");
-            //keyの値を0に戻す
-            key = 0;
         }
-        
+           
+    }
         [photo setImage:showedImage_key];
         
-        NSLog(@"前の画面が表示されました");
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
