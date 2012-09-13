@@ -26,7 +26,6 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    
     mapShowed = NO;
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
