@@ -20,9 +20,9 @@
     NSString* dir = [paths objectAtIndex:0];
     FMDatabase* db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"album.db"]];
     
-    NSLog(@"oepning");
+    //NSLog(@"oepning");
     [db open];
-    NSLog(@"opened");
+    NSLog(@"DB:Opend");
     return db;
 }
 

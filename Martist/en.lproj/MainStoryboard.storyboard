@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--View Controller - Top-->
@@ -35,7 +35,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-432" y="-39"/>
+            <point key="canvasLocation" x="-435" y="-83"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sWR-UQ-7dU">
@@ -180,7 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="お絵描き" image="nav.png" id="kIp-xm-mhg" userLabel="Tab Bar Item - お絵描き"/>
+                    <tabBarItem key="tabBarItem" title="お絵描き" image="pencil.png" id="kIp-xm-mhg" userLabel="Tab Bar Item - お絵描き"/>
                     <connections>
                         <outlet property="pinOrMap" destination="qGA-63-YNF" id="uSp-JD-SCN"/>
                         <outlet property="saveBotton" destination="RgM-7B-xNm" id="V6z-SB-WpW"/>
@@ -218,8 +218,8 @@
                                     <action selector="deletePhotoData:" destination="WCS-s2-6kJ" eventType="touchUpInside" id="61r-Gu-7ZC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sPf-r7-pJ4">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sPf-r7-pJ4">
+                                <rect key="frame" x="-1" y="0.0" width="82" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="前へ" image="arrow 2.png" backgroundImage="左端.png">
@@ -234,7 +234,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kf0-Ge-GuP">
-                                <rect key="frame" x="240" y="0.0" width="80" height="40"/>
+                                <rect key="frame" x="240" y="0.0" width="81" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="次へ" image="arrow 1.png" backgroundImage="右端.png">
@@ -249,7 +249,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zaU-AR-jGG">
-                                <rect key="frame" x="150" y="-1" width="100" height="41"/>
+                                <rect key="frame" x="160" y="0.0" width="80" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Twitter投稿" backgroundImage="真ん中.png">
@@ -419,6 +419,7 @@
         <image name="list 1.png" width="32" height="26"/>
         <image name="nav.png" width="21" height="31"/>
         <image name="スクリーンショット 2012-09-13 10.52.03.png" width="320" height="480"/>
+        <image name="pencil.png" width="225" height="225"/>
         <image name="右端.png" width="101" height="41"/>
         <image name="左端.png" width="103" height="41"/>
         <image name="真ん中.png" width="100" height="41"/>
@@ -482,6 +483,8 @@
             </relationships>
         </class>
     </classes>
+=======
+>>>>>>> ce036a084cb28d97bc8fb9585a8919f9a0c6be9e
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
