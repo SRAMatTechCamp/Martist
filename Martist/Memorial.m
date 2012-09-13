@@ -279,7 +279,6 @@ UIImage *showedImage_key;
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
-        NSLog(@"現在のkey:%d",key);
         //keyによるDB制御
         FMResultSet *rs_key;;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
@@ -295,14 +294,18 @@ UIImage *showedImage_key;
                 else if( [rs_key next] ){
                     image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                     showedImage_key = [UIImage imageWithData:image_key];
+                    NSLog(@"現在のkey:%d",key);
                     NSLog(@"表示された画像の番号:%d",key);
                     NSLog(@"前の画面が表示されました");
                 }
                 }
-        }else if(key<=1){
+        }
+        
+        if(key<=1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             key = 1;
+            NSLog(@"現在のkey:%d",key);
         }
         
         
