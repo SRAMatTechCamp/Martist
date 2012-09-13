@@ -18,9 +18,10 @@
     UIImage *uploadImage;
 }
 @property (weak, nonatomic) IBOutlet
-
-
 UIImageView *photo;
+
+@property (weak, nonatomic) IBOutlet UILabel *warningLabel;
+
 @property (nonatomic, strong) IBOutlet UITextView *inputtext;
 
 - (IBAction)Send:(id)sender;

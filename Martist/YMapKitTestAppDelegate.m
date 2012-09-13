@@ -114,7 +114,7 @@
     UIImage* image2;
     UIImage* reImage;
     
-    //ボタンをのぞいてぴったりの画像で保存する
+   /* //ボタンをのぞいてぴったりの画像で保存する
    // UIView *justView;
     self.view.frame = CGRectMake(0, 40, 320, 373);
     
@@ -127,7 +127,7 @@
     image2 = UIGraphicsGetImageFromCurrentImageContext();
     //UIGraphicsEndImageContext(); 
     
-   // self.view.frame.size = CGSizeMake(320, 373);
+   // self.view.frame.size = CGSizeMake(320, 373);*/
     
     // UIView のサイズの画像コンテキストを開始します。
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -141,7 +141,7 @@
     // 画像コンテキストから画像を生成します。
     image = UIGraphicsGetImageFromCurrentImageContext();
     
-    reImage = [self resizedImage:image];
+    //reImage = [self resizedImage:image];
     
     // 画像コンテキストを終了します。
     UIGraphicsEndImageContext();
@@ -159,6 +159,11 @@
         //imageDataは画像、currentDateは保存した日時
         if([db executeUpdate:@"INSERT INTO  album(image,time) VALUES (?,?)",imagedata,currentDate]) 
         NSLog(@"マップからDBへの挿入が完了しました");
+        
+        // Alertを表示する
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存されました" message:@"設定でカメラにも保存できます" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+        
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
@@ -172,7 +177,7 @@
 
     UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);*/
 
-    self.view.frame = CGRectMake(0, 0, 320, 480);
+    //self.view.frame = CGRectMake(0, 0, 320, 480);
 }
 
 // 保存が完了したら呼ばれるメソッド
@@ -181,8 +186,8 @@
     NSLog(@"保存が完了しました");
     
     // Alertを表示する
-    // UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:nil message:@"保存しました" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil] autorelease];
-    //[alert show];
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存されました" message:@"設定でカメラにも保存できます" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 
 //現在地取得
@@ -292,7 +297,7 @@
 //ルート検索が正常に終了しなかった場合
 -(void)errorRouteSearch:(YMKRouteOverlay*)routeOverlay withError:(int)error
 {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"エラー" message:@"ルート検索エラー"
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"線が書けません" message:@"ピンを二つおいてください"
                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
@@ -384,15 +389,8 @@
         [map removeAnnotation:beforeMyPoint];
         beforeMyPoint = myPoint;
         [map addAnnotation:myPoint];
-    }
-
-
-
-    
+    }    
 }
-
-
-
 
 
 // 例えば、カメラやアルバムから選んでもらった画像を扱います
