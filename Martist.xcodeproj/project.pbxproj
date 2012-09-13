@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3DA0411601687B00812B84 /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA03E1601687B00812B84 /* 右端.png */; };
+		3B3DA0421601687B00812B84 /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA03F1601687B00812B84 /* 左端.png */; };
+		3B3DA0431601687B00812B84 /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA0401601687B00812B84 /* 真ん中.png */; };
 		3B99D47E15FE06470057BF71 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46415FE06470057BF71 /* readme.txt */; };
 		3B99D47F15FE06470057BF71 /* compass48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46715FE06470057BF71 /* compass48.png */; };
 		3B99D48015FE06470057BF71 /* compass48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46815FE06470057BF71 /* compass48@2x.png */; };
@@ -152,9 +155,6 @@
 		4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF215F97F3400ED8996 /* Setting.m */; };
 		4C6E9EF615F97F7800ED8996 /* SNSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF515F97F7800ED8996 /* SNSConnection.m */; };
 		4C6E9EF915F97F9E00ED8996 /* DrawOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */; };
-		4CB61CFF1601658E00AEB9E9 /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB61CFC1601658E00AEB9E9 /* 右端.png */; };
-		4CB61D001601658E00AEB9E9 /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB61CFD1601658E00AEB9E9 /* 左端.png */; };
-		4CB61D011601658E00AEB9E9 /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB61CFE1601658E00AEB9E9 /* 真ん中.png */; };
 		4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */; };
 		4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62015FC64D6002B89C7 /* FMDatabase.m */; };
 		4CC7D62B15FC64D6002B89C7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62215FC64D6002B89C7 /* FMDatabaseAdditions.m */; };
@@ -177,6 +177,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B3DA03E1601687B00812B84 /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
+		3B3DA03F1601687B00812B84 /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
+		3B3DA0401601687B00812B84 /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
 		3B99D46415FE06470057BF71 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		3B99D46715FE06470057BF71 /* compass48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass48.png; path = "../mapsdk_ios /Ymap/image/compass48.png"; sourceTree = "<group>"; };
 		3B99D46815FE06470057BF71 /* compass48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compass48@2x.png"; path = "../mapsdk_ios /Ymap/image/compass48@2x.png"; sourceTree = "<group>"; };
@@ -334,9 +337,6 @@
 		4C6E9EF515F97F7800ED8996 /* SNSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSConnection.m; sourceTree = "<group>"; };
 		4C6E9EF715F97F9D00ED8996 /* DrawOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawOnMap.h; sourceTree = "<group>"; };
 		4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawOnMap.m; sourceTree = "<group>"; };
-		4CB61CFC1601658E00AEB9E9 /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
-		4CB61CFD1601658E00AEB9E9 /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
-		4CB61CFE1601658E00AEB9E9 /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
 		4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4CC7D61F15FC64D6002B89C7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		4CC7D62015FC64D6002B89C7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
@@ -415,10 +415,10 @@
 			isa = PBXGroup;
 			children = (
 				3B99DC9715FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */,
+				3B3DA03E1601687B00812B84 /* 右端.png */,
+				3B3DA03F1601687B00812B84 /* 左端.png */,
+				3B3DA0401601687B00812B84 /* 真ん中.png */,
 				3B99D46715FE06470057BF71 /* compass48.png */,
-				4CB61CFC1601658E00AEB9E9 /* 右端.png */,
-				4CB61CFD1601658E00AEB9E9 /* 左端.png */,
-				4CB61CFE1601658E00AEB9E9 /* 真ん中.png */,
 				3B99D46815FE06470057BF71 /* compass48@2x.png */,
 				3B99D46915FE06470057BF71 /* goal.png */,
 				3B99D46A15FE06470057BF71 /* goal@2x.png */,
@@ -853,9 +853,9 @@
 				3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */,
-				4CB61CFF1601658E00AEB9E9 /* 右端.png in Resources */,
-				4CB61D001601658E00AEB9E9 /* 左端.png in Resources */,
-				4CB61D011601658E00AEB9E9 /* 真ん中.png in Resources */,
+				3B3DA0411601687B00812B84 /* 右端.png in Resources */,
+				3B3DA0421601687B00812B84 /* 左端.png in Resources */,
+				3B3DA0431601687B00812B84 /* 真ん中.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
