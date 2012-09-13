@@ -151,11 +151,8 @@
 		4C6E9E5815F83AD200ED8996 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E9E5615F83AD200ED8996 /* InfoPlist.strings */; };
 		4C6E9E5B15F83AD200ED8996 /* MartistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9E5A15F83AD200ED8996 /* MartistTests.m */; };
 		4C6E9E6D15F8691A00ED8996 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6E9E6C15F8691A00ED8996 /* MapKit.framework */; };
-		4C6E9EED15F8BCF100ED8996 /* DrawOnTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */; };
 		4C6E9EF015F97CA800ED8996 /* Memorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EEF15F97CA800ED8996 /* Memorial.m */; };
 		4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF215F97F3400ED8996 /* Setting.m */; };
-		4C6E9EF615F97F7800ED8996 /* SNSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF515F97F7800ED8996 /* SNSConnection.m */; };
-		4C6E9EF915F97F9E00ED8996 /* DrawOnMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */; };
 		4C94785116018EC000999901 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C94785016018EC000999901 /* pencil.png */; };
 		4CC7D61B15FC5A68002B89C7 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */; };
 		4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D62015FC64D6002B89C7 /* FMDatabase.m */; };
@@ -330,16 +327,10 @@
 		4C6E9E5915F83AD200ED8996 /* MartistTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MartistTests.h; sourceTree = "<group>"; };
 		4C6E9E5A15F83AD200ED8996 /* MartistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MartistTests.m; sourceTree = "<group>"; };
 		4C6E9E6C15F8691A00ED8996 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		4C6E9EEB15F8BCF000ED8996 /* DrawOnTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawOnTap.h; sourceTree = "<group>"; };
-		4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawOnTap.m; sourceTree = "<group>"; };
 		4C6E9EEE15F97CA800ED8996 /* Memorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memorial.h; sourceTree = "<group>"; };
 		4C6E9EEF15F97CA800ED8996 /* Memorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memorial.m; sourceTree = "<group>"; };
 		4C6E9EF115F97F3400ED8996 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
 		4C6E9EF215F97F3400ED8996 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
-		4C6E9EF415F97F7700ED8996 /* SNSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSConnection.h; sourceTree = "<group>"; };
-		4C6E9EF515F97F7800ED8996 /* SNSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSConnection.m; sourceTree = "<group>"; };
-		4C6E9EF715F97F9D00ED8996 /* DrawOnMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawOnMap.h; sourceTree = "<group>"; };
-		4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawOnMap.m; sourceTree = "<group>"; };
 		4C94785016018EC000999901 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		4CC7D61A15FC5A68002B89C7 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		4CC7D61F15FC64D6002B89C7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -600,16 +591,10 @@
 				4C6E9E3E15F83AD200ED8996 /* AppDelegate.h */,
 				4C6E9E3F15F83AD200ED8996 /* AppDelegate.m */,
 				4C6E9E4115F83AD200ED8996 /* MainStoryboard.storyboard */,
-				4C6E9EF715F97F9D00ED8996 /* DrawOnMap.h */,
-				4C6E9EF815F97F9E00ED8996 /* DrawOnMap.m */,
-				4C6E9EEB15F8BCF000ED8996 /* DrawOnTap.h */,
-				4C6E9EEC15F8BCF000ED8996 /* DrawOnTap.m */,
 				4C6E9EF115F97F3400ED8996 /* Setting.h */,
 				4C6E9EF215F97F3400ED8996 /* Setting.m */,
 				4C6E9EEE15F97CA800ED8996 /* Memorial.h */,
 				4C6E9EEF15F97CA800ED8996 /* Memorial.m */,
-				4C6E9EF415F97F7700ED8996 /* SNSConnection.h */,
-				4C6E9EF515F97F7800ED8996 /* SNSConnection.m */,
 				4C6E9E4415F83AD200ED8996 /* ViewController.h */,
 				4C6E9E4515F83AD200ED8996 /* ViewController.m */,
 				3B9DA76515FD7F68005E78ED /* YMapKitTestAppDelegate.h */,
@@ -902,11 +887,8 @@
 				4C6E9E3C15F83AD200ED8996 /* main.m in Sources */,
 				4C6E9E4015F83AD200ED8996 /* AppDelegate.m in Sources */,
 				4C6E9E4615F83AD200ED8996 /* ViewController.m in Sources */,
-				4C6E9EED15F8BCF100ED8996 /* DrawOnTap.m in Sources */,
 				4C6E9EF015F97CA800ED8996 /* Memorial.m in Sources */,
 				4C6E9EF315F97F3400ED8996 /* Setting.m in Sources */,
-				4C6E9EF615F97F7800ED8996 /* SNSConnection.m in Sources */,
-				4C6E9EF915F97F9E00ED8996 /* DrawOnMap.m in Sources */,
 				4CC7D62A15FC64D6002B89C7 /* FMDatabase.m in Sources */,
 				4CC7D62B15FC64D6002B89C7 /* FMDatabaseAdditions.m in Sources */,
 				4CC7D62C15FC64D6002B89C7 /* FMDatabasePool.m in Sources */,
