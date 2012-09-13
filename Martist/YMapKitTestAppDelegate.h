@@ -36,6 +36,7 @@
     double latitude, longitude; // 取得した緯度経度
 
     
+    __weak IBOutlet UIButton *pinOrMap;
     __weak IBOutlet UIButton *saveBotton;
     __weak IBOutlet UIButton *searchBotton;
     __weak IBOutlet UIButton *drawBotton;

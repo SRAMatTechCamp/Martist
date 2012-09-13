@@ -16,6 +16,7 @@
 @implementation Setting
 @synthesize getLocation;
 @synthesize writeStar;
+@synthesize saveToCamera;
 @synthesize HowToGo;
 
 
@@ -40,6 +41,7 @@
     [self setHowToGo:nil];
     [self setGetLocation:nil];
     [self setWriteStar:nil];
+    [self setSaveToCamera:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -74,6 +76,18 @@
     app.getStar = TRUE;
 }
 
+- (IBAction)saveCamera:(id)sender{
+    if([[saveToCamera currentTitle] isEqualToString:@"カメラロールに保存：なし"]){
+        [saveToCamera setTitle:@"カメラロールに保存：あり" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        app.CameraFlag = TRUE;
+    }else{
+        [saveToCamera setTitle:@"カメラロールに保存：なし" forState:UIControlStateNormal];
+        AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        app.CameraFlag = FALSE;
+    }
+    
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

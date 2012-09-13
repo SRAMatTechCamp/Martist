@@ -16,6 +16,7 @@
 @synthesize CarFlag;
 @synthesize LocationFlag;
 @synthesize getStar;
+@synthesize CameraFlag;
 
 
 //アプリの初回起動時にのみ呼ばれるところ
