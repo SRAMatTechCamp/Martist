@@ -17,7 +17,9 @@
 @synthesize LocationFlag;
 @synthesize getStar;
 @synthesize CameraFlag;
-
+@synthesize image;
+@synthesize setImage;
+@synthesize imageSet;
 
 //アプリの初回起動時にのみ呼ばれるところ
 //まずデータベースをここで作ってしまう

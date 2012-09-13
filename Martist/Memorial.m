@@ -174,7 +174,7 @@ UIImage *showedImage_key;
 - (IBAction)Send:(id)sender{
     TWTweetComposeViewController *tweet = [[TWTweetComposeViewController alloc]init];
     
-    [tweet setInitialText:@"ここにメッセージを入力してください"];
+    [tweet setInitialText:@"ここにメッセージを入力してください     #Martist"];
     
     [tweet addImage:uploadImage];
     

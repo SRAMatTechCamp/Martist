@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *getLocation;
 @property (weak, nonatomic) IBOutlet UIButton *writeStar;
 @property (weak, nonatomic) IBOutlet UIButton *saveToCamera;
+@property (weak, nonatomic) IBOutlet UIButton *getImageAddress;
+@property (weak, nonatomic) IBOutlet UISwitch *putImage;
 
 - (IBAction)changeHowToGo:(id)sender;
 
@@ -21,5 +23,9 @@
 - (IBAction)setStar:(id)sender;
 
 - (IBAction)saveCamera:(id)sender;
+
+- (IBAction)getImgAdress:(id)sender;
+
+- (IBAction)putImg:(id)sender;
 
 @end

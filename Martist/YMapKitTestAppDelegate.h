@@ -34,6 +34,7 @@
     NSString *annotationSubtitle;
     CLLocationManager *locationManager; // 現在地情報取得
     double latitude, longitude; // 取得した緯度経度
+    UIImageView *imgview;
 
     
     __weak IBOutlet UIButton *pinOrMap;
