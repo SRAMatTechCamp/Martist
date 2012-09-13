@@ -19,6 +19,7 @@
 @synthesize saveToCamera;
 @synthesize getImageAddress;
 @synthesize putImage;
+@synthesize focusMe;
 @synthesize HowToGo;
 
 
@@ -46,6 +47,7 @@
     [self setSaveToCamera:nil];
     [self setGetImageAddress:nil];
     [self setPutImage:nil];
+    [self setFocusMe:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -132,6 +134,16 @@
         app.setImage = FALSE;
     }
     
+}
+
+- (IBAction)focusMe:(id)sender{
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    if(focusMe.on == TRUE){
+        app.FocusFlag = TRUE;
+    }else{
+        app.FocusFlag = FALSE;
+    }
 }
 
 

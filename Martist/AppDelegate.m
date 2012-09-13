@@ -20,6 +20,7 @@
 @synthesize image;
 @synthesize setImage;
 @synthesize imageSet;
+@synthesize FocusFlag;
 
 //アプリの初回起動時にのみ呼ばれるところ
 //まずデータベースをここで作ってしまう

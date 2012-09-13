@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveToCamera;
 @property (weak, nonatomic) IBOutlet UIButton *getImageAddress;
 @property (weak, nonatomic) IBOutlet UISwitch *putImage;
+@property (weak, nonatomic) IBOutlet UISwitch *focusMe;
 
 - (IBAction)changeHowToGo:(id)sender;
 
@@ -27,5 +28,7 @@
 - (IBAction)getImgAdress:(id)sender;
 
 - (IBAction)putImg:(id)sender;
+
+- (IBAction)focusMe:(id)sender;
 
 @end

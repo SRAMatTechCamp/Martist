@@ -26,7 +26,6 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-    
     mapShowed = NO;
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
@@ -264,7 +263,8 @@
     if(app.setImage == TRUE && app.imageSet == FALSE){
         UIImage *img = app.image;
         imgview = [[UIImageView alloc] initWithImage:img];
-        imgview.alpha = 0.4;
+        imgview.alpha = 0.5;
+        imgview.frame =  CGRectMake(0, 39, 320, 375);
         [self.view addSubview:imgview];
         if(app.image != nil){
             NSLog(@"aaaaaaa");
@@ -423,7 +423,8 @@
     return nil;
 }
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-    [locationManager stopUpdatingLocation];    
+    [locationManager stopUpdatingLocation];
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     if(mapShowed == FALSE){
         mapShowed = TRUE;
         //YMKMapViewのインスタンスを作成
@@ -455,7 +456,11 @@
         MyAnnotation* myPoint = [[MyAnnotation alloc] initWithLocationCoordinate:center title:[[NSString alloc] initWithString:@"節点"] subtitle:[[NSString alloc] initWithString:@"節点"]];
         beforeMyPoint = myPoint;
         [map addAnnotation:myPoint];
-    }    
+        if(app.FocusFlag == TRUE){
+            [map setCenterCoordinate:center];
+        }
+            
+    }
 }
 
 
