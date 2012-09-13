@@ -21,7 +21,7 @@ UIImage *showedImage;
 
 //主キー(num)を識別するための数字
 int key;
-int key_max=1;//現在の写真の枚数を保存
+int key_max=100;//現在の写真の枚数を保存
 NSData *image_key;
 UIImage *showedImage_key;
 
@@ -68,10 +68,10 @@ UIImage *showedImage_key;
         }*/
         
         //[rs next]により要素がある次々ループが回る
-        [rs next];
+        /*[rs next];
         pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
         showedImage = [UIImage imageWithData:pickedImage];
-        uploadImage = showedImage;
+        uploadImage = showedImage;*/
         
         //UIImageView(photo)のメソッドを用いて
         //画像(showedImage)を表示する
@@ -235,18 +235,12 @@ UIImage *showedImage_key;
         //写真遷移過程のイメージ
         //@データベースコネクト
         //現在の写真をimageで取得する
-        //@その写真のnumをselect文により求める
-        //num+1の写真が存在するか確かめる
         //ある→その写真の表示
         //ない→ないことを通知する(あとで実装)
-        //rsには現在の写真のタプルが入っている
-        
-        NSLog(@"現在のkey:%d",key);
         //keyによるDB制御
         FMResultSet *rs_key;;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
-        
         
         //データベースの最大値を超える場合の処理を付け加える
         
@@ -263,15 +257,15 @@ UIImage *showedImage_key;
         
          [photo setImage:showedImage_key];
         
-        //ボタンが押されたらkeyを増加させる
+        //最後の画像のときにはkeyを増加させない
+        if(key != key_max){
         key++;
-        NSLog(@"増加直後のkey:%d",key);
-        
+        NSLog(@"現在のkey:%d",key);
+        //ここを画面に表示させる
+        NSLog(@"次の画面が表示されました");
+        }
         
         NSLog(@"表示された画像の番号:%d",key);
-        
-        //ここを画面に表示させる
-         NSLog(@"次の画面が表示されました");
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
@@ -291,34 +285,34 @@ UIImage *showedImage_key;
         rs_key = [db executeQuery:@"SELECT * FROM album"];
         [rs_key next];
         
-        //画像が表示されたらkeyを減少させる
-        if(key <= 1){
-            //画面に表示するように変更する
-            NSLog(@"前の画像が存在しません");
-            key = 1;
-        }else {
         //前のkeyの画像が存在するとき
-        key--;
-        
-        //keyの回数分だけループを回す
-        for (int i=0; i<key; i++) {
-            if( [rs_key next] ){
-                image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
-                showedImage_key = [UIImage imageWithData:image_key];
-                NSLog(@"表示された画像の番号:%d",key);
-                NSLog(@"前の画面が表示されました");
-            }else {
-                NSLog(@"表示できる画像がありません");
-            }
+        if(key > 1){
+            //keyの回数分だけループを回す
+            key--;
+            for (int i=0; i<key-1; i++) {
+               if(key == 1) {
+                    NSLog(@"前の画像がありません");}
+                else if( [rs_key next] ){
+                    image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
+                    showedImage_key = [UIImage imageWithData:image_key];
+                    NSLog(@"表示された画像の番号:%d",key);
+                    NSLog(@"前の画面が表示されました");
+                }
+                }
+        }else if(key<=1){
+            image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
+            showedImage_key = [UIImage imageWithData:image_key];
+            key = 1;
         }
-           
-    }
+        
+        
+        
         [photo setImage:showedImage_key];
         
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
-    };
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
