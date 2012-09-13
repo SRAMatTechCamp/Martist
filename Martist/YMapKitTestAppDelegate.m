@@ -214,7 +214,7 @@
     if(app.setImage == TRUE && app.imageSet == FALSE){
         UIImage *img = app.image;
         imgview = [[UIImageView alloc] initWithImage:img];
-        imgview.alpha = 0.3;
+        imgview.alpha = 0.4;
         [self.view addSubview:imgview];
         app.imageSet = TRUE;
     }else if(app.setImage == FALSE){
