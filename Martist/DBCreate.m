@@ -15,14 +15,14 @@
 
  //フォトアルバムのデータベース
 +(id)dbConnect{
-    NSLog(@"dbConnect");
+   // NSLog(@"dbConnect");
     NSArray* paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
     NSString* dir = [paths objectAtIndex:0];
     FMDatabase* db = [FMDatabase databaseWithPath:[dir stringByAppendingPathComponent:@"album.db"]];
     
     //NSLog(@"oepning");
     [db open];
-    NSLog(@"DB:Opend");
+    //NSLog(@"DB:Opend");
     return db;
 }
 
@@ -37,7 +37,7 @@
         [db setShouldCacheStatements:YES];
         NSString* sql = @"CREATE TABLE album (num INTEGER PRIMARY KEY,image BLOB,time TEXT);";
         if([db executeUpdate:sql]){
-            NSLog(@"DB作成完了");
+           // NSLog(@"DB作成完了");
             [db executeUpdate:@"vacuum"];//DBの整理整頓？
         }else{
             NSLog(@"execute失敗");
@@ -67,8 +67,6 @@
     if([db open]) {
         NSLog(@"open albumDB");
         [db setShouldCacheStatements:YES];
-        
-        
         
         // なんとなくタイムスタンプを保存
         NSDate* currentDate = [NSDate date];

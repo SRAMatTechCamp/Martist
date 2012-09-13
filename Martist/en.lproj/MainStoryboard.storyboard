@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
         <!--View Controller - Top-->
@@ -263,10 +263,10 @@
                                     <action selector="Send:" destination="WCS-s2-6kJ" eventType="touchUpInside" id="SlF-4h-Uul"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="保存された写真はありません" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="agA-75-fLa">
-                                <rect key="frame" x="77" y="215" width="166" height="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="保存された写真はありません" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="agA-75-fLa">
+                                <rect key="frame" x="28" y="177" width="264" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -462,7 +462,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="494" y="242"/>
+            <point key="canvasLocation" x="607" y="228"/>
         </scene>
     </scenes>
     <resources>
