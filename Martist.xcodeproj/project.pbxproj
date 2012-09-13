@@ -47,6 +47,12 @@
 		3B9DA7AD15FDAA1E005E78ED /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */; };
 		3B9DA7AF15FDAA2A005E78ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */; };
 		3B9DA7B115FDAA32005E78ED /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */; };
+		3BDFB9EA1602411500C493F2 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDFB9E91602411500C493F2 /* Tutorial.m */; };
+		3BDFB9F1160247B700C493F2 /* tu01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFB9EC160247B700C493F2 /* tu01.png */; };
+		3BDFB9F2160247B700C493F2 /* tu02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFB9ED160247B700C493F2 /* tu02.png */; };
+		3BDFB9F3160247B700C493F2 /* tu03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFB9EE160247B700C493F2 /* tu03.png */; };
+		3BDFB9F4160247B700C493F2 /* tu04.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFB9EF160247B700C493F2 /* tu04.png */; };
+		3BDFB9F5160247B700C493F2 /* tu05.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BDFB9F0160247B700C493F2 /* tu05.png */; };
 		4C305C7415FDE7C30079526F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4C6170CF15FD85F400484C52 /* arrow 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707415FD85F400484C52 /* arrow 1.png */; };
 		4C6170D015FD85F400484C52 /* arrow 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C61707515FD85F400484C52 /* arrow 2.png */; };
@@ -224,6 +230,13 @@
 		3B9DA7AC15FDAA1E005E78ED /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3B9DA7AE15FDAA2A005E78ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3B9DA7B015FDAA32005E78ED /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3BDFB9E81602411500C493F2 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		3BDFB9E91602411500C493F2 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
+		3BDFB9EC160247B700C493F2 /* tu01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tu01.png; sourceTree = "<group>"; };
+		3BDFB9ED160247B700C493F2 /* tu02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tu02.png; sourceTree = "<group>"; };
+		3BDFB9EE160247B700C493F2 /* tu03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tu03.png; sourceTree = "<group>"; };
+		3BDFB9EF160247B700C493F2 /* tu04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tu04.png; sourceTree = "<group>"; };
+		3BDFB9F0160247B700C493F2 /* tu05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tu05.png; sourceTree = "<group>"; };
 		4C61707415FD85F400484C52 /* arrow 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 1.png"; sourceTree = "<group>"; };
 		4C61707515FD85F400484C52 /* arrow 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 2.png"; sourceTree = "<group>"; };
 		4C61707615FD85F400484C52 /* arrow 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow 3.png"; sourceTree = "<group>"; };
@@ -418,6 +431,11 @@
 		3B99D49615FE06A40057BF71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3BDFB9EC160247B700C493F2 /* tu01.png */,
+				3BDFB9ED160247B700C493F2 /* tu02.png */,
+				3BDFB9EE160247B700C493F2 /* tu03.png */,
+				3BDFB9EF160247B700C493F2 /* tu04.png */,
+				3BDFB9F0160247B700C493F2 /* tu05.png */,
 				3B3DA05E1601CDBD00812B84 /* タイトル.png */,
 				3B3DA04A1601741900812B84 /* スクリーンショット 2012-09-13 10.52.03.png */,
 				4C9478571601C34200999901 /* 鉛筆.png */,
@@ -614,6 +632,8 @@
 				4C6E9E3615F83AD200ED8996 /* Supporting Files */,
 				3B99D49715FE43000057BF71 /* MyAnnotation.h */,
 				3B99D49815FE43000057BF71 /* MyAnnotation.m */,
+				3BDFB9E81602411500C493F2 /* Tutorial.h */,
+				3BDFB9E91602411500C493F2 /* Tutorial.m */,
 			);
 			path = Martist;
 			sourceTree = "<group>";
@@ -864,6 +884,11 @@
 				4C9478581601C34200999901 /* 鉛筆.png in Resources */,
 				3B3DA05D1601CADE00812B84 /* pen.png in Resources */,
 				3B3DA05F1601CDBD00812B84 /* タイトル.png in Resources */,
+				3BDFB9F1160247B700C493F2 /* tu01.png in Resources */,
+				3BDFB9F2160247B700C493F2 /* tu02.png in Resources */,
+				3BDFB9F3160247B700C493F2 /* tu03.png in Resources */,
+				3BDFB9F4160247B700C493F2 /* tu04.png in Resources */,
+				3BDFB9F5160247B700C493F2 /* tu05.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,6 +937,7 @@
 				3B9DA76715FD7F68005E78ED /* YMapKitTestAppDelegate.m in Sources */,
 				3B99D49915FE43000057BF71 /* MyAnnotation.m in Sources */,
 				4C305C7415FDE7C30079526F /* (null) in Sources */,
+				3BDFB9EA1602411500C493F2 /* Tutorial.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
