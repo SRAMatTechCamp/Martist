@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B3DA0411601687B00812B84 /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA03E1601687B00812B84 /* 右端.png */; };
-		3B3DA0421601687B00812B84 /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA03F1601687B00812B84 /* 左端.png */; };
-		3B3DA0431601687B00812B84 /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA0401601687B00812B84 /* 真ん中.png */; };
+		3B3DA04516016C5D00812B84 /* 右端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA04416016C5D00812B84 /* 右端.png */; };
+		3B3DA04816016D6400812B84 /* 左端.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA04616016D6400812B84 /* 左端.png */; };
+		3B3DA04916016D6400812B84 /* 真ん中.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B3DA04716016D6400812B84 /* 真ん中.png */; };
 		3B99D47E15FE06470057BF71 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46415FE06470057BF71 /* readme.txt */; };
 		3B99D47F15FE06470057BF71 /* compass48.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46715FE06470057BF71 /* compass48.png */; };
 		3B99D48015FE06470057BF71 /* compass48@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B99D46815FE06470057BF71 /* compass48@2x.png */; };
@@ -177,9 +177,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B3DA03E1601687B00812B84 /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
-		3B3DA03F1601687B00812B84 /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
-		3B3DA0401601687B00812B84 /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
+		3B3DA04416016C5D00812B84 /* 右端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "右端.png"; sourceTree = "<group>"; };
+		3B3DA04616016D6400812B84 /* 左端.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左端.png"; sourceTree = "<group>"; };
+		3B3DA04716016D6400812B84 /* 真ん中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "真ん中.png"; sourceTree = "<group>"; };
 		3B99D46415FE06470057BF71 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		3B99D46715FE06470057BF71 /* compass48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass48.png; path = "../mapsdk_ios /Ymap/image/compass48.png"; sourceTree = "<group>"; };
 		3B99D46815FE06470057BF71 /* compass48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compass48@2x.png"; path = "../mapsdk_ios /Ymap/image/compass48@2x.png"; sourceTree = "<group>"; };
@@ -414,16 +414,16 @@
 		3B99D49615FE06A40057BF71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3B3DA04416016C5D00812B84 /* 右端.png */,
 				3B99DC9715FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png */,
-				3B3DA03E1601687B00812B84 /* 右端.png */,
-				3B3DA03F1601687B00812B84 /* 左端.png */,
-				3B3DA0401601687B00812B84 /* 真ん中.png */,
 				3B99D46715FE06470057BF71 /* compass48.png */,
 				3B99D46815FE06470057BF71 /* compass48@2x.png */,
 				3B99D46915FE06470057BF71 /* goal.png */,
 				3B99D46A15FE06470057BF71 /* goal@2x.png */,
 				3B99D46B15FE06470057BF71 /* pin_green_s.png */,
 				3B99D46C15FE06470057BF71 /* pin_green_s@2x.png */,
+				3B3DA04616016D6400812B84 /* 左端.png */,
+				3B3DA04716016D6400812B84 /* 真ん中.png */,
 				3B99D46D15FE06470057BF71 /* pin_head_l.png */,
 				3B99D46E15FE06470057BF71 /* pin_head_s.png */,
 				3B99D46F15FE06470057BF71 /* pin_purple_s.png */,
@@ -853,9 +853,9 @@
 				3B99DC9815FF12B40057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				3B99DC9A15FF12C30057BF71 /* スクリーンショット 2012-09-11 15.23.03.png in Resources */,
 				4CE9B43115FF39F400A33AAC /* 透明　ボタン.png in Resources */,
-				3B3DA0411601687B00812B84 /* 右端.png in Resources */,
-				3B3DA0421601687B00812B84 /* 左端.png in Resources */,
-				3B3DA0431601687B00812B84 /* 真ん中.png in Resources */,
+				3B3DA04516016C5D00812B84 /* 右端.png in Resources */,
+				3B3DA04816016D6400812B84 /* 左端.png in Resources */,
+				3B3DA04916016D6400812B84 /* 真ん中.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
