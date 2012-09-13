@@ -3,6 +3,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MyAnnotation.h"
 #import "AppDelegate.h"
+#import "Memorial.h"
 
 
 
@@ -113,7 +114,7 @@
 }
 
 // データベースに保存するメソッド
-//現在はDBに保存しているが、設定でカメラへ保存も選択できるようにする予定
+//現在はDBに保存しているが、設定でカメラへ保存も選択できる
 - (IBAction)saveToAlbum:(id)sender {
     UIImage* image;
   
