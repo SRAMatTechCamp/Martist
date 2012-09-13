@@ -266,11 +266,13 @@
     if(app.setImage == TRUE && app.imageSet == FALSE){
         UIImage *img = app.image;
         imgview = [[UIImageView alloc] initWithImage:img];
-        imgview.alpha = 0.3;
+        imgview.alpha = 0.4;
         [self.view addSubview:imgview];
-        app.imageSet = TRUE;
+        if(app.image != nil){
+            NSLog(@"aaaaaaa");
+            app.imageSet = TRUE;
+        }
     }else if(app.setImage == FALSE){
-        NSLog(@"aaaaaaa");
         [imgview removeFromSuperview];
     }
  
@@ -442,7 +444,7 @@
         center.latitude = newLocation.coordinate.latitude;
         center.longitude = newLocation.coordinate.longitude;
         
-        map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.002, 0.002));
+        map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.01, 0.01));
         
         [self.view addSubview:map];
         
