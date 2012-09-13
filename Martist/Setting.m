@@ -114,7 +114,7 @@
     
     NSURL *url = [editingInfo objectForKey:UIImagePickerControllerReferenceURL];
     
-    [getImageAddress setTitle:url.query forState:UIControlStateNormal];
+    [getImageAddress setTitle:@"画像選択中" forState:UIControlStateNormal];
     
 	NSLog(@"query : %@", [url query]);
     

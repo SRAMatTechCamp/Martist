@@ -185,6 +185,9 @@
 		3B3DA04A1601741900812B84 /* スクリーンショット 2012-09-13 10.52.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2012-09-13 10.52.03.png"; sourceTree = "<group>"; };
 		3B3DA05C1601CADE00812B84 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
 		3B3DA05E1601CDBD00812B84 /* タイトル.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "タイトル.png"; sourceTree = "<group>"; };
+		3B3DA0601601D3DE00812B84 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		3B3DA0611601D3DE00812B84 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3DA0621601D3DE00812B84 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B99D46415FE06470057BF71 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		3B99D46715FE06470057BF71 /* compass48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compass48.png; path = "../mapsdk_ios /Ymap/image/compass48.png"; sourceTree = "<group>"; };
 		3B99D46815FE06470057BF71 /* compass48@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "compass48@2x.png"; path = "../mapsdk_ios /Ymap/image/compass48@2x.png"; sourceTree = "<group>"; };
@@ -936,6 +939,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4C6E9E3915F83AD200ED8996 /* en */,
+				3B3DA0611601D3DE00812B84 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -944,6 +948,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4C6E9E4215F83AD200ED8996 /* en */,
+				3B3DA0601601D3DE00812B84 /* ja */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -952,6 +957,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4C6E9E5715F83AD200ED8996 /* en */,
+				3B3DA0621601D3DE00812B84 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
