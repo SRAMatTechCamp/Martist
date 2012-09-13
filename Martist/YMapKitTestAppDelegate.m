@@ -34,6 +34,7 @@
     app.CarFlag = false;
     app.LocationFlag = false;
     app.getStar = false;
+    app.CameraFlag = false;
     [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
     }
 
@@ -42,6 +43,7 @@
     saveBotton = nil;
     searchBotton = nil;
     drawBotton = nil;
+    pinOrMap = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -58,8 +60,10 @@
 -(IBAction)tappin:(id)sender {
     if(map.userInteractionEnabled){
         map.userInteractionEnabled = NO;
+        [pinOrMap setTitle:@"ピン" forState:UIControlStateNormal];
     }else{
         map.userInteractionEnabled = YES;
+        [pinOrMap setTitle:@"マップ" forState:UIControlStateNormal];
     }
 }
 
@@ -163,16 +167,18 @@
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
     };
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    if(app.CameraFlag == TRUE){
+        //image_af = [self resizedImage:image];
+        
+        //UIImage *image = [[self.view] UIImage];
+        SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
+        
+        UIImageWriteToSavedPhotosAlbum(image, self, sel, NULL);
+        
+        self.view.frame = CGRectMake(0, 0, 320, 480);
+    }
 
-    //カメラへ保存する部分
-    /*image_af = [self resizedImage:image];
-    
-    //UIImage *image = [[self.view] UIImage];
-    SEL sel = @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:);
-
-    UIImageWriteToSavedPhotosAlbum(image_af, self, sel, NULL);*/
-
-    self.view.frame = CGRectMake(0, 0, 320, 480);
 }
 
 // 保存が完了したら呼ばれるメソッド
@@ -187,6 +193,8 @@
 
 //現在地取得
 - (void) getLocationThread {
+    
+    [map removeAnnotation:beforeMyPoint];
     
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     
@@ -381,7 +389,6 @@
         center.latitude = newLocation.coordinate.latitude;
         center.longitude = newLocation.coordinate.longitude;
         MyAnnotation* myPoint = [[MyAnnotation alloc] initWithLocationCoordinate:center title:[[NSString alloc] initWithString:@"節点"] subtitle:[[NSString alloc] initWithString:@"節点"]];
-        [map removeAnnotation:beforeMyPoint];
         beforeMyPoint = myPoint;
         [map addAnnotation:myPoint];
     }
