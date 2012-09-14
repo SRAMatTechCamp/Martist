@@ -97,6 +97,7 @@ UIImage *showedImage_key;
         if([rs next]){
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
+            uploadImage = showedImage;
             [photo setImage:showedImage];
             
             NSLog(@"写真の番号:%d",key);
@@ -104,6 +105,7 @@ UIImage *showedImage_key;
             //画像が表示されるときにはwarningLabelを隠す
             [warningLabel setHidden:YES];
         }else {
+            uploadImage = showedImage;
             [photo setImage:showedImage];
         }
         }
@@ -173,7 +175,7 @@ UIImage *showedImage_key;
         NSLog(@"%d番目のデータを削除しました",delete_num);
         UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"写真を削除しました"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
         [alert show];
-        
+        uploadImage = showedImage_key;
          [photo setImage:showedImage_key];
         
         /*if(key_max <= delete_num)
@@ -240,6 +242,7 @@ UIImage *showedImage_key;
         if( [rs_key next] ){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
+            uploadImage = showedImage_key;
             [photo setImage:showedImage_key];
         }
         }
@@ -321,7 +324,7 @@ UIImage *showedImage_key;
                   if( [rs_key next] ){
                     image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                     showedImage_key = [UIImage imageWithData:image_key];
-                      
+                      uploadImage = showedImage_key;
                    [photo setImage:showedImage_key];
                       
                       image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
@@ -338,6 +341,7 @@ UIImage *showedImage_key;
         }else if(key ==1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
+            uploadImage = showedImage_key;
             [photo setImage:showedImage_key];
             
             image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
@@ -350,6 +354,7 @@ UIImage *showedImage_key;
         }else if(key < 1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
+            uploadImage = showedImage_key;
             [photo setImage:showedImage_key];
             
             image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
