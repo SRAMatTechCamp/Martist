@@ -35,6 +35,7 @@
     //キーはnumとTime(番号と保存日時、写真の形式String型)
     if([db open]) {
         [db setShouldCacheStatements:YES];
+        //numはAUTOINCREMENTで値がかぶらないようにすることが可能
         NSString* sql = @"CREATE TABLE album (num INTEGER PRIMARY KEY,image BLOB,time TEXT);";
         if([db executeUpdate:sql]){
            // NSLog(@"DB作成完了");

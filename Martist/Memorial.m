@@ -18,14 +18,26 @@
 @synthesize Twitter;
 @synthesize photo;
 
-
-int now_num = 1;
 UIImage *showedImage;
 
 //主キー(num)を識別するための数字
 int key;
-int key_base=1;
 int key_max;//現在の写真の枚数を保存
+int delete_num=0;//削除する場所把握用
+
+
+NSData *image_key1; 
+
+
+
+NSData *pickedImage ;
+//NSDataからNSStirngへの変換
+NSString *pickedString;
+//NSStringからnNSIntegerへの変換
+NSInteger pickednum;
+
+
+
 NSData *image_key;
 UIImage *showedImage_key;
 
@@ -45,52 +57,7 @@ UIImage *showedImage_key;
     //はじめに画面が呼ばれたときに初期化
     key = 1;
     NSLog(@"初期のkey:%d",key);
-    
- /*   //ここに画像を呼び出して、表示させる処理を書いた。
-    //宣言はif文のなかではなく上で宣言しておく(中だと動かないときがある)
-    FMResultSet *rs;
-    FMResultSet *count;
-    
-    FMDatabase* db = [DBCreate dbConnect];
-    
-    //データベースがあるとき
-    if([db open]){
-        [db setShouldCacheStatements:YES];
-        
-        //検索した結果を返す(現在はすべて返している)
-        rs = [db executeQuery:@"SELECT * FROM album"];
-          
-        key_max = [self countAll];
-        NSLog(@"現在の写真の数:%d",key_max);
-        
-        if(key ==1){
-        //一番はじめにある画像が選択されている
-            if([rs next]){
-        NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-        showedImage = [UIImage imageWithData:pickedImage];
-    
-        [photo setImage:showedImage];
-        
-        //画像が表示されるときにはwarningLabelを隠す
-        [warningLabel setHidden:YES];
-                
-            }
-        }else {
-                //画像が表示されないときにはwarningLabelを表示する
-                [warningLabel setHidden:NO];
-                
-                
-            }
-    }*
-    
-    //画像がないとき
-    //[warningLabel setHidden:YES];
-    //あるとき
-    //[warningLabel setHidden:NO];
-     
-    [rs close];
-     [db close];*/
-    
+  
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -108,6 +75,7 @@ UIImage *showedImage_key;
 //タブ:Memorialが選択されるたびに呼ばれる
 //写真があれば、現在は毎回１枚目がされるようになっている
 - (void)viewWillAppear:(BOOL)animated{
+    
     //ここに画像を呼び出して、表示させる処理を書いた。
     //宣言はif文のなかではなく上で宣言しておく(中だと動かないときがある)
     FMResultSet *rs;
@@ -129,7 +97,6 @@ UIImage *showedImage_key;
         if([rs next]){
             NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
             showedImage = [UIImage imageWithData:pickedImage];
-            
             [photo setImage:showedImage];
             
             NSLog(@"写真の番号:%d",key);
@@ -137,17 +104,7 @@ UIImage *showedImage_key;
             //画像が表示されるときにはwarningLabelを隠す
             [warningLabel setHidden:YES];
         }else {
-            
-          //  NSData *pickedImage = [[NSData alloc] initWithData:[rs dataForColumn:@"image"]];
-          //  showedImage = [UIImage imageWithData:pickedImage];
-            
             [photo setImage:showedImage];
-            NSLog(@"写真の番号1:%d",key);
-            //画像が表示されないときにはwarningLabelを表示する
-            //[warningLabel setHidden:NO];
-            
-            /*UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"保存された写真はありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
-             [alert show];*/
         }
         }
         }
@@ -197,31 +154,63 @@ UIImage *showedImage_key;
     [self presentViewController:tweet animated:YES completion:nil];
     
 }
+
 //指定したデータをDBから削除する
+//削除する場所の指定がまだ甘い
 -(IBAction)deletePhotoData:(id)sender{
+    if(delete_num ==0)
+        delete_num = key;
     
-    //ボタンが読み込まれるたびに値が加算されていく
-    //now_num +=1;
+    delete_num = key;
+    NSLog(@"現在削除したい画像の位置%d",delete_num);
     
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
     if([db open]){
-        //データを削除する
-        if(now_num <=  5){
-        //[db executeUpdate:@"DELETE FROM  album WHERE num = ? ",denum]; 
-        //[db executeUpdate:@"DELETE FROM  album WHERE num = 1 "]; 
-          //  [db executeUpdate:@"DELETE FROM  album WHERE num = 2 "]; 
-            //NSLog(@"%d番目のデータの削除が完了",now_num); 
-        }
+        //delete_num番目にあるデータを削除する
+        [self deleteId:pickednum];
+        
+        NSLog(@"%d番目のデータを削除しました",delete_num);
+        UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"写真を削除しました"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
+        [alert show];
+        
+         [photo setImage:showedImage_key];
+        
+        /*if(key_max <= delete_num)
+            delete_num = */
+        
+    
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
-    };
+    }
 }
+
+
+//番号指定でデータの消去
+-(void)deleteId:(int)recordId {
+
+    NSString* sql = @"delete from album where num = ?";
+    
+    FMDatabase* db = [DBCreate dbConnect];
+    
+    if(![db open]) {
+        return;
+    }
+    [db setShouldCacheStatements:YES];
+    
+    [db executeUpdate:sql, [NSNumber numberWithInt:recordId]];
+    
+    [db close];
+}
+
 
 
 //次の写真を表示する
 -(IBAction)moveAfterPhoto:(id)sender{
+    
+    
+    delete_num = key;
    
     NSLog(@"画像遷移前のkey:%d",key);
     NSLog(@"画像遷移前のkey_max:%d",key_max);
@@ -254,7 +243,13 @@ UIImage *showedImage_key;
             [photo setImage:showedImage_key];
         }
         }
-     NSLog(@"次の画像があるので遷移します");
+            image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
+            pickedString = [[NSString alloc] initWithData:image_key1 encoding:NSUTF8StringEncoding];
+            //NSStringからnNSIntegerへの変換
+            pickednum=[pickedString intValue];
+            
+            NSLog(@"現在の写真のnum:%d",pickednum);
+     //NSLog(@"次の画像があるので遷移します");
     }
             
         if(key_max == 0){
@@ -266,8 +261,6 @@ UIImage *showedImage_key;
             
             //画像が表示されるときにはwarningLabelを隠す
             [warningLabel setHidden:YES];
-            
-            NSLog(@"222");
         }else if(key_max == key){
             UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"次の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
             [alert show];
@@ -306,6 +299,9 @@ UIImage *showedImage_key;
     
     key--;
     
+    //削除後に前の画像が削除されるときよう
+    delete_num = key - 1;
+    
     [warningLabel setHidden:YES];
     //データベースを開く
     FMDatabase* db = [DBCreate dbConnect];
@@ -325,20 +321,45 @@ UIImage *showedImage_key;
                   if( [rs_key next] ){
                     image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
                     showedImage_key = [UIImage imageWithData:image_key];
+                      
                    [photo setImage:showedImage_key];
+                      
+                      image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
+                      
                 }
                 }
-            NSLog(@"現在のkey:%d",key);
+            pickedString = [[NSString alloc] initWithData:image_key1 encoding:NSUTF8StringEncoding];
+            //NSStringからnNSIntegerへの変換
+            pickednum=[pickedString intValue];
+            NSLog(@"現在の写真のnum:%d",pickednum);
+            
             NSLog(@"表示された画像の番号:%d",key);
-            NSLog(@"前の画面が表示されました");
+           // NSLog(@"前の画面が表示されました");
         }else if(key ==1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             [photo setImage:showedImage_key];
+            
+            image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
+            
+            pickedString = [[NSString alloc] initWithData:image_key1 encoding:NSUTF8StringEncoding];
+            //NSStringからnNSIntegerへの変換
+            pickednum=[pickedString intValue];
+            
+            NSLog(@"現在の写真のnum:%d",pickednum);
         }else if(key < 1){
             image_key = [[NSData alloc] initWithData:[rs_key dataForColumn:@"image"]];
             showedImage_key = [UIImage imageWithData:image_key];
             [photo setImage:showedImage_key];
+            
+            image_key1 = [[NSData alloc] initWithData:[rs_key dataForColumn:@"num"]];
+            
+            pickedString = [[NSString alloc] initWithData:image_key1 encoding:NSUTF8StringEncoding];
+            //NSStringからnNSIntegerへの変換
+            pickednum=[pickedString intValue];
+            
+             NSLog(@"現在の写真のnum:%d",pickednum);
+            
             UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"前の画像がありません"  message: nil delegate:self  cancelButtonTitle:nil  otherButtonTitles:@"OK",nil];  
                 [alert show];
             key=1;
@@ -349,7 +370,6 @@ UIImage *showedImage_key;
             [alert show];*/
             [warningLabel setHidden:NO];
         }
-            
     }else {
         NSLog(@"データベースが開けなかったので");
         NSLog(@"データベースに登録できませんでした");
