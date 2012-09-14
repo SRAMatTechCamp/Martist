@@ -27,6 +27,7 @@
     
     [super viewDidLoad];
     mapShowed = NO;
+    map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 39, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
     locationManager = [[CLLocationManager alloc]init];
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
@@ -38,7 +39,33 @@
     app.imageSet = false;
     app.setImage = false;
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getLocationThread) userInfo:nil repeats:YES];
+    [NSThread detachNewThreadSelector:@selector(checkNoLocationThread) toTarget:self withObject:nil];
+}
+
+- (void)checkNoLocationThread{
+    [NSThread sleepForTimeInterval:2];
+    if(mapShowed == NO){
+        mapShowed = TRUE;
+        
+        //地図のタイプを指定 標準の地図を指定
+        map.mapType = YMKMapTypeStandard;
+        
+        
+        //YMKMapViewDelegateを登録
+        map.delegate = self;
+        
+        
+        //地図の位置と縮尺を設定
+        CLLocationCoordinate2D center;
+        center.latitude = MIDTOWN_LAT;
+        center.longitude = MIDTOWN_LON;
+        
+        map.region = YMKCoordinateRegionMake(center, YMKCoordinateSpanMake(0.01, 0.01));
+        
+        [self.view addSubview:map];
+        NSLog(@"nolocation");
     }
+}
 
 - (void)viewDidUnload
 {
@@ -427,8 +454,6 @@
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication]delegate];
     if(mapShowed == FALSE){
         mapShowed = TRUE;
-        //YMKMapViewのインスタンスを作成
-        map = [[YMKMapView alloc] initWithFrame:CGRectMake(0, 39, 320, 375) appid:@"GTEGfaGxg67NbTJpzBxvZEE8bo6JBalSvNQQJVrrSEtfj6XZbnjh9_Agwmyqqdc-" ];
         
         //地図のタイプを指定 標準の地図を指定
         map.mapType = YMKMapTypeStandard;

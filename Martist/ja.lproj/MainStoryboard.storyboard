@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -282,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="607" y="-373"/>
         </scene>
-        <!--Tutorial - チュートリアル-->
+        <!--Tutorial - つかいかた-->
         <scene sceneID="3sl-ZH-QbC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avJ-1G-SZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,8 +314,8 @@
                                     <action selector="start:" destination="7jq-wl-pjv" eventType="touchUpInside" id="7oE-FI-fQc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="チュートリアル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Svt-pN-zvR">
-                                <rect key="frame" x="11" y="10" width="169" height="61"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="つかいかた" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Svt-pN-zvR">
+                                <rect key="frame" x="12" y="10" width="169" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -323,7 +324,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="チュートリアル" image="cloud up.png" id="vnP-b9-Rfl"/>
+                    <tabBarItem key="tabBarItem" title="つかいかた" image="info.png" id="vnP-b9-Rfl"/>
                     <connections>
                         <outlet property="start" destination="tAr-SQ-kvG" id="ftz-wl-Ulf"/>
                     </connections>
@@ -473,7 +474,7 @@
         <image name="arrow 1.png" width="32" height="25"/>
         <image name="arrow 2.png" width="32" height="25"/>
         <image name="book.png" width="26" height="30"/>
-        <image name="cloud up.png" width="42" height="28"/>
+        <image name="info.png" width="16" height="36"/>
         <image name="list 1.png" width="32" height="26"/>
         <image name="nav.png" width="21" height="31"/>
         <image name="pen.png" width="28" height="24"/>

@@ -283,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="607" y="-373"/>
         </scene>
-        <!--Tutorial - SNS連動-->
+        <!--Tutorial - つかいかた-->
         <scene sceneID="3sl-ZH-QbC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avJ-1G-SZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +314,7 @@
                                     <action selector="start:" destination="7jq-wl-pjv" eventType="touchUpInside" id="FVJ-ti-j9d"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="チュートリアル" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GNt-zN-eCy">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="つかいかた" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="GNt-zN-eCy">
                                 <rect key="frame" x="9" y="0.0" width="180" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
@@ -324,7 +324,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="SNS連動" image="cloud up.png" id="vnP-b9-Rfl"/>
+                    <tabBarItem key="tabBarItem" title="つかいかた" image="info.png" id="vnP-b9-Rfl"/>
                     <connections>
                         <outlet property="start" destination="Dfr-Xa-RUV" id="3WF-KK-uEq"/>
                     </connections>
@@ -467,71 +467,13 @@
         <image name="arrow 1.png" width="32" height="25"/>
         <image name="arrow 2.png" width="32" height="25"/>
         <image name="book.png" width="26" height="30"/>
-        <image name="cloud up.png" width="42" height="28"/>
+        <image name="info.png" width="16" height="36"/>
         <image name="list 1.png" width="32" height="26"/>
         <image name="nav.png" width="21" height="31"/>
         <image name="pen.png" width="28" height="24"/>
         <image name="タイトル.png" width="640" height="951"/>
         <image name="真ん中.png" width="100" height="41"/>
     </resources>
-    <classes>
-        <class className="Memorial" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Memorial.h"/>
-            <relationships>
-                <relationship kind="action" name="Send:"/>
-                <relationship kind="outlet" name="Twitter" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="inputtext" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="photo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="warningLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="Setting" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Setting.h"/>
-            <relationships>
-                <relationship kind="action" name="changeGetLocation:"/>
-                <relationship kind="action" name="changeHowToGo:"/>
-                <relationship kind="action" name="focusMe:"/>
-                <relationship kind="action" name="getImgAdress:"/>
-                <relationship kind="action" name="putImg:"/>
-                <relationship kind="action" name="saveCamera:"/>
-                <relationship kind="action" name="setStar:"/>
-                <relationship kind="outlet" name="HowToGo" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="focusMe" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="getImageAddress" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="getLocation" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="putImage" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="saveToCamera" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="writeStar" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="Tutorial" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Tutorial.h"/>
-            <relationships>
-                <relationship kind="action" name="start:"/>
-                <relationship kind="outlet" name="start" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="myLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="YMapKitTestAppDelegate" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YMapKitTestAppDelegate.h"/>
-            <relationships>
-                <relationship kind="action" name="removeroute:"/>
-                <relationship kind="action" name="routing:"/>
-                <relationship kind="action" name="saveToAlbum:"/>
-                <relationship kind="action" name="tappin:"/>
-                <relationship kind="outlet" name="drawBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pinOrMap" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchBotton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="window" candidateClass="UIWindow"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
